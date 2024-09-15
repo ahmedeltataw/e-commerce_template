@@ -1,0 +1,27 @@
+---
+import type { LinkType } from "../../types/type";
+interface Props {
+  MainTitle: string;
+  data: LinkType[];
+}
+const { MainTitle, data } = Astro.props;
+import Link from "@components/ui/global/Link.astro";
+---
+
+<div class="Footer-meta">
+  <h4 class="fs-24 fw-500 pb-12 relative">{MainTitle}</h4>
+  <ul>
+    {
+      data.map((item: LinkType) => (
+        <li class="pb-8">
+          <Link
+            href={item.href}
+            aria={`${item.text}Link`}
+            text={item.text}
+            Class=""
+          />
+        </li>
+      ))
+    }
+  </ul>
+</div>

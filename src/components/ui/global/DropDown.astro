@@ -1,0 +1,33 @@
+---
+import Link from "./Link.astro";
+import type { LinkType } from "../../../types/type";
+
+
+
+interface Props {
+  data: LinkType[];
+  id: string;
+}
+const { data, id } = Astro.props;
+---
+
+<ul class="dropDownMenu" id={id}>
+  {
+    
+    data.map((link: LinkType) => (
+        
+      <li>
+        <Link
+          href={link.href}
+          Class="d-flex items-center gap-3"
+          aria={link.text}
+          text={link.text}
+          Img={{ alt: link.Img?.alt ?? "", side: link.Img?.side ?? "left" }}
+          ImageSrc={link.ImageSrc ?? ""}
+     
+          icon={{name:link.icon?.names , side:link.icon?.side?? "left"}}
+        />
+      </li>
+    ))
+  }
+</ul>

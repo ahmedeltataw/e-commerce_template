@@ -1,0 +1,23 @@
+---
+import DropDown from "@components/ui/global/DropDown.astro";
+import Button from "@components/ui/global/Button.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Ar from "@assets/images/flag/flagAr.png";
+import {LangDropDown} from "@data/Data";
+---
+
+<div class="dropDownLang relative">
+  <Button
+    type="button"
+    aria={`dropDownBtn`}
+    ClassName="dropDownBtn d-flex items-center gap-2 BtnLang"
+    ariaEx={`false`}
+    controll={`dropDownLang`}
+  >
+  <Image src={Ar} alt={`flagLang`} format="webp" />
+  <span class=" fs-16">العربية</span>
+  <Icon name={`arrow-down`} size={`24`} class={`dropDownArrow`}  />
+  </Button>
+  <DropDown data={LangDropDown} id="dropDownLang"/>
+</div>

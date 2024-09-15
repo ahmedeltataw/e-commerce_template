@@ -1,0 +1,28 @@
+---
+import MainHeading from "@components/ui/global/MainHeading.astro";
+import CateBox from "./cateBox.astro";
+import {CateBoxData} from "@data/Data";
+import type {cateBoxType} from "../../types/type";
+---
+
+<section class="section-1 cate" aria-label="category">
+  <div class="container">
+    <MainHeading title="الاقسام" swiperBtn={true} />
+    <!-- Swiper -->
+    <div class="swiper cateSwiper">
+      <div class="swiper-wrapper">
+        {
+                CateBoxData.map((box:cateBoxType)=>(
+                <div class="swiper-slide">
+                    <CateBox title={box.title} img={box.img}/>
+                </div>
+                ))
+            
+        }
+
+      </div>
+      
+      
+    </div>
+  </div>
+</section>

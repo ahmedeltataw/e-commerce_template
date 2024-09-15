@@ -1,0 +1,51 @@
+---
+import Link from "../global/Link.astro";
+import { ListLinksPageData } from "../../../data/Data";
+import type { LinkType } from "../../../types/type";
+import Button from "../global/Button.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<ul
+  class="d-flex items-center gap-10 navLinks lg-max-d-none "
+  id="responsiveNavLinks"
+>
+  <Button
+    type="button"
+    aria={`close menu`}
+    ClassName="btn-run relative round-6 btnCloseMenu lg-d-none"
+    ariaEx={`false`}
+    controll={`responsiveNavLinks`}
+    id="btnCloseMenu"
+  >
+    <Icon name={`close`} size={`36`} class={`relative`} />
+  </Button>
+  {
+    ListLinksPageData.map((li: LinkType) => (
+      <li>
+        <Link
+          href={li.href}
+          aria={li.text}
+          Class="navLink fs-16"
+          text={li.text}
+        />
+      </li>
+    ))
+  }
+  <li>
+    <Link
+      href="#!"
+      aria="signUp Page "
+      Class="navLink fs-16 lg-d-none"
+      text="تسجيل"
+    />
+  </li>
+  <li>
+    <Link
+      href="#!"
+      aria="login Page"
+      Class="navLink fs-16 lg-d-none"
+      text="تسجيل الدخول"
+    />
+  </li>
+</ul>

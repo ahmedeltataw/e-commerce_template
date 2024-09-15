@@ -1,0 +1,46 @@
+---
+import Link from "@components/ui/global/Link.astro";
+---
+
+<nav class="mobileFooter md-d-none">
+  <ul class="mobileFooterList d-grid justify-around relative">
+    <li class="d-flex items-center justify-center ">
+      <Link
+        href="#!"
+        aria="home page"
+        Class="navLink d-flex items-center justify-center  gap-x-2 fs-14 active"
+        icon={{ name: "Home", side: "left" }}
+        text="الرئيسية"
+      />
+      
+    </li>
+    <li class="d-flex items-center justify-center">
+      <Link
+        href="#!"
+        aria="notifications  page"
+        Class="navLink d-flex items-center justify-center gap-x-2 fs-14"
+        icon={{ name: "notifications", side: "left" }}
+        text="الاشعارات"
+      />
+    </li>
+    <li class="d-flex items-center justify-center">
+      <Link
+        href="#!"
+        aria="user page"
+        Class="navLink d-flex items-center justify-center gap-x-2 fs-14"
+        icon={{ name: "user", side: "left" }}
+        text="حسابي"
+      />
+    </li>
+    <li class="d-flex items-center justify-center">
+      <Link
+        href="#!"
+        aria="order page"
+        Class="navLink d-flex items-center justify-center gap-x-2 fs-14"
+        icon={{ name: "order", side: "left" }}
+        text="طلباتي"
+      />
+    </li>
+</ul>
+
+</nav>

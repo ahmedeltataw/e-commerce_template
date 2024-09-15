@@ -1,0 +1,118 @@
+---
+import Button from "./Button.astro";
+import { Icon } from "astro-icon/components";
+interface Props {
+  type:
+    | "text"
+    | "number"
+    | "password"
+    | "email"
+    | "date"
+    | "time"
+    | "file"
+    | "checkbox";
+  title?: string;
+  name?: string;
+  place?: string;
+  value?: string;
+  isDisabled: boolean;
+  isLabel: boolean;
+  LabelClassName?: string;
+  InputClassName?: string;
+  FormClassName?: string;
+
+  //buttons
+  IsButton?: {
+    aria?: string;
+    Title?: string;
+    ClassName?: string;
+    BtnIcon?: {
+      name?: string;
+      id?: string;
+      ClassName?: string;
+    };
+  };
+  //icon
+  Icons?: {
+    name?: string;
+    id?: string;
+    ClassName?: string;
+  };
+  //password
+  IsPassword?: boolean;
+}
+const {
+  title,
+  name,
+  type,
+  place,
+  value,
+  isDisabled,
+  isLabel = true,
+  InputClassName,
+  IsButton = false,
+
+  Icons = false,
+  IsPassword = false,
+
+  FormClassName,
+  LabelClassName,
+ 
+} = Astro.props;
+---
+
+<div class=`formGroup ${FormClassName ? FormClassName : ''}   `>
+  {
+    isLabel && (
+      <label for={name} class={LabelClassName}>
+        {title}
+      </label>
+    )
+  }
+  {
+    IsButton && (
+      <Button
+        type="submit"
+        aria={IsButton.aria}
+        ClassName={` ${IsButton.ClassName ?IsButton.ClassName : '' }`}>
+        {IsButton.Title}
+        {IsButton.BtnIcon && <Icon name={IsButton.BtnIcon.name} size={24} id={IsButton.BtnIcon.id} />}
+      </Button>
+    )
+  }
+  {
+    IsPassword ? (
+      <div class="relative IsPassword">
+        <input
+          type={type}
+          name={name}
+          id={name}
+          class={`round-4 pr-5 pl-5 ${InputClassName}`}
+          placeholder={place}
+          value={value}
+          disabled={isDisabled}
+        />
+
+        {Icons && <Icon name={Icons.name} size={24} id={Icons.id} />}
+        {Icons && (
+          <Icon
+            name={Icons.name}
+            size={24}
+            id={Icons.id}
+            class={Icons.ClassName}
+          />
+        )}
+      </div>
+    ) : (
+      <input
+        type={type}
+        name={name}
+        id={name}
+        class={`round-4 pr-5 pl-5 ${InputClassName ? InputClassName:''}`}
+        placeholder={place}
+        value={value}
+        disabled={isDisabled}
+      />
+    )
+  }
+</div>

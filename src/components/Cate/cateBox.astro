@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import Link from "@components/ui/global/Link.astro";
+interface Props {
+    img: string |any,
+    title: string ,
+}
+const {img, title} = Astro.props
+---
+<div class="cateBox-1 relative  text-center">
+    <figure class="cateImg-1 mx-auto">
+        <Image src={img} alt={`img${title}`} format="webp" quality={70} class={`img-contain`}/>
+    </figure>
+    <figcaption class="title fs-20 fw-500 mt-6">{title}</figcaption>
+    <Link href="#!"  aria={`${title}link`} Class="absolute top-0 left-0" title={title} />
+  </div>

@@ -1,0 +1,162 @@
+@use "../../helpers/color" as *;
+@use "../../helpers/animation" as *;
+@use "../../helpers/extend" as*;
+@use "../../helpers/mixin" as *;
+
+footer {
+    min-height: 75dvh;
+    padding-top: 6vh;
+    margin-top: 5vh;
+    background-color: rgb(236, 250, 236);
+    width: 100%;
+
+    .footerLayout {
+        @include gridCol(300px,1fr);
+        @media(max-width:767px){
+            @include gridCol(200px,1fr);
+        }
+    }
+
+    .Footer-meta {
+
+        
+
+        h4 {
+            display: inline-block;
+            color: $title;
+            &::before {
+                @extend %pseudoElX;
+                width: 50%;
+                height: 2px;
+                background-color: $hover-1;
+                bottom: 20px;
+                right: 0;
+            }
+        }
+
+        a {
+            opacity: .9;
+
+            &:hover {
+                color: $hover-1;
+                opacity: 1;
+            }
+        }
+    }
+
+    .Newsletter {
+        .box {
+            .box-text {
+              
+
+                p {
+                    opacity: .8;
+                }
+            }
+
+            .box-icons {
+                svg {
+                    width: 48px;
+                }
+            }
+
+            form {
+
+                .formGroup {
+                    width: 500px;
+                    height: 55px;
+                    max-width: 100%;
+                    
+                }
+
+                input {
+                    @include input(100%, 100%, $subtitle);
+                    background-color: transparent;
+
+                    &::placeholder {
+                        color: $subtitle;
+                    }
+                    &:hover {
+                        border-color: $hover;
+                    }
+                    &:focus {
+                        border-color: $hover-1;
+                    }
+
+
+                }
+
+                .btnSendEmail {
+                    @extend %centerY;
+                    background-color: $hover;
+                    color: $w;
+                    height: 55px;
+                    transition: $t-s;
+
+                    &:hover {
+                        background-color: $hover-1;
+
+                    }
+                }
+            }
+        }
+
+        @media(max-width:768px) {
+            flex-direction: column;
+                    align-items: stretch;
+                    
+            gap: 15px;
+
+            
+        }
+    }
+    .copyright {
+        flex-direction: column;
+        
+        .paymentImg {
+            max-width: 335px;
+        }
+
+       
+        a {
+            color: $hover;
+            
+        }
+        @media(max-width:767px){
+            padding-bottom: 12vh;
+        }
+    }
+    .mobileFooter{
+        background-color: $w;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 999;
+        box-shadow: 0 -8px 1.25rem rgba(110, 110, 110, .3);
+
+        .mobileFooterList{
+            grid-template-columns: repeat(4 , 70px);
+            grid-template-rows: 70px;
+            li{
+                
+                a{
+                    flex-direction: column;
+                    transition: $t-s;
+                    svg{
+                        width: 30px;
+                        transition: $t-s;
+                    }
+                    &:hover ,&.active{
+                        color: $hover-1;
+                        svg{
+                            color: $hover-1;
+                          
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,43 @@
+@use "../../helpers/color" as *;
+@use "../../helpers/extend" as *;
+
+.mainHeading {
+    border-bottom: 1px solid $border-color;
+    h2 {
+        color: $w;
+        width: auto;
+        background-color: $hover-1;
+        letter-spacing: 1px;
+        font-size: clamp(18px , 1vw + 1.1rem ,28px);
+    }
+    .swiperBtn{
+        .swiper-button-next{
+            right: auto;
+            left: 60px;
+            
+        }
+        .swiper-button-prev{
+            left: 0;
+        }
+        .swiper-button-next , .swiper-button-prev{
+            background-color: transparent;
+            border: 1px solid $hover;
+            width: 50px;
+            height: clamp(46px , 3.4vw + 1.3rem ,50px);
+            transition: $t-s;
+            &::after{
+                font-size: 30px;
+                color: $hover;
+                transition: $t-s;
+            }
+            &:hover{
+                background-color: $hover-1;
+                border-color: transparent;
+
+                &::after{
+                    color: $w;
+                }
+            }
+        }
+    }
+}

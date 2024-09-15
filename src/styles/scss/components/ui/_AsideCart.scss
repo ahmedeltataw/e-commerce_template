@@ -1,0 +1,83 @@
+@use "../../helpers/color" as *;
+@use "../../helpers/animation" as *;
+@use "../../helpers/extend" as*;
+@use "../../helpers/mixin" as *;
+
+#CartShop {
+    @extend %aside;
+    width: 500px;
+    transform: translateX(500px)  scale(.8);
+    .cartContainer {
+        width: 100%;
+        height: 100%;
+        grid-template-rows: 70px 1fr 50px;
+        .closeCart {
+            @extend %closeAside;
+
+        }
+
+        .cartBox {
+            background-color: rgb(236, 250, 236);
+            color: $subtitle;
+            margin-bottom: 5px;
+            grid-template-columns: 1fr 150px 1fr 100px;
+            @media(max-width:492px) {
+                grid-template-columns: repeat(4, 1fr);
+
+           
+
+            }
+            .cartImg {
+                height:118px ;
+                img{
+                    object-fit: contain;
+                }
+            }
+            h3 {
+                @extend %responsive-text;
+               
+                font-size: 14px;
+                opacity: .8;
+            }
+
+            
+
+            
+
+            .delete {
+                width: 50px;
+                height: 35px;
+                background-color: #e15757;
+                border-radius: 0% 100% 100% 0% / 100% 0%;
+                svg {
+                    width: 24px;
+                    color: $w;
+                    margin-right: auto;
+                }   
+            }
+        }
+        .actions{
+            grid-template-columns: repeat(2 , 1fr);
+            gap: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+            .btn-run , .btn-runBorder{
+                &::before{
+                    border-radius: 4px;
+                    
+                }
+            }
+            
+        }
+        .massageEmpty{
+            @extend %centerPosition;
+            display: none;
+            &.open{
+                display: inline-block;
+            }
+       
+        }
+    }
+
+
+}

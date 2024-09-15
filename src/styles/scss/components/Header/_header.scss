@@ -1,0 +1,8 @@
+@use "./navTop";
+@use "./navBottom";
+@use "../../helpers/color" as *;
+header{
+    background: linear-gradient(270deg, hsla(0, 0%, 100%, 1) 61%, hsla(120, 45%, 98%, 1) 100%);
+
+
+};

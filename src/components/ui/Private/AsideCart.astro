@@ -1,0 +1,84 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from "../global/Button.astro";
+import { Image } from "astro:assets";
+import img from "@assets/images/products/pro-1.webp"
+---
+
+<!-- style="display: none;" -->
+<aside class="CartShop-1 d-none" id="CartShop">
+  <div class="cartContainer relative d-grid">
+    <div class="aside-top">
+      <Button
+        type="button"
+        aria="closeCart"
+        ariaEx={`false`}
+        controll={`CartShop`}
+        ClassName="closeCart"
+        id="closeCart"
+      >
+        <Icon name={`close`} size={20} />
+      </Button>
+      <h2 class="fs-24 text-center py-8 fw-900">سلتلك</h2>
+    </div>
+
+    <div class="absolute massageEmpty text-center ">
+      <Icon name={`emptyCart`} />
+      <p class=" fw-700 fs-24 pt-5 pl-6">السلة فارغة</p>
+    </div>
+    <div class="aside-middel AllCarts">
+      <div
+        class="cartBox d-grid items-center text-center relative py-3 px-2 round-8 mb-3"
+      >
+        <div class="cartImg round-6">
+          <Image src={img} alt="pro image" format="webp"  quality={70}  class={`round-6`}  />
+        </div>
+        <h3 class="fw-500">أومرون جهاز قياس ضغط الدم M3</h3>
+        <!--  -->
+        <div class="quanity d-flex items-center mx-auto">
+          <div class="d-flex items-center QuanityButtons">
+            <Button type="button" aria={`plus`} ClassName="btn btn-quanity plus"
+              >+</Button
+            >
+            <Button type="button" aria={`mins`} ClassName="btn btn-quanity mins"
+              >-</Button
+            >
+          </div>
+          <input type="text" class="text-center" value="1" />
+        </div>
+        <!--  -->
+        <div class={`price fs-16 pb-4	  `}>
+          <span class={`fw-700 `}>18,500</span>
+          <small class="fs-14">ر.س</small>
+        </div>
+        <!--  -->
+        <Button
+          type="button"
+          ClassName="btn delete absolute top-0 left-0"
+          aria={`delete product`}
+        >
+          <Icon name="delete" class={`ml-3`} />
+        </Button>
+        <!--  -->
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions d-grid relative">
+      <Button
+        type="button"
+        ClassName="btn-run round-4 relative"
+        aria="Cart page"
+      >
+        <a href="#!" class="relative fw-700">السلة</a>
+      </Button>
+      <Button
+        type="button"
+        ClassName="btn-runBorder round-4 relative"
+        aria="checkOut page"
+      >
+        <a href="#!" class="relative fw-700">ادفع الان</a>
+      </Button>
+    </div>
+  </div>
+</aside>

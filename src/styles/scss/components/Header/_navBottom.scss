@@ -1,0 +1,143 @@
+@use "../../helpers/color" as *;
+@use "../../helpers/extend" as *;
+@use "../../helpers/mixin" as *;
+
+
+.navBottom {
+    .Logo {
+        height: 60px;
+    }
+    .icon-nav-base{
+        width: 40px;
+        span{
+            background-color: $hover;
+            width: 30px;
+            &:nth-child(2){
+                transform: translateX(10px);
+            }
+        }
+        &:hover{
+            span:nth-child(2){
+                transform: translateX(0);
+            }
+        }
+    }
+    .navLinks {
+        .navLink {
+            &:hover {
+                color: $hover-1;
+            }
+
+        }
+
+        &.responsiveNavLinks {
+
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            width: 250px;
+            padding: 20px;
+            @extend %aside;
+
+            li {
+                padding-block: 15px ;
+                border-bottom: 1px solid $border-color;
+                width: 100%;
+
+                .navLink {
+                    transform: translateY(50px);
+                    opacity: 0;
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                    transition-delay: calc(0.1s * var(--i));
+                }
+            }
+
+
+            .btnCloseMenu {
+                width: 100%;
+                margin-block-end: 15px;
+
+                svg {
+                    width: 30px;
+                    padding: 5px 0;
+                    margin-inline: auto;
+
+                }
+            }
+
+            &.open {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+
+                li {
+                    .navLink {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .navButtons {
+        svg {
+            // opacity: .9;
+            color: $subtitle;
+
+            &:hover {
+                color: $hover-1;
+                opacity: 1;
+            }
+        }
+
+        .searchBtn {
+            margin-right: -15px;
+        }
+
+    }
+    .navSearchForm{
+        background-color: $BG;
+        padding-block: 10px;
+        width: 100%;
+        z-index: 999;
+        top: -80px;
+        padding-inline: 15px;
+        transform: scale(.5);
+        transition: $t-l;
+        opacity: 1;
+        box-shadow: 0 13px 1.25rem rgba($color: #6e6e6e, $alpha: .5);
+
+        .icon-search {
+            @extend %centerY;
+        }
+
+
+        &.open {
+
+            transform: scale(1);
+            opacity: 1;
+        }
+        input {
+            @include input(50px, 100%, rgba($color: $border-color, $alpha: 1));
+            color: #545454;
+            font-size: 16px;
+            padding-inline: 10px;
+        }
+        .btnSearchSubmit{
+            @extend %centerY;
+            left: 20px;
+            background-color: $hover;
+            height: 40px;
+            padding-inline: 10px;
+            transition: $t-s;
+            svg{
+                width: 28px;
+                color: $w;
+            }
+            &:hover{
+                background-color: $hover-1;
+            }
+        }
+    }   
+}

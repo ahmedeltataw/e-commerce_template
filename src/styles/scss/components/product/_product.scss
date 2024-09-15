@@ -1,0 +1,13 @@
+@use "../../helpers/color" as *;
+@use "../../helpers/extend" as *;
+@use "../../helpers/mixin" as *;
+.product{
+    min-height: 100dvh;
+    .product-1{
+        @include gridCol(250px,1fr);
+        @media(max-width:380px){
+            @include gridCol(100%,1fr);
+        }
+       
+    }
+}
