@@ -11,19 +11,21 @@ footer {
     width: 100%;
 
     .footerLayout {
-        @include gridCol(300px,1fr);
-        @media(max-width:767px){
-            @include gridCol(200px,1fr);
+        @include gridCol(300px, 1fr);
+
+        @media(max-width:767px) {
+            @include gridCol(200px, 1fr);
         }
     }
 
     .Footer-meta {
 
-        
+
 
         h4 {
             display: inline-block;
             color: $title;
+
             &::before {
                 @extend %pseudoElX;
                 width: 50%;
@@ -47,7 +49,7 @@ footer {
     .Newsletter {
         .box {
             .box-text {
-              
+
 
                 p {
                     opacity: .8;
@@ -66,7 +68,7 @@ footer {
                     width: 500px;
                     height: 55px;
                     max-width: 100%;
-                    
+
                 }
 
                 input {
@@ -76,9 +78,11 @@ footer {
                     &::placeholder {
                         color: $subtitle;
                     }
+
                     &:hover {
                         border-color: $hover;
                     }
+
                     &:focus {
                         border-color: $hover-1;
                     }
@@ -103,30 +107,33 @@ footer {
 
         @media(max-width:768px) {
             flex-direction: column;
-                    align-items: stretch;
-                    
+            align-items: stretch;
+
             gap: 15px;
 
-            
+
         }
     }
+
     .copyright {
         flex-direction: column;
-        
+
         .paymentImg {
             max-width: 335px;
         }
 
-       
+
         a {
             color: $hover;
-            
+
         }
-        @media(max-width:767px){
+
+        @media(max-width:767px) {
             padding-bottom: 12vh;
         }
     }
-    .mobileFooter{
+
+    .mobileFooter {
         background-color: $w;
         width: 100%;
         position: fixed;
@@ -135,28 +142,47 @@ footer {
         z-index: 999;
         box-shadow: 0 -8px 1.25rem rgba(110, 110, 110, .3);
 
-        .mobileFooterList{
-            grid-template-columns: repeat(4 , 70px);
+        .mobileFooterList {
+            grid-template-columns: repeat(4, 70px);
             grid-template-rows: 70px;
-            li{
-                
-                a{
+
+            li {
+
+                a {
                     flex-direction: column;
                     transition: $t-s;
-                    svg{
+
+                    svg {
                         width: 30px;
                         transition: $t-s;
                     }
-                    &:hover ,&.active{
+
+                    &:hover,
+                    &.active {
                         color: $hover-1;
-                        svg{
+
+                        svg {
                             color: $hover-1;
-                          
+
+                        }
+                    }
+                }
+            }
+
+            @media(max-width:480px) {
+                grid-template-columns: repeat(4, 60px);
+                grid-template-rows: 60px;
+
+                li {
+                    a{
+                        font-size: 12px;
+                        svg{
+                            width: 24px;
                         }
                     }
                 }
             }
         }
     }
-    
+
 }

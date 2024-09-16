@@ -1,0 +1,16 @@
+---
+import img from "@assets/images/products/pro-6.webp";
+import test from "@assets/images/hero/hero1.jpg"
+import { Image } from "astro:assets";
+---
+<div class="imageGallery d-grid gap-5">
+    <div class="mainImg round-4">
+        <figure><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4`}  /></figure>
+    </div>
+    <div class="subImg d-flex items-center gap-5">
+        <figure class="round-4"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4 active`} /></figure>
+        <figure class="round-4"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4`} /></figure>
+        <figure class="round-4"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4`} /></figure>
+        <figure class="round-4"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4`} /></figure>
+    </div>
+</div>

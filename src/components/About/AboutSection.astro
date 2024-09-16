@@ -1,0 +1,33 @@
+---
+interface Props {
+    ClassName: string;
+    title:string,
+    img:string |any,
+    des:string
+
+}
+const {ClassName , title , img ,des} = Astro.props
+import MainHeading from "@components/ui/global/MainHeading.astro";
+import { Image } from "astro:assets";
+
+---
+
+<section class="section-1 about-1">
+  <div class="container">
+    <MainHeading title={title}/>
+
+
+    <div class=`d-grid items-center  gap-8 ${ClassName} relative`>
+      <!-- left -->
+      <div class="leftSide relative">
+        <Image src={img} alt="about img" quality={70} format="webp" class={`img-cover `} />
+      </div>
+      <!-- right -->
+      <div class="rightSide relative">
+        <p class="line-big">
+           {des} 
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

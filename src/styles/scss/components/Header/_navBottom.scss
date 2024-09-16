@@ -6,6 +6,10 @@
 .navBottom {
     .Logo {
         height: 60px;
+        @media(max-width:380px){
+            height: 45px;
+
+        }
     }
     .icon-nav-base{
         width: 40px;
@@ -94,7 +98,12 @@
         .searchBtn {
             margin-right: -15px;
         }
+        @media(max-width:380px){
+           svg{
+            width: 30px;
+           }
 
+        }
     }
     .navSearchForm{
         background-color: $BG;

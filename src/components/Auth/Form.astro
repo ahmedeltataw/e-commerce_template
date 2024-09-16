@@ -1,0 +1,176 @@
+---
+interface Props {
+  isLogin?: boolean;
+  isSignUp?: boolean;
+  id: string;
+}
+const { isLogin = true, isSignUp = false, id } = Astro.props;
+import FormGroup from "@components/ui/global/FormGroup.astro";
+import SelectForm from "@components/ui/global/SelectForm.astro";
+import Button from "@components/ui/global/Button.astro";
+import Link from "@components/ui/global/Link.astro";
+import UploadImg from "@components/ui/global/UploadImg.astro";
+import img from "@assets/images/model-1.png"
+import { Icon } from "astro-icon/components";
+---
+
+<section class="section-1 auth-1">
+  <div class="container">
+    <h3 class="fs-28 pb-5 text-center">
+      {isLogin ? "تسجيل دخول" : "إنشاء حساب جديد"}
+    </h3>
+    <p class="pb-4 text-center fs-18">
+      {
+        isLogin
+          ? "أدخل بياناتك المسجلة لإكمال عملية تسجيل الدخول"
+          : "مرحبًا، أدخل بياناتك الحقيقية والصحيحة لضمان تحقق حسابك وبدء العمل"
+      }
+    </p>
+    <form action="#!" class="mx-auto" id={id}>
+        {
+            isSignUp && (
+                <UploadImg img={img}  />
+              <FormGroup
+                type="text"
+                isDisabled={false}
+                isLabel={true}
+                title="الاسم بالكامل" 
+                place="الاسم بالكامل "
+                name="userName"
+                id="userName"
+                FormClassName="d-flex gap-4 mb-8 relative"
+                InputClassName="round-8"
+                LabelClassName="pr-4"
+              />
+            )
+          }
+      <FormGroup
+        type="email"
+        isDisabled={false}
+        isLabel={true}
+        title="البريد الالكتروني"
+        place="ادخل بريدك الالكتروني"
+        name="userEmail"
+        id="userEmail"
+        FormClassName="d-flex gap-4 mb-8"
+        InputClassName="round-8"
+        LabelClassName="pr-4"
+      />
+      <FormGroup
+        type="password"
+        isDisabled={false}
+        isLabel={true}
+        title=" كلمة المرور"
+        place="ادخل كلمة المرور"
+        name="userPassword"
+        id="userPassword"
+        FormClassName=`d-flex gap-4  relative ${isLogin ? 'mb-4' : 'mb-8'}`
+        InputClassName="round-8"
+        LabelClassName="pr-4"
+        IsPassword={true}
+        Icons={{ openEye: { name: "openEye", ClassName: "d-none" ,id: "openEye"},
+    closeEye: { name: "closeEye", ClassName: ""  , id: "closeEye"},}}
+      />
+      {
+        isSignUp && (
+          <FormGroup
+            type="password"
+            isDisabled={false}
+            isLabel={true}
+            title=" تاكيد كلمة المرور" 
+            place="تاكيد كلمة المرور"
+            name="SureUserPassword"
+            id="SureUserPassword"
+            FormClassName="d-flex gap-4 mb-8 relative"
+            InputClassName="round-8"
+            LabelClassName="pr-4"
+            IsPassword={true}
+            Icons={{ openEye: { name: "openEye", ClassName: "d-none" ,id: "openEye1"},
+    closeEye: { name: "closeEye", ClassName: ""  , id: "closeEye1"},}}
+          />
+          <FormGroup
+            type="number"
+            isDisabled={false}
+            isLabel={true}
+            title="رقم الهاتف" 
+            place="رقم الهاتف"
+            name="userPhone"
+            id="userPhone"
+            FormClassName="d-flex gap-4 mb-8 relative"
+            InputClassName="round-8"
+            LabelClassName="pr-4"
+          />
+            <SelectForm id="userGender" title="تحديد النوع">
+                <option value="male">ذكر</option>
+                <option value="famale">انثي</option>
+            </SelectForm>
+        )
+      }
+      {
+        isLogin && (
+          <p class="pr-4">
+            <Link
+              href="#!"
+              aria="forgetPassword"
+              Class=""
+              text="هل نسيت كلمة المرور؟"
+            />
+          </p>
+        )
+      }
+      {
+        isSignUp && (
+          <p class="pr-4 text-center mt-10">
+            من خلال الاستمرار، أنت توافق على
+            <Link href="#!" aria="signUp" Class="" text="الشروط والأحكام" />
+            و
+            <Link href="#!" aria="signUp" Class="" text="سياسة الخصوصية" />
+          </p>
+        )
+      }
+
+      <div class="mt-10 d-flex items-center justify-center mx-auto">
+        <Button
+          type="submit"
+          aria={`تسجيل الدخول`}
+          ClassName="btn-run relative  round-6  px-8 py-2"
+          id={`${isLogin ? "LoginBtn" : 'SignUpBtn'}`}
+        >
+          <span class="px-10 py-6 fw-500 fs-18 relative"> 
+            {
+                isLogin ? "تسجيل الدخول" :'تسجيل'
+            }
+          </span>
+        </Button>
+      </div>
+      <div class="mt-14 authWith text-center ">
+        <div class="break relative ">
+            <p class="  absolute">
+            
+                {
+                  isLogin
+                    ? " أو قم بتسجيل الدخول باستخدام"
+                    : "أو أنشئ حسابًا باستخدام"
+                }
+              </p>
+        </div>
+        <Button
+          type="submit"
+          aria={`تسجيل باستحدام حساب جوجل`}
+          ClassName="btn-runBorder relative  round-6 px-8 py-2 d-flex items-center justify-center mx-auto mt-14"
+        >
+          <span class="px-10 py-6 fw-500 fs-18 relative "> حساب جوحل</span>
+          <Icon name="Google" size="28" class={`relative`} />
+        </Button>
+      </div>
+      {
+        isLogin && (
+          <p class="pr-4 text-center mt-10">
+            ليس لديك حساب؟
+            <Link href="SignUp.html" aria="signUp" Class="" text="إنشاء حساب جديد" />
+          </p>
+        )
+      }
+    </form>
+  </div>
+</section>

@@ -12,8 +12,9 @@ interface Props {
   icon?: {
     name?: string ,
     side: "left" | "right",
+    ClassIcon?:string,
   };
-  text?: string;
+  text?: string ;
   Img?:{
     alt: string,
     side?: "left" | "right",
@@ -47,7 +48,7 @@ const {
 >
   {
     icon && icon.name && icon.side === "left" && (
-      <Icon name={icon.name} height="24" width="24" />
+      <Icon name={icon.name} height="24" width="24" class={icon.ClassIcon}  />
     )
   }
   {
@@ -58,7 +59,7 @@ const {
   {text && text}
   {
     icon && icon.name && icon.side === "right" && (
-      <Icon name={icon.name} height="24" width="24" />
+      <Icon name={icon.name} height="24" width="24" class={icon.ClassIcon}  />
     )
   }
   {

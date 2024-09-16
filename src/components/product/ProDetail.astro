@@ -1,0 +1,43 @@
+---
+import SelectForm from "@components/ui/global/SelectForm.astro"
+import Button from "@components/ui/global/Button.astro"
+import Link from "@components/ui/global/Link.astro"
+---
+<div class="cardDetails">
+    <!-- title -->
+    <h3 class="fs-28 pb-8">جبيرة قدم هوائية قصيرة</h3>
+    <!-- price -->
+    <div class="price  pb-8	">
+        <span class=" fw-700 fs-28">300</span>
+        <small>ر.س</small>
+        <del class="pr-4 fs-24">600</del>
+        <small class="smallDel">ر.س</small>
+      </div>
+      <!-- des -->
+      <p class="des line-relaxed pb-8">
+        أومرون جهاز قياس ضغط الدم M3 هو جهاز قياس ضغط الدم الأوتوماتيكي من أعلى الذراع من شركة أومرون، وهي ش 
+      </p>
+    
+    <!-- num model -->
+      <ul class="d-flex items-center pb-8">
+        <li class="name">رقم الموديل:</li>
+        <li class="value">SOUK4JK74</li>
+      </ul>
+
+    <!-- size -->
+    <SelectForm title="اختر مقاسك:" id="size">
+        <option value="0">اختر</option>
+        <option value="1">S</option>
+        <option value="0">M</option>
+        <option value="0">L</option>
+        <option value="0">XL</option>
+    </SelectForm>
+    <div class="buttons d-flex items-center gap-5 mt-14">
+        <Button type="button" ClassName="btn-run relative round-4" aria={`اطلب الان`}>
+            <Link href="#!" Class="relative" aria="اطلب الان" text="اطلب الان" />
+        </Button>
+        <Button type="button" ClassName="btn-runBorder relative round-4" aria={`اضف للسلة`}>
+            <Link href="#!" Class="relative" aria="اضف للسلة" text="اضف للسلة" />
+        </Button>
+    </div>
+</div>

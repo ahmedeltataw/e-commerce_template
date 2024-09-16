@@ -10,7 +10,8 @@ interface Props {
     | "date"
     | "time"
     | "file"
-    | "checkbox";
+    | "checkbox"
+    | "radio";
   title?: string;
   name?: string;
   place?: string;
@@ -20,7 +21,7 @@ interface Props {
   LabelClassName?: string;
   InputClassName?: string;
   FormClassName?: string;
-
+  id?: string;
   //buttons
   IsButton?: {
     aria?: string;
@@ -34,9 +35,8 @@ interface Props {
   };
   //icon
   Icons?: {
-    name?: string;
-    id?: string;
-    ClassName?: string;
+    openEye: { name: string; ClassName?: string ,id?:string};
+    closeEye: { name: string; ClassName?: string ,id?:string};
   };
   //password
   IsPassword?: boolean;
@@ -57,14 +57,14 @@ const {
 
   FormClassName,
   LabelClassName,
- 
+  id,
 } = Astro.props;
 ---
 
 <div class=`formGroup ${FormClassName ? FormClassName : ''}   `>
   {
     isLabel && (
-      <label for={name} class={LabelClassName}>
+      <label for={id} class={LabelClassName}>
         {title}
       </label>
     )
@@ -74,9 +74,15 @@ const {
       <Button
         type="submit"
         aria={IsButton.aria}
-        ClassName={` ${IsButton.ClassName ?IsButton.ClassName : '' }`}>
+        ClassName={` ${IsButton.ClassName ? IsButton.ClassName : ""}`}>
         {IsButton.Title}
-        {IsButton.BtnIcon && <Icon name={IsButton.BtnIcon.name} size={24} id={IsButton.BtnIcon.id} />}
+        {IsButton.BtnIcon && (
+          <Icon
+            name={IsButton.BtnIcon.name}
+            size={24}
+            id={IsButton.BtnIcon.id}
+          />
+        )}
       </Button>
     )
   }
@@ -93,13 +99,13 @@ const {
           disabled={isDisabled}
         />
 
-        {Icons && <Icon name={Icons.name} size={24} id={Icons.id} />}
+        {Icons && <Icon name={Icons.openEye.name} size={24} id={Icons.openEye.id} class={Icons.openEye.ClassName} />}
         {Icons && (
           <Icon
-            name={Icons.name}
+            name={Icons.closeEye.name}
             size={24}
-            id={Icons.id}
-            class={Icons.ClassName}
+            id={Icons.closeEye.id}
+            class={Icons.closeEye.ClassName} 
           />
         )}
       </div>
@@ -107,8 +113,8 @@ const {
       <input
         type={type}
         name={name}
-        id={name}
-        class={`round-4 pr-5 pl-5 ${InputClassName ? InputClassName:''}`}
+        id={id}
+        class={`round-4 pr-5 pl-5 ${InputClassName ? InputClassName : ""}`}
         placeholder={place}
         value={value}
         disabled={isDisabled}

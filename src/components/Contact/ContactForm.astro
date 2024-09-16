@@ -1,0 +1,59 @@
+---
+import FormGroup from "@components/ui/global/FormGroup.astro";
+import Button from "@components/ui/global/Button.astro";
+---
+
+<form action="" class="mx-auto">
+  <FormGroup
+    type="text"
+    isLabel={true}
+    isDisabled={false}
+    place="ادخل الاسم بالكامل "
+    title="الاسم بالكامل "
+    name="userName"
+    id="userName"
+    FormClassName="d-flex gap-4 mb-8 relative"
+    InputClassName="round-8"
+    LabelClassName="pr-4"
+  />
+  <FormGroup
+    type="email"
+    isLabel={true}
+    isDisabled={false}
+    place="ادخل البريد الالكتروني"
+    title=" البريد الالكتروني"
+    name="userName"
+    id="userName"
+    FormClassName="d-flex gap-4 mb-8 relative"
+    InputClassName="round-8"
+    LabelClassName="pr-4"
+  />
+  <FormGroup
+    type="number"
+    isLabel={true}
+    isDisabled={false}
+    place="ادخل رقم الهاتف"
+    title=" رقم الهاتف"
+    name="userName"
+    id="userName"
+    FormClassName="d-flex gap-4 mb-8 relative"
+    InputClassName="round-8"
+    LabelClassName="pr-4"
+  />
+  <div class="formGroup d-flex gap-4 mb-8 relative">
+    <label for="massage" class="pr-4">رسالتك</label>
+    <textarea name="massage" id="massage" placeholder="رسالتك" class="round-8 pr-5 pt-5"></textarea>
+  </div>
+  <div class="mt-10 d-flex items-center justify-center mx-auto">
+    <Button
+      type="submit"
+      aria={`send massage `}
+      ClassName="btn-run relative  round-6  px-8 py-2"
+
+    >
+      <span class="px-10 py-6 fw-500 fs-18 relative"> 
+        ارسال
+      </span>
+    </Button>
+  </div>
+</form>

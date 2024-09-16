@@ -1,0 +1,275 @@
+---
+import Button from "@components/ui/global/Button.astro";
+import { Icon } from "astro-icon/components";
+import FormGroup from "@components/ui/global/FormGroup.astro";
+---
+
+<aside class="filterProducts-1">
+  <div class="d-flex items-center gap-5 responsiveFilterSearch mb-5">
+    <Button
+      type="button"
+      ClassName="lg-d-none btn-run relative openFilter px-5 round-4 d-flex items-center"
+      aria={`openFilter`}
+      id="openFilter"
+      ariaEx={`false`}
+      controll={`accordionResponsive`}
+    >
+      <Icon name="filter" size={`28`} class={`relative `} />
+      <span class="pr-2 relative">فلتر</span>
+    </Button>
+    <FormGroup
+      type="text"
+      FormClassName="relative searchFilterGroup "
+      isDisabled={false}
+      isLabel={false}
+      place="ابحث عن منتجك"
+      name="searchFilter"
+      id="searchFilter"
+      IsButton={{
+        aria: "searchFilter",
+        ClassName: "absolute searchFilter round-4 px-4",
+        BtnIcon: { name: "search" },
+      }}
+    />
+  </div>
+  <div class="accordion round-4 lg-max-d-none" id="accordionResponsive">
+    <Button
+      type="button"
+      aria={`closeFilter`}
+      ClassName="lg-d-none relative btn-run round-4 mb-10 "
+      id="closeFilter"
+      ariaEx={`false`}
+      controll={`accordionResponsive`}
+    >
+      <Icon name="close" size={`28`} class={`relative mx-auto py-4`} />
+    </Button>
+    <!-- item-1 -->
+    <div class="accordionItem">
+      <Button
+        type="button"
+        aria={`arrow-down`}
+        ClassName="d-flex items-center justify-between fs-18  py-7 px-6 round-t-4  "
+        ariaEx={false}
+        controll={``}
+      >
+        ترتيب
+        <Icon name={`arrow-down`} size={`28`} />
+      </Button>
+      <div class="accordionContent px-5">
+        <FormGroup
+          type="radio"
+          isLabel={true}
+          isDisabled={false}
+          name="sort"
+          title="الاكثر مبيعا"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="radio1"
+        />
+        <FormGroup
+          type="radio"
+          isLabel={true}
+          isDisabled={false}
+          name="sort"
+          title="السعر اقل اعلي"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="radio2"
+        />
+        <FormGroup
+          type="radio"
+          isLabel={true}
+          isDisabled={false}
+          name="sort"
+          title="السعر اعلي اقل"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="radio3"
+        />
+      </div>
+    </div>
+    <!--  -->
+    <!-- item-2 -->
+    <div class="accordionItem">
+      <Button
+        type="button"
+        aria={`arrow-down`}
+        ClassName="d-flex items-center justify-between fs-18 py-7 px-6  active"
+        ariaEx={false}
+        controll={``}
+      >
+        الاقسام الرئيسية
+        <Icon name={`arrow-down`} size={`28`} />
+      </Button>
+      <div class="accordionContent px-5">
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="All"
+          title="الكل"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-1"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="المشدات والجبائر"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-15"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="المستهلكات الطبية"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-2"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="المساعده على الحركة"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-3"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="المساعدة داخل المنزل"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-4"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="اجهزة مراقبة صحة المريض"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-5"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="المساعدة على التنفس"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-6"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="الاجهزة والمعدات المتخصصة"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-7"
+        />
+      </div>
+    </div>
+    <!--  -->
+    <!-- item-3 -->
+    <div class="accordionItem">
+      <Button
+        type="button"
+        aria={`arrow-down`}
+        ClassName="d-flex items-center justify-between fs-18 py-7 px-6 round-b-4 "
+        ariaEx={false}
+        controll={``}
+      >
+        الاقسام الفرعية
+        <Icon name={`arrow-down`} size={`28`} />
+      </Button>
+      <div class="accordionContent px-5">
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="المشدات والجبائر"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-8"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="المستهلكات الطبية"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-9"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="المساعده على الحركة"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-10"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="المساعدة داخل المنزل"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-11"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="اجهزة مراقبة صحة المريض"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-12"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="المساعدة على التنفس"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-13"
+        />
+        <FormGroup
+          type="checkbox"
+          isLabel={true}
+          isDisabled={false}
+          name="CateName"
+          title="الاجهزة والمعدات المتخصصة"
+          FormClassName="d-flex items-center justify-between pt-7"
+          LabelClassName="fs-16"
+          id="checkbox-14"
+        />
+      </div>
+    </div>
+    <!--  -->
+  </div>
+</aside>

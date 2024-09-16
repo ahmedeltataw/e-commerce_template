@@ -4,18 +4,18 @@
 @use "./components/Header/header";
 @use "./components/footer/footer";
 @use "./components/ui/DropDown";
-
 @use "./components/ui/mainHeading";
 @use "./components/ui/AsideCart";
 // @use "./components/ui/SuccessMessage";
 @use "./components/ui/card";
 // @use "./components/ui/ViewModel";
-// @use "./components/ui/breadcrumb";
+@use "./components/ui/smallBreadcrumb";
 a,svg{
     color: $subtitle;
     transition: $t-s;
     
 }
+
 hr{
     
     border-color:$border-color ;    
@@ -32,7 +32,7 @@ hr{
     
 }
 // ///////////btn style/////////////
-button , .btn{
+button , .btn ,input ,textarea{
     font-family: inherit;
 }
 .btn-run{
@@ -58,7 +58,7 @@ button , .btn{
     }
     &:hover{
         border-color: transparent;
-        a , svg{
+        a , svg ,span{
             color: $w;
         }
     }
@@ -82,6 +82,13 @@ button , .btn{
             width: 100%;
         }
     }
+}
+.btnMore{
+    
+        svg{
+            width: 48px;
+            color: $hover;
+        }
 }
 //////////////overlay///////////
 .overLay{

@@ -1,0 +1,39 @@
+@use "../helpers/color" as *;
+@use "../helpers/extend" as *;
+@use "../helpers/mixin" as *;
+.section-1 {
+    margin-top: 6vh;
+  }
+ .contactUs-1{
+    form{
+        width: 600px;
+        max-width: 100%;
+        // background-color: red;
+        padding-inline: 20px;
+        padding-block: 25px;
+
+        .formGroup{
+        flex-direction: column;
+            width: 100%;
+            input ,textarea {
+                @include input(56px, 100%,transparent);
+                background-color: $BG;
+                font-size: 14px;
+                transition: $t-s;
+                &:focus {
+                    border-color: $hover;
+                }
+            }
+            textarea{
+                @include input(150px, 100%,transparent);
+            }
+        }
+        .btn-run{
+            width: 100%;
+        }
+
+
+
+
+    }
+ }

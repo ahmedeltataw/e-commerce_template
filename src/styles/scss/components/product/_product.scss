@@ -10,4 +10,8 @@
         }
        
     }
+    &[aria-label="cateName1"]{
+        background-color: rgba($color: $BG, $alpha: .55);
+        padding-top: 15px;
+    }
 }

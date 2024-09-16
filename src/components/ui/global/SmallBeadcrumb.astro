@@ -1,0 +1,22 @@
+---
+interface Props {
+    defaultPage: string;
+    linkPage: string;
+}
+const {defaultPage, linkPage} =Astro.props;
+// import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
+---
+<section class="smallBreadcrumb py-8">
+    <div class="container">
+        <ul class="d-flex items-center">
+            <li class="fw-500"
+            > 
+            <Link href="/" aria="" Class="d-flex items-center " icon={{name:'Home' ,side:'left',ClassIcon:'ml-2 '}} text={defaultPage}  />
+            </li>
+            <li class="fw-500 px-5  fs-16 separator">&gt</li>
+            <li class="fw-500"> {linkPage}</li>
+            
+        </ul>
+    </div>
+</section>

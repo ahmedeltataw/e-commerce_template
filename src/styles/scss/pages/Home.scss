@@ -1,8 +1,8 @@
 @use "../helpers/color" as *;
+@use "../components/product/product";
 @use "../components/Hero/hero";
 @use "../components/service/service";
 @use "../components/Cate/cate";
-@use "../components/product/product";
 @use "../components/Breaks&Ads/Break";
 .swiper {
     width: 100%;

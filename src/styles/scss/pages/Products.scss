@@ -1,0 +1,124 @@
+@use "../helpers/color" as *;
+@use "../helpers/extend" as *;
+@use "../helpers/mixin" as *;
+@use "../components/product/product";
+
+.section-1 {
+    margin-top: 6vh;
+}
+
+.productFilter-1 {
+    grid-template-columns: 350px 1fr;
+    gap: 5px;
+    @media (max-width:991px){
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 1fr;
+    }
+    .filterProducts-1 {
+        width: 100%;
+        height: auto;
+        
+        .searchFilterGroup{
+            width: 100%;
+            height: 45px;
+            input{
+                @include input(100%,100%,$border-color);
+                padding-inline: 10px;
+            }
+            .searchFilter{
+                height: 80%;
+                background-color: $hover;
+                @extend %centerY;
+                left: 5px;
+                svg{
+                    width: 24px;
+                    color: $w;
+                }
+            }
+        }
+        .openFilter{
+            height: 42px;
+            
+            svg{
+                width: 25px;
+            }
+            &::before{
+                border-radius: 4px;
+            }
+        }
+       
+        .accordion {
+
+            border: 1px solid $border-color;
+            &:last-child{
+                border-bottom: none;
+            }
+            .accordionItem {
+                border-bottom: 1px solid $border-color;
+                button {
+                    width: 100%;
+                    background-color: transparent;
+                    color: $subtitle;
+                    height: 100%;
+                    svg {
+                        color: $subtitle;
+                        width: 24px;
+                    }
+                    &.active {
+                        background-color: $hover;
+                        color: $w;
+                        
+                        svg{
+                            color: $w;
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                .accordionContent {
+                    
+                    height: 0;
+                    overflow: hidden;
+
+                    .formGroup {
+                        input {
+                            @include input(18px, 18px, transparent);
+                            accent-color: $hover;
+                        }
+                    }
+                    
+                }
+                button.active + .accordionContent{
+                    margin-bottom: 20px;
+                }
+
+
+            }
+
+            &.responsive-accordion{
+                width: 400px;
+                padding: 20px 5px;
+                height: 100vh;
+                @extend %aside;
+                .btn-run {
+                    width: 100%;
+
+                    svg{
+                        width: 30px;
+                    }
+                }
+                
+                .accordionItem{
+                    border: 1px solid $border-color;
+                   
+                    &:nth-child(3){
+                        border-bottom-color: transparent;
+                        border-top-color: transparent;
+                    }
+                }
+            }
+        }
+
+    }
+
+};
