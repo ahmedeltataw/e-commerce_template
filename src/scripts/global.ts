@@ -15,7 +15,6 @@ let closeCart = document.getElementById("closeCart") as HTMLButtonElement;
 // navSearchForm
 let SearchForm = document.getElementById("navSearchForm") as HTMLFormElement;
 let openNavSearch = document.getElementById("openNavSearch") as HTMLButtonElement;
-console.log(openNavSearch)
 let closeNavSearch = document.getElementById("closeNavSearch") as HTMLButtonElement;
 // product filtering
 let AllButton = document.querySelectorAll('.accordionItem button') as NodeListOf<HTMLButtonElement>;
@@ -175,7 +174,7 @@ const filterProductAcc = ()=>{
     let ArrayChild = Array.from(contentDiv.children) as HTMLLIElement []
     if(contentDiv && ArrayChild) {
       if(btn.classList.contains('active')){
-        console.log(contentDiv)
+        
         let h = calcMaxHeight(ArrayChild)
         contentDiv.style.height = `${h}px`
         animationSlide('down', ArrayChild, contentDiv); // Adjust duration as needed
@@ -234,9 +233,11 @@ window.addEventListener("click", (e: Event) => {
   const target = e.target as HTMLElement;
 
   if (overlay && overlay.contains(target)) {
+
     toggleAsideMenu('close', responsiveNavLinks, 'responsiveNavLinks', 'lg-max-d-none',openMenu, btnCloseMenu, true, true);
     toggleAsideMenu('close', CartShop, null, 'd-none', openCart, closeCart, true, false);
     toggleAsideMenu('close', Filter, 'responsive-accordion', 'lg-max-d-none', openFilter, closeFilter, true, false);
+
 
     
   }
@@ -246,5 +247,6 @@ window.addEventListener("click", (e: Event) => {
 
 
 });
+
 
 window.addEventListener('DOMContentLoaded' , filterProductAcc);

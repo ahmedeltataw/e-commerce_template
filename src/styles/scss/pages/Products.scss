@@ -3,9 +3,6 @@
 @use "../helpers/mixin" as *;
 @use "../components/product/product";
 
-.section-1 {
-    margin-top: 6vh;
-}
 
 .productFilter-1 {
     grid-template-columns: 350px 1fr;
@@ -49,12 +46,13 @@
        
         .accordion {
 
-            border: 1px solid $border-color;
-            &:last-child{
-                border-bottom: none;
-            }
+            
             .accordionItem {
-                border-bottom: 1px solid $border-color;
+                border: 1px solid $border-color;    
+                &:nth-child(3){
+                    border-top: none;
+                    border-bottom: none;
+                }
                 button {
                     width: 100%;
                     background-color: transparent;

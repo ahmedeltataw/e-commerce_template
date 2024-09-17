@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, b as addAttribute, d as createAstro } from './astro/server-Bpp7M_eh.js';
 import 'kleur/colors';
 import '@astrojs/internal-helpers/path';
-import { e as $$Icon, c as $$Button, $ as $$Image, p as productData } from './Layout-DfNeseKW.js';
+import { c as $$Icon, d as $$Button, $ as $$Image, p as productData } from './Layout-DKmOrqMg.js';
 import { $ as $$MainHeading } from './MainHeading-BfGzsKJK.js';
 
 const $$CardButton = createComponent(($$result, $$props, $$slots) => {

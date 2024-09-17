@@ -23,9 +23,6 @@
             grid-template-columns: 1fr 150px 1fr 100px;
             @media(max-width:492px) {
                 grid-template-columns: repeat(4, 1fr);
-
-           
-
             }
             .cartImg {
                 height:118px ;
@@ -62,6 +59,10 @@
             width: 100%;
             margin-bottom: 10px;
             .btn-run , .btn-runBorder{
+                a{
+                    width: 100%;
+                    height: 100%;
+                }
                 &::before{
                     border-radius: 4px;
                     

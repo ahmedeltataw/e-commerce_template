@@ -1,0 +1,36 @@
+---
+import Button from "../global/Button.astro";
+interface Props {
+  isRow?: boolean;
+}
+const { isRow = false } = Astro.props;
+import { Icon } from "astro-icon/components";
+---
+
+{
+  isRow ? (
+    <div
+      class={`quanity d-flex items-center mx-auto Row `}>
+      <Button type="button" aria={`plus`} ClassName="btn btn-quanity plus">
+        <Icon name={`plus`} size={`24`} />
+      </Button>
+
+      <input type="text" class="text-center" value="1" disabled />
+      <Button type="button" aria={`mins`} ClassName="btn btn-quanity mins">
+        <Icon name={`mins`} size={`24`} />
+      </Button>
+    </div>
+  ) : (
+    <div class="quanity d-flex items-center mx-auto Colum">
+      <div class="d-flex items-center QuanityButtons">
+        <Button type="button" aria={`plus`} ClassName="btn btn-quanity plus">
+          +
+        </Button>
+        <Button type="button" aria={`mins`} ClassName="btn btn-quanity mins">
+          -
+        </Button>
+      </div>
+      <input type="text" class="text-center" value="1" disabled />
+    </div>
+  )
+}

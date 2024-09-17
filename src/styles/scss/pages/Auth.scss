@@ -2,7 +2,13 @@
 @use "../helpers/extend" as *;
 @use "../helpers/mixin" as *;
 .auth-1{
-    margin-top: 6vh;
+    h3{
+        font-size: clamp(20px , 1vw  + 1.1rem ,28px);
+    }
+    p{
+        font-size: clamp(16px ,1vw + .6rem , 18px);
+
+    }
     form{
         width: 600px;
         max-width: 100%;
@@ -41,6 +47,11 @@
         }
         .btn-runBorder , .btn-run{
             width: 99%;
+            // padding-block: clamp();
+            span{
+                font-size: clamp(14px ,1vw + .6rem , 18px);
+                padding-block: clamp(6px ,1vw + .6rem ,16px);
+            }
         }
         .btn-runBorder {
             
@@ -58,6 +69,8 @@
                     @include centerPosition;
                     background-color: $w;
                     padding-inline: 8px;
+                    white-space: nowrap;
+                    font-size: clamp(13px ,1vw + .5rem , 16px)
                 }
             }
         }
@@ -84,13 +97,13 @@
             padding: 5px;
             margin-inline: auto;
             max-width: 100%;
-
+            transition: $t-s;
             @media (max-width:480px) {
                 width: 100%;
                 height: 100%;
             }
 
-            transition: $t-s;
+            
 
             img {
 

@@ -30,6 +30,29 @@ new Swiper(".heroSwiper", {
       },
     },
   });
+  new Swiper(".ClientSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop:true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      480: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 30,
+      },
+    },
+  });
   // ser box animations
   let boxSer = document.querySelectorAll(".boxSer-1") as NodeListOf<HTMLDivElement>;
 if(boxSer) boxSer.forEach((box:HTMLDivElement)=>{

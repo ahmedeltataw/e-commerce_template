@@ -2,7 +2,9 @@
 import { Icon } from "astro-icon/components";
 import Button from "../global/Button.astro";
 import { Image } from "astro:assets";
-import img from "@assets/images/products/pro-1.webp"
+import img from "@assets/images/products/pro-1.webp";
+import QuanityBtn from "./QuanityBtn.astro";
+import DeleteBtn from "./DeleteBtn.astro";
 ---
 
 <!-- style="display: none;" -->
@@ -35,30 +37,14 @@ import img from "@assets/images/products/pro-1.webp"
         </div>
         <h3 class="fw-500">أومرون جهاز قياس ضغط الدم M3</h3>
         <!--  -->
-        <div class="quanity d-flex items-center mx-auto">
-          <div class="d-flex items-center QuanityButtons">
-            <Button type="button" aria={`plus`} ClassName="btn btn-quanity plus"
-              >+</Button
-            >
-            <Button type="button" aria={`mins`} ClassName="btn btn-quanity mins"
-              >-</Button
-            >
-          </div>
-          <input type="text" class="text-center" value="1" />
-        </div>
+        <QuanityBtn/>
         <!--  -->
         <div class={`price fs-16 pb-4	  `}>
           <span class={`fw-700 `}>18,500</span>
           <small class="fs-14">ر.س</small>
         </div>
         <!--  -->
-        <Button
-          type="button"
-          ClassName="btn delete absolute top-0 left-0"
-          aria={`delete product`}
-        >
-          <Icon name="delete" class={`ml-3`} />
-        </Button>
+        <DeleteBtn/>
         <!--  -->
       </div>
     </div>
@@ -67,17 +53,17 @@ import img from "@assets/images/products/pro-1.webp"
     <div class="actions d-grid relative">
       <Button
         type="button"
-        ClassName="btn-run round-4 relative"
+        ClassName="btn-run round-4 relative "
         aria="Cart page"
       >
-        <a href="#!" class="relative fw-700">السلة</a>
+        <a href="Cart.html" class="relative fw-700 d-flex items-center justify-center" aria-label="Cart page">السلة</a>
       </Button>
       <Button
         type="button"
         ClassName="btn-runBorder round-4 relative"
         aria="checkOut page"
       >
-        <a href="#!" class="relative fw-700">ادفع الان</a>
+        <a href="Payment.html" class="relative fw-700 d-flex items-center justify-center" aria-label="payment">ادفع الان</a>
       </Button>
     </div>
   </div>

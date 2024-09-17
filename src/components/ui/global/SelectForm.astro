@@ -1,11 +1,12 @@
 ---
 interface Props {
     id: string;
-    title: string
+    title: string,
+    ClassName?: string
 }
-const { id , title } = Astro.props
+const { id , title ,ClassName} = Astro.props
 ---
-<div class="formGroup relative mb-10 d-flex">
+<div class={`formGroup relative mb-10 d-flex ${ClassName}`}>
     <label for={id} class="pr-4 pb-5"> {title}</label>
     <select name={id}  id={id} class="round-8 pr-5 pl-5">
         <slot />

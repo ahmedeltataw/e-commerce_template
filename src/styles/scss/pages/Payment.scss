@@ -1,0 +1,101 @@
+@use "../helpers/color" as *;
+@use "../helpers/extend" as *;
+@use "../helpers/mixin" as *;
+.Payment-1{
+    .parent{
+        grid-template-columns: repeat(2 , 1fr);
+        @media(max-width:991px){
+            grid-template-columns: 1fr;
+        }
+    }
+    .invoice{
+        .AllProOrder{
+            background-color: $BG;
+            .numPro{
+                opacity: .8;
+            }
+            .price span , .total p{
+                color: $title;
+            }
+            .total span{
+                color: $hover;
+            }
+            @media(max-width:400px){
+                & > div{
+                    flex-flow: wrap row;
+                    margin-bottom: 15px;
+                    .price{
+                        padding-top: 5px;
+                    }
+                }
+            }
+        }
+        .formGroup{
+            width: 100%;
+            height: 48px;
+            padding-inline-end: 4px;
+
+            input{
+                @include input (100% , 100% , transparent);
+                background-color: $BG;
+            }
+            .btnDiscount{
+                flex-shrink: 0;
+                height: 100%;
+                padding: 0 10px;
+                background-color: $hover;
+                color: $w;
+                transition: $t-s;
+                &:hover{
+                    background-color: $hover-1;
+                }
+            }
+        }
+    }
+    .PaymentWay{
+        svg{
+            
+            margin-inline: auto;
+           
+        }
+        .PayWay{
+            grid-template-rows: 100px;
+            grid-template-columns: repeat(2 , 1fr);
+            .way-1{
+                
+                background-color: $BG;
+                transition: $t-s;
+                input{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    inset: 0;
+                    appearance: none;
+                    transition: $t-s;
+                    cursor: pointer;
+                    &:checked{
+                        border: 1px solid $hover-1;
+                        background-color: rgba($color: $hover-1, $alpha: .1) ;
+                    }
+                }
+                &:has(input:checked){
+                    background-color: transparent;
+                }
+            }
+           
+        }
+        .payNow{
+            background-color: $BG;
+            .now{
+                background-color: $w;
+                .payNowBtn{
+                    @extend %centerY;
+                    height: 85%;
+                    &::before{
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

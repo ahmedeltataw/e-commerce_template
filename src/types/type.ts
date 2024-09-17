@@ -25,12 +25,13 @@ export interface SerBoxType{
 }
 export interface cateBoxType{
   img:string | any;
-  title:string,
+  title?:string,
 }
 
 export interface ProductType extends cateBoxType{
   des:string,
   href:string,
   price:string,
-  discount?:{value:string , newPrice:string} | null
+  discount?:{value:string , newPrice:string} | null,
+  title:string,
 }

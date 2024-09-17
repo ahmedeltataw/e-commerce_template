@@ -1,6 +1,6 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, d as createAstro } from './astro/server-Bpp7M_eh.js';
 import 'kleur/colors';
-import { d as $$Link } from './Layout-DfNeseKW.js';
+import { g as $$Link } from './Layout-DKmOrqMg.js';
 
 const $$Astro = createAstro();
 const $$SmallBeadcrumb = createComponent(($$result, $$props, $$slots) => {

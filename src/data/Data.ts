@@ -275,3 +275,33 @@ export const FooterCate_4Data: LinkType[] = [
         href: '#!',
     },
 ]
+
+// =======client ================
+import Prand_1 from "@assets/images/prand/b2.webp";
+import Prand_2 from "@assets/images/prand/b3.png";
+import Prand_3 from "@assets/images/prand/b4.png";
+import Prand_4 from "@assets/images/prand/b5.png";
+import Prand_5 from "@assets/images/prand/b6.webp";
+export const ClientData:cateBoxType[] = [
+    {
+        img:Prand_1,
+    },
+    {
+        img:Prand_2,
+    },
+    {
+        img:Prand_3,
+    },
+    {
+        img:Prand_4,
+    },
+    {
+        img:Prand_5,
+    },
+    {
+        img:Prand_3,
+    },
+    {
+        img:Prand_1,
+    },
+]
