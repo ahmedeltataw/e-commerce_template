@@ -43,14 +43,6 @@ export default defineConfig({
           }) => {
             // Check if the file is an image
             if (/\.(gif|jpe?g|png|svg|webp)$/.test(name ?? '')) {
-              // Extract the folder structure relative to 'src/assets/images/'
-              const match = name.match(/src\/assets\/images\/(.+)/);
-              if (match && match[1]) {
-                // Preserve subfolders and filename
-                return `assets/images/${match[1]}`;
-              }
-
-              // Default case: if no subfolders, just use the file name
               return 'assets/images/[name]-[hash][extname]';
             }
             if (/\.css$/.test(name ?? '')) {
