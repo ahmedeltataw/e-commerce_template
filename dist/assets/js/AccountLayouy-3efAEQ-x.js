@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, b as addAttribute, e as renderSlot, d as createAstro } from './astro/server-Bpp7M_eh.js';
 import 'kleur/colors';
 import '@astrojs/internal-helpers/path';
-import { $ as $$Image, f as $$Link } from './Layout-TZliDyVf.js';
+import { $ as $$Image, f as $$Link } from './Layout-BoxAu8F9.js';
 import { i as img } from './model-1-BPvO31C4.js';
 
 const $$Avatar = createComponent(($$result, $$props, $$slots) => {

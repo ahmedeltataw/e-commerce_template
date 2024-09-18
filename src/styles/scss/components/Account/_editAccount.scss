@@ -26,9 +26,7 @@
         }
         .uploadImg {
             // 
-            @media (min-width:992px){
-                grid-column: 1 / 3;
-            }
+          
             width: 100%;
             height: 250px;
             border: 3px dashed #e2e2e2;
@@ -41,7 +39,9 @@
                 width: 100%;
                 height: 100%;
             }
-
+            @media (min-width:992px){
+                grid-column: 1 / 3;
+            }
             
 
             img {
@@ -66,7 +66,6 @@
             @media (min-width:992px){
                 grid-column: 1 / 3;
             }
-            // color: ;
         }
     }
 }

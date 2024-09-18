@@ -8,7 +8,7 @@
       @extend %col-4;
        
     }
-    &[aria-label="newProduct"]{
+    &.newProduct{
         background-color: rgba($color: $BG3, $alpha: 1);
         padding-block: 60px;
     }

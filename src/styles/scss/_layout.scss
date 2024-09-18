@@ -1,4 +1,4 @@
-@use "../plugins/AE.css";
+// @use "../plugins/AE.css";
 @use "./helpers/color" as *;
 @use "./helpers/mixin" as *;
 
@@ -19,6 +19,12 @@ html[lang="en"]{
 html[lang="ar"]{
     direction: rtl;
     
+}
+p{
+    // font-size: clamp(16px ,1vw + .6rem , 18px);
+   @media(max-width:580px){
+    font-size: 13px;
+   } 
 }
 
 ::-webkit-scrollbar{

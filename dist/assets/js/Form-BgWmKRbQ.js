@@ -1,8 +1,8 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, a as renderComponent, d as createAstro } from './astro/server-Bpp7M_eh.js';
 import 'kleur/colors';
-import { e as $$FormGroup, f as $$Link, d as $$Button, c as $$Icon } from './Layout-TZliDyVf.js';
+import { e as $$FormGroup, f as $$Link, d as $$Button, c as $$Icon } from './Layout-BoxAu8F9.js';
 import { $ as $$SelectForm } from './SelectForm-BDewKlO2.js';
-import { $ as $$UploadImg } from './UploadImg-B-RkplGs.js';
+import { $ as $$UploadImg } from './UploadImg-BP1J6uzq.js';
 import { i as img } from './model-1-BPvO31C4.js';
 
 const $$Astro = createAstro();
@@ -19,7 +19,7 @@ const $$Form = createComponent(($$result, $$props, $$slots) => {
     closeEye: { name: "closeEye", ClassName: "", id: "closeEye1" }
   } })}
           ${renderComponent($$result, "FormGroup", $$FormGroup, { "type": "number", "isDisabled": false, "isLabel": true, "title": "\u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062A\u0641", "place": "\u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062A\u0641", "name": "userPhone", "id": "userPhone", "FormClassName": "d-flex gap-4 mb-8 relative", "InputClassName": "round-8", "LabelClassName": "pr-4" })}
-            ${renderComponent($$result, "SelectForm", $$SelectForm, { "id": "userGender", "title": "\u062A\u062D\u062F\u064A\u062F \u0627\u0644\u0646\u0648\u0639" }, { "default": ($$result2) => renderTemplate` <option value="male">ذكر</option> <option value="famale">انثي</option> ` })}`} ${isLogin && renderTemplate`<p class="pr-4"> ${renderComponent($$result, "Link", $$Link, { "href": "#!", "aria": "forgetPassword", "Class": "", "text": "\u0647\u0644 \u0646\u0633\u064A\u062A \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061F" })} </p>`} ${isSignUp && renderTemplate`<p class="pr-4 text-center mt-10">
+            ${renderComponent($$result, "SelectForm", $$SelectForm, { "id": "userGender", "title": "\u062A\u062D\u062F\u064A\u062F \u0627\u0644\u0646\u0648\u0639" }, { "default": ($$result2) => renderTemplate` <option value="male">ذكر</option> <option value="famale">انثي</option> ` })}`} ${isLogin && renderTemplate`<p class="pr-4"> ${renderComponent($$result, "Link", $$Link, { "href": "#!", "aria": "forgetPassword", "Class": "", "text": "\u0647\u0644 \u0646\u0633\u064A\u062A \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061F" })} </p>`} ${isSignUp && renderTemplate`<p class="pr-4 text-center mt-10 condition">
 من خلال الاستمرار، أنت توافق على
 ${renderComponent($$result, "Link", $$Link, { "href": "#!", "aria": "signUp", "Class": "", "text": "\u0627\u0644\u0634\u0631\u0648\u0637 \u0648\u0627\u0644\u0623\u062D\u0643\u0627\u0645" })}
 و
