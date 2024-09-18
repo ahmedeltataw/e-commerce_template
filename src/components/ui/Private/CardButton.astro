@@ -1,28 +1,47 @@
 ---
 import { Icon } from "astro-icon/components";
 import Button from "../global/Button.astro";
+interface Props {
+  IsStatus?: boolean;
+}
+const { IsStatus = false } = Astro.props;
 ---
+
 <div class="cardButtons absolute">
+
+  {
+    IsStatus ? (
+      <Button
+        type="button"
+        aria={`quickView`}
+        ClassName="d-flex items-center iconButton BtnDelete px-5	 py-4	 round-6  relative overflow-hidden">
+        <Icon name={`delete`} size={`30`} class={`relative`} />
+        <span class="absolute round-tl-6 round-bl-6 d-flex items-center justify-center fs-14 px-3">
+            حذف
+        </span>
+      </Button>
+    ) :
+    (
     <Button
-      type="button"
-      aria={`addToCart`}
-      ClassName="d-flex items-center iconButton px-5	 py-4 round-6  relative overflow-hidden mb-1"
-    >
-      <Icon name={`cart2`} size={`30`} class={`relative`} />
-      <span
-        class="absolute round-tl-6 round-bl-6 d-flex items-center justify-center fs-14 px-3"
-        >اضف للسلة</span
-      >
-    </Button>
-    <Button
-      type="button"
-      aria={`quickView`}
-      ClassName="d-flex items-center iconButton px-5	 py-4	 round-6  relative overflow-hidden"
-    >
-      <Icon name={`search`} size={`30`} class={`relative`} />
-      <span
-        class="absolute round-tl-6 round-bl-6 d-flex items-center justify-center fs-14 px-3"
-        >نظرة سريعة</span
-      >
-    </Button>
-  </div>
+    type="button"
+    aria={`addToCart`}
+    ClassName="d-flex items-center iconButton px-5	 py-4 round-6  relative overflow-hidden mb-1"
+  >
+    <Icon name={`cart2`} size={`30`} class={`relative`} />
+    <span
+      class="absolute round-tl-6 round-bl-6 d-flex items-center justify-center fs-14 px-3"
+      >اضف للسلة</span>
+  </Button>
+  <Button
+    type="button"
+    aria={`quickView`}
+    ClassName="d-flex items-center iconButton px-5	 py-4	 round-6  relative overflow-hidden"
+  >
+    <Icon name={`search`} size={`30`} class={`relative`} />
+    <span
+      class="absolute round-tl-6 round-bl-6 d-flex items-center justify-center fs-14 px-3"
+      >نظرة سريعة</span>
+  </Button>
+    )
+  }
+</div>

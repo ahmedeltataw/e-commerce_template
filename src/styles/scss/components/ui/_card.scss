@@ -4,9 +4,10 @@
 
 
 .pro-1{
+    height: fit-content;
     border: 1px solid $border-color;
     transition: $t-s;
-    background-color: $w;
+    background-color: rgba($color: $w, $alpha: .7);
     .cardButtons{
         .iconButton{
             
@@ -51,25 +52,47 @@
             &:nth-child(2){
                 transition-delay: 200ms ;
             }
+            &.BtnDelete{
+                background-color: $error-text;
+                top: 50px;
+                span{
+                    background-color: $error-text;
+                }
+            }
         }
         
     }
 
     .proImg-1{
         height: clamp(200px , 25vw + 2rem, 250px);
-        .discount{
+        
+        .discount , .Status{
             background-color: $error-text;
             color: $w;
+        }
+        .Status {
+            &.new{
+                background-color: rgb(50, 146, 224);
+            }
+            &.out{
+                background-color: rgb(34, 34, 34);
+            }
+            &.delivered{
+                background-color: rgb(214, 145, 33);
+            }
+            &.paid{
+                background-color: $hover-1;
+            }
         }
     }
     .proDetails{
         .price{
             span {
                 color: $hover;
-                font-size: clamp(20px , 1vw  + 1.1rem ,28px);
+                font-size: clamp(20px , 1vw  + 1.1rem ,24px);
             }
             del{
-                font-size: 24px;
+                font-size: 22px;
                 color: $subtitle;
                 opacity: .7;
             }
@@ -85,7 +108,7 @@
         }
         .proTitle{
             @include responsiveText(1);
-            font-size: clamp(16px , 1vw  + .7rem ,20px);
+            font-size: clamp(16px , 1vw  + .7rem ,18px);
         }
         .des{
             

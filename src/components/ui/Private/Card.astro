@@ -6,9 +6,13 @@ interface Props {
   img: string | any;
   price: string ;
   discount: { value: string | any; newPrice: string | any };
+  Status?: boolean
+  StatusValue?: string;
+  StatusClass?: string;
+
 }
 
-const { href, title, des, img, price, discount=false } = Astro.props;
+const { href, title, des, img, price, discount=false , Status=false , StatusValue ,StatusClass} = Astro.props;
 
 import { Image } from "astro:assets";
 import CardButton from "./CardButton.astro";
@@ -16,7 +20,7 @@ import CardButton from "./CardButton.astro";
 
 <!-- card > img > title > des > price  > discount  -->
 <div class="card pro-1 py-6 px-8 round-6 relative overflow-hidden">
-  <CardButton />
+  <CardButton IsStatus={Status} />
   <!-- img -->
   <figure class="proImg-1 round-4 mx-auto relative">
     <Image
@@ -26,6 +30,13 @@ import CardButton from "./CardButton.astro";
       quality={70}
       class={` round-4 img-contain`}
     />
+    {
+      Status && StatusValue && (
+      <p class={`Status absolute top-0 right-0 px-4 py-2 round-4 ${StatusClass}`}>
+          {StatusValue}
+        </p>
+      )
+    }
     {
       discount && discount.value && (
         <p class="discount absolute top-0 left-0 px-4 py-2 round-4">
@@ -38,10 +49,10 @@ import CardButton from "./CardButton.astro";
   <div class="proDetails">
     {
       discount  && discount.newPrice ? (
-        <div class="price fs-20 pb-4	">
+        <div class="price pb-4	">
           <span class=" fw-700">{discount.newPrice}</span>
           <small>ر.س</small>
-		  <del class="pr-4">{price}</del>
+		  <del class="pr-3">{price}</del>
           <small class="smallDel">ر.س</small>
         </div>
       ) : (
@@ -52,7 +63,7 @@ import CardButton from "./CardButton.astro";
       )
     }
 
-    <h3 class="proTitle pb-4 fw-500 line-relaxed">{title}</h3>
+    <h3 class="proTitle pb-3 fw-500 line-relaxed">{title}</h3>
     <p class="des line-relaxed fs-14">
       {des}
     </p>

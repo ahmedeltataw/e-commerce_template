@@ -1,29 +1,9 @@
-import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, d as createAstro, b as addAttribute } from './astro/server-Bpp7M_eh.js';
+import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, a as renderComponent, d as createAstro } from './astro/server-Bpp7M_eh.js';
 import 'kleur/colors';
-import { $ as $$Image, e as $$FormGroup, g as $$Link, d as $$Button, c as $$Icon } from './Layout-CQBdZetp.js';
-import { $ as $$SelectForm } from './SelectForm-BhreREzA.js';
-import '@astrojs/internal-helpers/path';
-
-const $$Astro$1 = createAstro();
-const $$UploadImg = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
-  Astro2.self = $$UploadImg;
-  const { img } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<div class="uploadImg mb-8 relative"> ${renderComponent($$result, "Image", $$Image, { "src": img, "alt": "userPhoto", "id": `userPhoto`, "quality": 70 })} <label for="uploadUserPhoto" class="absolute"></label> <input type="file" name="uploadUserPhoto" id="uploadUserPhoto" class="d-none"> </div>`;
-}, "D:/project/version/2/Astro 2024/e-commerce/src/components/ui/global/UploadImg.astro", void 0);
-
-const img = new Proxy({"src":"/assets/images/model-1-CGGG64Sm.png","width":1200,"height":1200,"format":"png"}, {
-						get(target, name, receiver) {
-							if (name === 'clone') {
-								return structuredClone(target);
-							}
-							if (name === 'fsPath') {
-								return "D:/project/version/2/Astro 2024/e-commerce/src/assets/images/model-1.png";
-							}
-							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("D:/project/version/2/Astro 2024/e-commerce/src/assets/images/model-1.png");
-							return target[name];
-						}
-					});
+import { e as $$FormGroup, f as $$Link, d as $$Button, c as $$Icon } from './Layout-TZliDyVf.js';
+import { $ as $$SelectForm } from './SelectForm-BDewKlO2.js';
+import { $ as $$UploadImg } from './UploadImg-B-RkplGs.js';
+import { i as img } from './model-1-BPvO31C4.js';
 
 const $$Astro = createAstro();
 const $$Form = createComponent(($$result, $$props, $$slots) => {

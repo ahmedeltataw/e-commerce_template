@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "@styles/scss/pages/account.scss";
+// components
+import SmallBeadcrumb from '@components/ui/global/SmallBeadcrumb.astro';
+import AccountLayouy from '@components/Account/AccountLayouy.astro';
+import MyOrder from '@components/Account/MyOrder.astro';
+---
+
+<Layout title="jadwal | طلباتي" des='  متجر متخصص في توفير جميع الأدوات والمستلزمات الطبية بأعلى جودة وأسعار تنافسية، لتلبية احتياجات المستشفيات والعيادات والأفراد مع خدمة توصيل سريعة ودعم فني متواصل. '>
+<SmallBeadcrumb defaultPage='الرئيسية' linkPage=' طلباتي'  />
+    <AccountLayouy sectionName='MyOrder'>
+        <MyOrder/>
+    </AccountLayouy>
+</Layout>

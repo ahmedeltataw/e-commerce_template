@@ -1,12 +1,40 @@
 @use "../../helpers/color" as *;
 @use "../../helpers/extend" as *;
+@use "../../helpers/mixin" as *;
 
-.mainHeading {
+.mainHeading  {
     border-bottom: 1px solid $border-color;
     h2 {
         color: $w;
-        width: auto;
         background-color: $hover-1;
+        
+    }
+    .swiper-button-next , .swiper-button-prev{
+        width: 50px;
+            height: clamp(46px , 3.4vw + 1.3rem ,50px);
+            &::after{
+                font-size: 30px;
+            }
+    }
+}
+.mainHeading2{
+    h2{
+        line-height: 1.2;
+        // font-size: 36px;
+        color: $hover-1;
+    }
+   
+    
+    .swiper-button-next , .swiper-button-prev{
+        @include cricle(50px);
+            &::after{
+                font-size: 28px;
+            }
+    }
+}
+.mainHeading2 , .mainHeading{
+    h2{
+        width: auto;
         letter-spacing: 1px;
         font-size: clamp(18px , 1vw + 1.1rem ,28px);
     }
@@ -21,18 +49,17 @@
         }
         .swiper-button-next , .swiper-button-prev{
             background-color: transparent;
-            border: 1px solid $hover;
-            width: 50px;
-            height: clamp(46px , 3.4vw + 1.3rem ,50px);
+            border: 1px solid $border-color;
+            
             transition: $t-s;
             &::after{
-                font-size: 30px;
+               
                 color: $hover;
                 transition: $t-s;
             }
             &:hover{
                 background-color: $hover-1;
-                border-color: transparent;
+                border-color: $hover-1;
 
                 &::after{
                     color: $w;

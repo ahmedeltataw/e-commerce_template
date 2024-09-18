@@ -11,8 +11,7 @@ let SignUpForm = document.getElementById("SignUpForm") as HTMLFormElement;
 let UserPassword = document.getElementById("userPassword") as HTMLInputElement;
 let SureUserPassword = document.getElementById("SureUserPassword") as HTMLInputElement;
 //
-let userImage = document.getElementById("userPhoto") as HTMLImageElement;
-let uploadFile = document.getElementById("uploadUserPhoto") as HTMLInputElement
+
 //////////show password////////////////////////
 const toggleShowPassword = (show: string, openEl: HTMLButtonElement, closeEl: HTMLButtonElement, selectInput: HTMLInputElement) => {
     let IsShow = show === 'open';
@@ -141,10 +140,7 @@ const CheckPasswordConfirm = () => {
  const redirectToPage = (page: string) => {
     window.location.href = page;
 }
-/////////////////////////upload img\\\\\\\\\\\\\\\
-const UploadImage = () => {
-    uploadFile?.files?.[0] && (userImage.src = URL.createObjectURL(uploadFile.files[0]))
-}
+
 
 
 
@@ -181,4 +177,3 @@ SignUpForm?.addEventListener("submit", (e: Event) => {
     }
 
 });
-uploadFile?.addEventListener("change", UploadImage)

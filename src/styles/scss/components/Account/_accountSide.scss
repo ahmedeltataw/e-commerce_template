@@ -1,0 +1,69 @@
+@use "../../helpers/color" as *;
+@use "../../helpers/extend" as *;
+@use "../../helpers/mixin" as *;
+.accountSide{
+    .userInfo{
+        background-color: $w;
+        box-shadow:0 9px 1.25rem rgba(83,83,83,.1803921569);
+        border-radius: 20px;
+        flex-flow: wrap row;
+        h3{
+            font-size: clamp(16px ,1vw + .6rem , 18px)
+        }
+        .avatar{
+            @include cricle(80px);
+            img{
+                border: 1px solid $hover-1;
+            }
+        }
+        
+    }
+    .accountList{
+        background-color: $w;
+        flex-direction: column;
+        border-radius: 16px;
+        border: 1px solid #ccc;
+        
+        li{
+            width: 100%;
+        }
+        .navLink{
+            border: 1px solid $border-color;
+            border-radius: 12px;
+            transition: $t-s;
+            svg{
+                width: 24px;
+                color: $hover-1;
+                transition: $t-s;
+                &.logout{
+                    color: $error-text;
+                }
+            }
+            &:hover,&.active{
+                background-color: $hover-1;
+                border-color: transparent;
+                color: $w;
+                svg{
+                    color: $w;
+                }
+                
+            }
+           
+        }
+        @media(max-width:991px){
+            flex-flow: wrap row;
+            flex-direction: row;
+            li{
+               width: auto;
+               flex: 120px  1;
+               a{
+                font-size: 14px;
+                text-wrap: nowrap;
+                svg{
+                    width: 16px;
+                }
+               }
+            }
+        }
+    }
+}

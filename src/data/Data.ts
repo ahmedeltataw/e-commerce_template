@@ -124,6 +124,9 @@ export const productData: ProductType[] = [
         price: '200',
         discount: { value: '10', newPrice: '150' },
         img: pro1,
+        // Status: false,
+        StatusValue: 'جديد',
+        StatusClass: 'new',
     },
     {
         title: 'جهاز توليد اكسجين نيولايف ايلت اير سيب 5 لتر ',
@@ -132,6 +135,9 @@ export const productData: ProductType[] = [
         price: '400',
         discount: null,
         img: pro2,
+        // Status: false,
+        StatusValue: 'منتهي',
+        StatusClass: 'out',
     },
     {
         title: 'ماء مقطر نقي 1لتر SPI',
@@ -140,6 +146,9 @@ export const productData: ProductType[] = [
         price: '10',
         discount: null,
         img: pro3,
+        // Status: false,
+        StatusValue: 'تم الشحن',
+        StatusClass: 'delivered',
     },
     {
         title: 'سرير طبي للعناية المركزة 6 حركات هيل روم أمريكي مع المرتبة HR900',
@@ -148,6 +157,9 @@ export const productData: ProductType[] = [
         price: '17,500',
         discount: { value: '30', newPrice: '12,400' },
         img: pro4,
+        // Status: false,
+        StatusValue: 'تم الشحن',
+        StatusClass: 'delivered',
     },
     {
         title: 'مخدة نوم طبية كونتور',
@@ -156,6 +168,8 @@ export const productData: ProductType[] = [
         price: '500',
         discount: { value: '50', newPrice: '250' },
         img: pro5,
+        StatusValue:'تم الدفع',
+        StatusClass: 'paid',
     },
     {
         title: 'جبيرة قدم هوائية قصيرة',
@@ -164,6 +178,8 @@ export const productData: ProductType[] = [
         price: '300',
         discount: null,
         img: pro6,
+        StatusValue:'مرفوض',
+        StatusClass: 'declined',
     },
     {
         title: 'جهاز توليد اكسجين نيولايف ايلت اير سيب 5 لتر ',
@@ -172,6 +188,8 @@ export const productData: ProductType[] = [
         price: '400',
         discount: null,
         img: pro2,
+        StatusValue: 'جديد',
+        StatusClass: 'new',
     },
     {
         title: 'ماء مقطر نقي 1لتر SPI',
@@ -180,6 +198,8 @@ export const productData: ProductType[] = [
         price: '10',
         discount: null,
         img: pro3,
+        StatusValue:'تم الدفع',
+        StatusClass: 'paid',
     },
 ]
 // ============footer ul==========

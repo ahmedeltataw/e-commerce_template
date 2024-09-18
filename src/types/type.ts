@@ -34,4 +34,7 @@ export interface ProductType extends cateBoxType{
   price:string,
   discount?:{value:string , newPrice:string} | null,
   title:string,
+  // Status?:boolean,
+  StatusValue?: "جديد" | 'مرفوض' | 'تم الشحن' | 'تم الدفع' | 'منتهي' ,
+  StatusClass?:string,
 }

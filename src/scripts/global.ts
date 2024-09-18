@@ -21,7 +21,9 @@ let AllButton = document.querySelectorAll('.accordionItem button') as NodeListOf
 let openFilter = document.getElementById('openFilter') as HTMLButtonElement;
 let closeFilter = document.getElementById('closeFilter') as HTMLButtonElement;
 let Filter = document.getElementById("accordionResponsive") as HTMLDivElement;
-
+// upload img
+let userImage = document.getElementById("userPhoto") as HTMLImageElement;
+let uploadFile = document.getElementById("uploadUserPhoto") as HTMLInputElement
 
 // ==========(((((((((((((((((((((((((((global functions)))))))))))))))))))))))))))=============
 // =====calcHeight============
@@ -214,7 +216,13 @@ const filterProductAcc = ()=>{
   });
 }
 
-
+/////////////////////////upload img\\\\\\\\\\\\\\\
+const UploadImage = () => {
+  if(uploadFile && userImage){
+    uploadFile.files?.[0] && (userImage.src = URL.createObjectURL(uploadFile.files[0]))
+  }
+  
+}
 
 
 if (openMenu) openMenu.addEventListener("click", () => toggleAsideMenu('open', responsiveNavLinks, 'responsiveNavLinks', 'lg-max-d-none', openMenu, btnCloseMenu, true, true));
@@ -229,6 +237,7 @@ if (BtnLang) BtnLang.addEventListener('click', showDropDownLang)
   if(closeFilter)closeFilter.addEventListener('click' , ()=>toggleAsideMenu('close', Filter, 'responsive-accordion', 'lg-max-d-none', openFilter, closeFilter, true, false));
   if(openNavSearch) openNavSearch.addEventListener('click',()=>toggleSearch('open'));
   if(closeNavSearch) closeNavSearch.addEventListener('click',()=>toggleSearch('close'));
+if(uploadFile)uploadFile.addEventListener("change", UploadImage)
 window.addEventListener("click", (e: Event) => {
   const target = e.target as HTMLElement;
 

@@ -1,0 +1,21 @@
+@use "../../helpers/color" as *;
+@use "../../helpers/extend" as *;
+@use "../../helpers/mixin" as *;
+.MyOrder{
+    .orderFilter{
+        .SelectFilter{
+            margin: 0;
+            flex-basis: 200px;
+            select{
+                @include input(48px , 100% , $border-color);
+                border-radius: 6px;
+                font-size: 15px;
+                color: $subtitle;
+                
+            }
+        }
+    }
+    .middel{
+    @extend %col-4;
+    }
+}

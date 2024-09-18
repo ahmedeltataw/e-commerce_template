@@ -1,0 +1,47 @@
+---
+import { productData } from "@data/Data";
+import type { ProductType } from "../../types/type";
+import Card from "@components/ui/Private/Card.astro";
+import SelectForm from "@components/ui/global/SelectForm.astro";
+import Button from "@components/ui/global/Button.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<div class="orderFilter mb-10 d-flex items-center justify-between">
+  <p class="fs-18">طلباتي</p>
+  <SelectForm id="orderFilter" ClassName="SelectFilter">
+    <option value="All">الكل</option>
+    <option value="new">جديد</option>
+    <option value="out">منتهي</option>
+    <option value="delivered">تم الشحن</option>
+    <option value="paid">تم الدفع</option>
+    <option value="declined">declined</option>
+  </SelectForm>
+</div>
+<div class="middel d-grid gap-5">
+  {
+    productData.map((item: ProductType) => (
+      <Card
+        title={item.title}
+        des={item.des}
+        href={item.href}
+        img={item.img}
+        price={item.price}
+        discount={{
+          value: item.discount?.value,
+          newPrice: item.discount?.newPrice,
+        }}
+        Status={true}
+        StatusValue={item.StatusValue}
+        StatusClass={item.StatusClass}
+      />
+    ))
+  }
+</div>
+<Button
+  type="button"
+  aria={`loadMore`}
+  ClassName="btnMore d-flex items-center justify-center mx-auto mt-10  "
+>
+  <Icon name={"loader"} size={`28`} />
+</Button>
