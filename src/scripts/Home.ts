@@ -53,6 +53,37 @@ new Swiper(".heroSwiper", {
       },
     },
   });
+  new Swiper(".ProductSwiper", {
+    slidesPerView: "auto",
+    watchSlidesProgress: true,
+    spaceBetween: 10,
+    speed: 700,
+    loop:true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  
+    
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      576: {
+        slidesPerView: 1,
+      },
+      992: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 3,
+      },
+    },
+  });
   // ser box animations
   let boxSer = document.querySelectorAll(".boxSer-1") as NodeListOf<HTMLDivElement>;
 if(boxSer) boxSer.forEach((box:HTMLDivElement)=>{

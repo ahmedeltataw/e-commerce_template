@@ -4,47 +4,55 @@
 
 
 .navBottom {
+    width: 100%;
     .Logo {
         height: 60px;
-        @media(max-width:380px){
-            height: 45px;
+        @media(max-width:480px) {
+            height: 40px;
 
         }
     }
-    .icon-nav-base{
+
+    .icon-nav-base {
         width: 40px;
-        span{
+
+        span {
             background-color: $hover;
             width: 30px;
-            &:nth-child(2){
+
+            &:nth-child(2) {
                 transform: translateX(10px);
             }
         }
-        &:hover{
-            span:nth-child(2){
+
+        &:hover {
+            span:nth-child(2) {
                 transform: translateX(0);
             }
         }
     }
+
     .navLinks {
+        z-index: 99999;
         .navLink {
-            &:hover {
+            &:hover , &.active {
                 color: $hover-1;
             }
 
         }
 
         &.responsiveNavLinks {
-
+           
             flex-direction: column;
             align-items: flex-start;
             gap: 0;
             width: 250px;
             padding: 20px;
+            transform: translateX(250px) scale(.8) ;
             @extend %aside;
 
             li {
-                padding-block: 15px ;
+                padding-block: 15px;
                 border-bottom: 1px solid $border-color;
                 width: 100%;
 
@@ -98,14 +106,17 @@
         .searchBtn {
             margin-right: -15px;
         }
-        @media(max-width:380px){
-           svg{
-            width: 30px;
-           }
+
+        @media(max-width:480px) {
+            gap: 12px;
+            svg {
+                width: 30px;
+            }
 
         }
     }
-    .navSearchForm{
+
+    .navSearchForm {
         background-color: $BG;
         padding-block: 10px;
         width: 100%;
@@ -127,26 +138,95 @@
             transform: scale(1);
             opacity: 1;
         }
+
         input {
             @include input(50px, 100%, rgba($color: $border-color, $alpha: 1));
             color: #545454;
             font-size: 16px;
             padding-inline: 10px;
         }
-        .btnSearchSubmit{
+
+        .btnSearchSubmit {
             @extend %centerY;
-            left: 20px;
+            left: 8px;
             background-color: $hover;
             height: 40px;
             padding-inline: 10px;
             transition: $t-s;
-            svg{
+
+            svg {
                 width: 28px;
                 color: $w;
             }
-            &:hover{
+
+            &:hover {
                 background-color: $hover-1;
             }
         }
-    }   
+    }
+
+    .dropDownAvatar {
+        .AvatarBtn {
+            .avatar {
+                width: 50px;
+                height: 50px;
+
+                @media(max-width:480px) {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                img {
+                    border-color: $border-color;
+                    transition: $t-s;
+                }
+            }
+        }
+
+        #dropDownUser {
+            top: 60px;
+            right: -20px;
+            min-width: 150px;
+            font-size: 14px;
+            border-radius: 6px;
+            a {
+                svg {
+                    color: $hover;
+                }
+            }
+
+            li:last-child {
+                a {
+                    svg {
+                        color: $error-text;
+                    }
+                }
+            }
+        }
+    }
+}
+html[lang="en"]{
+    .navBottom {
+        .navButtons{
+            .searchBtn{
+
+                margin-right: 0;
+            }
+        }
+        .navSearchForm {
+            .btnSearchSubmit{
+                right: 8px;
+                left: auto;
+            }
+        }
+        .navLinks {
+            &.responsiveNavLinks {
+                transform: translateX(-250px) scale(.8) ;
+                &.open {
+                    opacity: 1;
+                    transform: translateX(0) scale(1);
+                }
+            }
+        }
+    }
 }

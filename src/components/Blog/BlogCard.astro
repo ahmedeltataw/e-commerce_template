@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import test from "@assets/images/blog/blog-img2.jpg";
+---
+
+<div class="cardBlog-1 relative round-8">
+  <!-- img -->
+  <figure class="overflow-hidden round-tr-8 round-tl-8">
+    <Image
+      src={test}
+      alt={`blog-img`}
+      class={`round-tr-8 round-tl-8 img-cover`}
+    />
+  </figure>
+  <!-- detalis -->
+  <div class="blogDetalis pt-5 px-4">
+    <!-- title -->
+    <h3 class="fs-18 line-relaxed pb-3">
+      التقنيات الحديثة في العلاج الطبيعي أسرع طريق للشفاء والرفاهية
+    </h3>
+    <!-- des -->
+    <p class="des fs-14 line-normal">
+      ولكن لكي ترى من أين جاء كل هذا الخطأ لأولئك الذين يتهمون اللذة ويمتدحون
+      الألم، سأفتح الأمر برمته، وأشرح نفس الأشياء التي قالها مكتشف الحقيقة، كما
+      كان، المهندس من حياة سعيدة. فإنه لا أحد يحتقر أو يكره المتعة لأنها متعة.
+    </p>
+    <!-- time -->
+    <div class="time d-flex items-center gap-2 p-5">
+      <Icon name={`date`} size={`48`} />
+      <p class="date fs-16">20 سبتمبر 2024</p>
+    </div>
+  </div>
+  <!-- linke at all -->
+  <a
+    href="BlogDetails.html"
+    title="التقنيات الحديثة في العلاج الطبيعي أسرع طريق للشفاء والرفاهية"
+    aria-label="التقنيات الحديثة في العلاج الطبيعي أسرع طريق للشفاء والرفاهية"
+    class="absolute top-0 left-0"></a>
+</div>

@@ -1,7 +1,12 @@
 ---
-import SelectForm from "@components/ui/global/SelectForm.astro"
-import Button from "@components/ui/global/Button.astro"
-import Link from "@components/ui/global/Link.astro"
+import SelectForm from "@components/ui/global/SelectForm.astro";
+import Button from "@components/ui/global/Button.astro";
+import Link from "@components/ui/global/Link.astro";
+import QuantiyBtn from "@components/ui/Private/QuanityBtn.astro";
+interface Props {
+  id?:string,
+}
+const {id} =Astro.props
 ---
 <div class="cardDetails">
     <!-- title -->
@@ -23,9 +28,15 @@ import Link from "@components/ui/global/Link.astro"
         <li class="name">رقم الموديل:</li>
         <li class="value">SOUK4JK74</li>
       </ul>
-
+      <!-- qunity -->
+      <ul class="d-flex items-center">
+        <li class="name">الكمية:</li>
+        <li>
+          <QuantiyBtn/>
+        </li>
+      </ul>
     <!-- size -->
-    <SelectForm title="اختر مقاسك:" id="size" ClassName="mt-9">
+    <SelectForm title="اختر مقاسك:" id={id} ClassName="mt-9">
         <option value="0">اختر</option>
         <option value="1">S</option>
         <option value="0">M</option>
@@ -34,10 +45,10 @@ import Link from "@components/ui/global/Link.astro"
     </SelectForm>
     <div class="buttons d-flex items-center gap-5 mt-14">
         <Button type="button" ClassName="btn-run relative round-4" aria={`اطلب الان`}>
-            <Link href="#!" Class="relative" aria="اطلب الان" text="اطلب الان" />
+            <Link href="Payment.html" Class="relative d-flex items-center justify-center" aria="اطلب الان" text="اطلب الان" />
         </Button>
         <Button type="button" ClassName="btn-runBorder relative round-4" aria={`اضف للسلة`}>
-            <Link href="#!" Class="relative" aria="اضف للسلة" text="اضف للسلة" />
+            <Link href="#!" Class="relative d-flex items-center justify-center" aria="اضف للسلة" text="اضف للسلة" />
         </Button>
     </div>
 </div>

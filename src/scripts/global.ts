@@ -3,6 +3,10 @@ let header = document.querySelector('header') as HTMLDivElement
 let BtnLang = document.querySelector(".BtnLang") as HTMLButtonElement;
 let dropDownLang = document.getElementById("dropDownLang") as HTMLUListElement;
 let dropDownLangLi = document.querySelectorAll("#dropDownLang li") as NodeListOf<HTMLElement>;
+// dropDown user setting
+let BtnUser = document.querySelector(".AvatarBtn") as HTMLButtonElement;
+let dropDownUser = document.getElementById("dropDownUser") as HTMLUListElement;
+let dropDownUserLi = document.querySelectorAll("#dropDownUser li") as NodeListOf<HTMLElement>;
 // toggle aside menu 
 let openMenu = document.getElementById("openMenu") as HTMLButtonElement;
 let btnCloseMenu = document.getElementById("btnCloseMenu") as HTMLButtonElement;
@@ -23,7 +27,9 @@ let closeFilter = document.getElementById('closeFilter') as HTMLButtonElement;
 let Filter = document.getElementById("accordionResponsive") as HTMLDivElement;
 // upload img
 let userImage = document.getElementById("userPhoto") as HTMLImageElement;
-let uploadFile = document.getElementById("uploadUserPhoto") as HTMLInputElement
+let uploadFile = document.getElementById("uploadUserPhoto") as HTMLInputElement;
+// 
+let whatsAppBtn = document.getElementById("whatsAppBtn") as HTMLButtonElement;
 
 // ==========(((((((((((((((((((((((((((global functions)))))))))))))))))))))))))))=============
 // =====calcHeight============
@@ -40,7 +46,7 @@ function calcMaxHeight(items: NodeListOf<HTMLLIElement> | HTMLLIElement[]): numb
 const animationSlide = (dir: 'up' | 'down', totalHeight: NodeListOf<HTMLLIElement> | any, targetEL: HTMLUListElement | any) => {
   let height = dir === "down" ? 0 : calcMaxHeight(totalHeight);
   let targetHeight = dir === 'down' ? calcMaxHeight(totalHeight) : 0;
-  let speed = dir === 'down' ? (targetHeight / (targetHeight * 0.1)) : (height / (height * 0.1));
+  let speed = dir === 'down' ? (targetHeight / (targetHeight * 0.05)) : (height / (height * 0.05));
   function animate() {
     if ((height <= 0 && dir === 'up') || (height >= targetHeight && dir === 'down')) {
       if (dir === 'up') {
@@ -78,7 +84,7 @@ const setAriaExpanded = (btn: HTMLButtonElement | null, EX: boolean) => {
   btn?.setAttribute('aria-expanded', EX.toString())
 };
 // =======toggle dropdown=========
-const toggleDropDown = (action: 'open' | 'close', Li: NodeListOf<HTMLLIElement> | any, DropDown: HTMLUListElement | any) => {
+const toggleDropDown = (action: 'open' | 'close', Li: NodeListOf<HTMLLIElement> | any, DropDown: HTMLUListElement | any,time:number) => {
   if (action == 'open') {
     if (DropDown) toggleClass(DropDown, ['open'], 'add');
     if (DropDown && Li) animationSlide('down', Li, DropDown);
@@ -86,7 +92,7 @@ const toggleDropDown = (action: 'open' | 'close', Li: NodeListOf<HTMLLIElement> 
     if (DropDown && Li) animationSlide('up', Li, DropDown);
     setTimeout(() => {
       if (DropDown) toggleClass(DropDown, ['open'], 'remove');
-    }, 100)
+    }, time)
   }
 }
 // =======toggleAsideMenu=========
@@ -132,12 +138,12 @@ const toggleAsideMenu = (action: 'open' | 'close', asideEl: HTMLUListElement | H
 // =================================================================
 // ==========(((((((((((((((((((((((((((privet functions)))))))))))))))))))))))))))=============
 // drop down menu lang function 
-const showDropDownLang = () => {
-  if (!BtnLang) return;
-  toggleClass(BtnLang, ['open'], 'toggle');
-  let isOpen = BtnLang.classList.contains('open');
-  toggleDropDown(isOpen ? 'open' : 'close', dropDownLangLi, dropDownLang);
-  setAriaExpanded(BtnLang, isOpen);
+const showDropDownLang = ( Li: NodeListOf<HTMLLIElement> | any, DropDown: HTMLUListElement | any , Btn:HTMLButtonElement,time:number) => {
+  if (!Btn) return;
+  toggleClass(Btn, ['open'], 'toggle');
+  let isOpen = Btn.classList.contains('open');
+  toggleDropDown(isOpen ? 'open' : 'close', Li, DropDown,time);
+  setAriaExpanded(Btn, isOpen);
 }
 // =======toggle nav search ========
 const toggleSearch = (action:'open'|'close')=>{
@@ -223,12 +229,105 @@ const UploadImage = () => {
   }
   
 }
+// ////////////////////////////////////start model order//////////////////////////////////
+// toggle order models
+let myOderTable = document.getElementById("myOderTable") as HTMLTableElement;
+let ModelMyOrder = document.getElementById("ModelMyOrder") as HTMLDivElement;
+let CloseOrderModel = document.getElementById("CloseOrderModel") as HTMLButtonElement;
+const toggleModelOrder = ()=>{
+  if(myOderTable)myOderTable.addEventListener('click',(e:Event)=>{
+    let target = e.target as HTMLElement;
+    if(target.closest('.ViewOrderBtn')){
+      let button = target.closest('.ViewOrderBtn') as HTMLButtonElement;
+      console.log(button)
+      if(button){
+        toggleAsideMenu('open',ModelMyOrder,null,'d-none',button,CloseOrderModel,true,false);
+      }
+      if(CloseOrderModel) CloseOrderModel.addEventListener('click', ()=> toggleAsideMenu('close',ModelMyOrder,null,'d-none',button,CloseOrderModel,true,false));
+      window.addEventListener("click", (e: Event) =>{
+        let target = e.target as HTMLElement;
+        if(overlay && overlay.contains(target)){
+          toggleAsideMenu('close',ModelMyOrder,null,'d-none',button,CloseOrderModel,true,false)
+        }
+      })
+    }
 
+  })
+}
+toggleModelOrder();
+// ////////////////////////////////////end model order//////////////////////////////////
+// //////////////////////////////////start view model //////////////////////////////////
+let quickyViewModel = document.getElementById("quickyViewModel") as HTMLDivElement;
+let CloseViewModel = document.getElementById("CloseViewModel") as HTMLButtonElement;
+let openViewModel = document.querySelectorAll(".pro-1") as NodeListOf<HTMLDivElement>
+const toggleViewModel = (action:'open'|'close' , btn:HTMLButtonElement | null)=>{
+  if(!btn) return ;
+  if(action === 'open'){
+    toggleAsideMenu('open',quickyViewModel,null,'d-none',btn,CloseViewModel,true,false)
+  } else{
+    toggleAsideMenu('close',quickyViewModel,null,'d-none',btn,CloseViewModel,true,false)
+  }
+}
+const ViewModel =()=>{
+  if(openViewModel)openViewModel.forEach((Div:HTMLDivElement)=>{
+    if(Div)Div.addEventListener('click',(e:Event)=>{
+      let target = e.target as HTMLElement;
+      if(target.closest('.quickView')){
+        let button = target.closest('.quickView') as HTMLButtonElement;
+        console.log(button)
+        if(button){
+          toggleViewModel('open', button);
+        }
+        if(CloseViewModel) CloseViewModel.addEventListener('click', ()=>toggleViewModel('close', button));
+        window.addEventListener("click", (e: Event) =>{
+          let target = e.target as HTMLElement;
+          if(overlay && overlay.contains(target)){
+            toggleViewModel('close', button);
+          }
+        })
+      }
+    })
+    
+  })
+  // if(openViewModel) openViewModel.addEventListener('click',()=>{
+    
+  // })
 
+}
+ViewModel();
+// //////////////////////////////////end view model //////////////////////////////////
+// //////////////////////////////////start gallery model //////////////////////////////////
+// /////////////////////////////////img galley //////////////////////////
+let MainImagePro = document.querySelector(".gridSystem #productImgGallery .mainImg img") as HTMLImageElement;
+let SubImagePro = document.querySelectorAll(".gridSystem #productImgGallery .subImg img")as NodeListOf<HTMLImageElement>;
+let MainImageModel = document.querySelector(".showModel #ModelImgGallery .mainImg img") as HTMLImageElement;
+let SubImageModel = document.querySelectorAll(".showModel #ModelImgGallery .subImg img")as NodeListOf<HTMLImageElement>;
+const ImageGallery = (Main:HTMLImageElement,Sub: NodeListOf<HTMLImageElement>)=>{
+  if(Main && Sub){
+    Sub.forEach((img:HTMLImageElement )=>{
+      
+      img.addEventListener('click',()=>{
+        // document.querySelector(".active")?.classList.remove("active");
+        Sub.forEach(subImg => subImg.classList.remove("active"));
+        
+        toggleClass(img , ['active'] ,'add')
+        Main.style.opacity= "0"
+        setTimeout(()=>{
+          Main.style.opacity= "1"
+          Main.src = img.src;
+        },200)
+      })
+    })
+  }
+}
+ImageGallery(MainImagePro , SubImagePro);
+ImageGallery(MainImageModel , SubImageModel);
+// //////////////////////////////////end gallery model //////////////////////////////////
 if (openMenu) openMenu.addEventListener("click", () => toggleAsideMenu('open', responsiveNavLinks, 'responsiveNavLinks', 'lg-max-d-none', openMenu, btnCloseMenu, true, true));
 if (btnCloseMenu) btnCloseMenu.addEventListener("click", () => toggleAsideMenu('close', responsiveNavLinks, 'responsiveNavLinks', 'lg-max-d-none', openMenu, btnCloseMenu, true, true));
 
-if (BtnLang) BtnLang.addEventListener('click', showDropDownLang)
+if (BtnLang) BtnLang.addEventListener('click', ()=>showDropDownLang(dropDownLangLi ,dropDownLang,BtnLang ,100));
+if (BtnUser) BtnUser.addEventListener('click', ()=>showDropDownLang(dropDownUserLi ,dropDownUser,BtnUser ,200));
 
   if(openCart) openCart.addEventListener('click', ()=>toggleAsideMenu('open', CartShop, null, 'd-none', openCart, closeCart, true, false));
   if(closeCart) closeCart.addEventListener('click', ()=>toggleAsideMenu('close', CartShop, null, 'd-none', openCart, closeCart, true, false));
@@ -259,3 +358,14 @@ window.addEventListener("click", (e: Event) => {
 
 
 window.addEventListener('DOMContentLoaded' , filterProductAcc);
+
+// window scrolling effect
+const ScrollingEffect = ()=>{
+  if(!whatsAppBtn) return;
+  if(window.scrollY >= 120){
+    toggleClass(whatsAppBtn , ['show'] ,'add')
+  }else{
+    toggleClass(whatsAppBtn , ['show'] ,'remove')
+  }
+}
+window.addEventListener('scroll' , ScrollingEffect)

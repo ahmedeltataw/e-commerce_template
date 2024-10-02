@@ -4,21 +4,22 @@ interface Props {
   swiperBtn?: boolean;
   Show?: boolean;
   subtitle?: string;
-//   Word?: string;
+  Word?: string;
 }
-const { title, swiperBtn = false, Show = true ,subtitle } = Astro.props;
+const { title, swiperBtn = false, Show = true ,subtitle ,Word} = Astro.props;
 ---
 
 {
   Show && (
     <div class="mainHeading2 mb-10 relative ">
         <span class="subTitle d-block fs-18">{subtitle}</span>
-      <h2 class=" fw-700 relative  pt-6 d-inline-block">
+      <h2 class=" fw-700 fs-r-48  relative  pt-6 d-inline-block">
         {title}
-        {/* <span class="WorldColor">{Word}</span> */}
+        <br/>
+        <span class="WorldColor">{Word}</span>
       </h2>
       {swiperBtn && (
-        <div class="swiperBtn ">
+        <div class="swiperBtn relative ">
           <div class="swiper-button-next  round-t-6" />
           <div class="swiper-button-prev round-t-6" />
         </div>

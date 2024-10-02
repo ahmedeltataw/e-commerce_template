@@ -7,7 +7,7 @@ footer {
     min-height: 75dvh;
     padding-top: 6vh;
     margin-top: 5vh;
-    background-color: rgb(236, 250, 236);
+    background-color: $BG3;
     width: 100%;
 
     .footerLayout {
@@ -98,7 +98,8 @@ footer {
                     color: $w;
                     height: 55px;
                     transition: $t-s;
-
+                    border-start-end-radius: 4px;
+                    border-end-end-radius: 4px;
                     &:hover {
                         background-color: $hover-1;
 
@@ -184,4 +185,26 @@ footer {
         }
     }
 
+}
+html[lang="en"] {
+    footer{
+        .Footer-meta{
+            h4{
+                &::before{
+                    left: 0;
+                }
+            }
+        }
+        .Newsletter {
+            .box{
+                form{
+                    .btnSendEmail {
+                        right: 0;
+                        left: auto;
+                        
+                    }
+                }
+            }
+        }
+    }
 }

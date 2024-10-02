@@ -23,6 +23,9 @@
                 background-color: $BG;
                 font-size: 14px;
             }
+            label{
+                padding-inline-start: 8px;
+            }
             .IsPassword{
                 svg{
                     position: absolute;
@@ -119,6 +122,20 @@
                 border-color: $hover;
             }
 
+        }
+    }
+}
+html[lang="en"] {
+    .auth-1{
+        form{
+            .formGroup{
+                .IsPassword{
+                    svg{
+                        right: 15px;
+                        left: auto;
+                    }
+                }
+            }
         }
     }
 }

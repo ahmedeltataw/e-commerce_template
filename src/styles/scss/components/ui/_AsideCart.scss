@@ -7,6 +7,7 @@
     @extend %aside;
     width: 500px;
     transform: translateX(500px)  scale(.8);
+    padding-inline-start:7px;
     .cartContainer {
         width: 100%;
         height: 100%;
@@ -49,7 +50,8 @@
                 svg {
                     width: 24px;
                     color: $w;
-                    margin-right: auto;
+                    margin-inline-start: auto;
+                    margin-inline-end: 6px;
                 }   
             }
         }
@@ -81,4 +83,23 @@
     }
 
 
+}
+html[lang="en"]{
+    #CartShop{
+        transform: translateX(-500px)  scale(.8);
+        &.open{
+            transform: translateX(0) scale(1);
+        opacity: 1;
+        }
+        .cartContainer{
+            .cartBox{
+                .delete {
+                    right: 0;
+                    left: auto;
+                    border-radius: 0% 100% 0% 100% / 0% 0% 100% 100% ;
+                    
+                }
+            }
+        }
+    }
 }

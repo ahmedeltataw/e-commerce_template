@@ -9,6 +9,7 @@
     transition: $t-s;
     background-color: rgba($color: $w, $alpha: .7);
     .cardButtons{
+        right: 10px;
         .iconButton{
             
             background-color: $hover;
@@ -16,6 +17,7 @@
             transform: translateX(50px) scale(.9);
             opacity: 0;
             z-index: 1;
+            
             svg{
                 width: 24px;
                 color: $w;
@@ -95,6 +97,7 @@
                 font-size: 22px;
                 color: $subtitle;
                 opacity: .7;
+                padding-inline-start: 6px;
             }
             .smallDel{
                 font-size: 16px;
@@ -139,3 +142,14 @@
         height: 100%;
     }
 }
+// html[lang="en"]{
+//     .proDetails{
+//         .price{
+//             del{
+//                 // padding-left: 6px;
+//                 // padding-right: 0;
+//                 padding-inline-start: 6px;
+//             }
+//         }
+//     }
+// }

@@ -68,15 +68,15 @@
             svg {
                 width: 32px;
                 color: $w;
-                margin-right: auto;
-                margin-left: 12px;
+                margin-inline-start: auto;
+                margin-inline-end: 12px;
             }   
             @media(max-width:580px){
                 width: 55px;
                 height: 40px;
                 svg{
                     width: 24px;
-                    margin-left: 2;
+                    margin-inline-end: 8px;
                 }
             }
         }
@@ -103,5 +103,17 @@
             grid-template-rows: repeat(2 , 40px);
         }
         
+    }
+}
+html[lang="en"]{
+    .cart-1{
+        .cartBox{
+            .delete {
+                right: 0;
+                left: auto;
+                border-radius: 0% 100% 0% 100% / 0% 0% 100% 100% ;
+                
+            }
+        }
     }
 }

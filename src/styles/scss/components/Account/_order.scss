@@ -1,21 +1,189 @@
 @use "../../helpers/color" as *;
 @use "../../helpers/extend" as *;
 @use "../../helpers/mixin" as *;
-.MyOrder{
-    .orderFilter{
-        .SelectFilter{
+
+.MyOrder {
+    width: 100%;
+
+    .orderFilter {
+        .SelectFilter {
             margin: 0;
             flex-basis: 200px;
-            select{
-                @include input(48px , 100% , $border-color);
+
+            select {
+                @include input(48px, 100%, $border-color);
                 border-radius: 6px;
                 font-size: 15px;
                 color: $subtitle;
-                
+
             }
         }
     }
-    .middel{
-    @extend %col-4;
+
+    table {
+        width: 100%;
+        max-width: 100%;
+
+        border-collapse: collapse;
+        border-spacing: 0;
+        text-align: center;
+
+        th,
+        td {
+            white-space: nowrap;
+        }
+
+        thead {
+            border: none;
+            background-color: red;
+            height: 7vh;
+            background-color: $BG;
+            border-bottom: 1px solid $border-color;
+
+            th {
+                padding-inline: 25px;
+            }
+
+        }
+
+        tbody {
+            // background-color: ;
+
+            tr {
+                border-bottom: 1px solid $border-color;
+
+                &:nth-child(even) {
+                    background-color: $BG;
+                }
+
+                td {
+                    padding-block: 15px;
+
+                    &.new {
+                        color: rgb(50, 146, 224);
+                    }
+
+                    &.out {
+                        color: rgb(34, 34, 34);
+                    }
+
+                    &.delivered {
+                        color: rgb(214, 145, 33);
+                    }
+
+                    &.paid {
+                        color: #3CB371;
+                    }
+                }
+            }
+
+            .ViewOrderBtn {
+                border-color: rgb(18, 124, 210);
+
+                span {
+                    color: rgb(18, 124, 210);
+                }
+
+                &::before {
+                    background-color: rgb(18, 124, 210);
+                }
+
+                &:hover {
+                    border-color: transparent;
+                    ;
+
+                    span {
+                        color: $w;
+                    }
+                }
+            }
+
+            .DeleteOrderBtn {
+                background-color: $error-text;
+                span{
+                    color: $w;
+                }
+                &::before {
+                    background-color: $error;
+                }
+
+            }
+
+            // background-color: blue;
+        }
+    }
+
+    @media(max-width:767px) {
+        overflow-x: auto;
+    }
+
+    .Model {
+   
+        .orderModel {
+
+            position: relative;
+
+            // overflow-x: scroll;
+            table {
+                tbody {
+                    tr {
+                        td {
+                            padding-block: 10px;
+                            padding-inline: 10px;
+                            white-space: wrap;
+
+                            .ModelImg {
+                                width: 80px;
+                                height: 80px;
+
+                            }
+                        }
+                    }
+                }
+
+                .totalRow {
+                    width: 100%;
+                }
+
+                @media (max-width:776px) {
+                    thead {
+                        display: none;
+                    }
+
+                    tbody {
+                        tr {
+                            display: block;
+
+                            td {
+                                display: block;
+                                text-align: left;
+                                padding-left: 100px;
+                                padding-top: 0;
+
+                                .ModelImg {
+                                    min-width: 80px;
+                                }
+
+                                .ModelImg {
+                                    position: absolute;
+                                    left: 10px;
+                                    top: 10px;
+                                }
+                            }
+
+                            &.totalRow {
+                                td {
+                                    display: inline-block;
+                                    padding-block: 10px;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+       
     }
 }

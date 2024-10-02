@@ -1,6 +1,7 @@
 @use "./helpers/color" as *;
 @use "./helpers/extend" as *;
 @use "./helpers/mixin" as *;
+@use "./helpers/animation" as *;
 @use "./components/Header/header";
 @use "./components/footer/footer";
 @use "./components/ui/DropDown";
@@ -10,62 +11,87 @@
 @use "./components/ui/card";
 // @use "./components/ui/ViewModel";
 @use "./components/ui/smallBreadcrumb";
-a,svg{
+
+a,
+svg {
     color: $subtitle;
     transition: $t-s;
-    
+
 }
 
-hr{
-    
-    border-color:$border-color ;    
+hr {
+
+    border-color: $border-color ;
     opacity: .2;
 }
-.separator{
+
+.separator {
     color: $subtitle;
 }
-.count{
-                
+
+.count {
+
     background-color: $hover-1;
     @include cricle(20px);
     color: $w;
-    
+
 }
+
 // ///////////btn style/////////////
-button , .btn ,input ,textarea , select{
+button,
+.btn,
+input,
+textarea,
+select {
     font-family: inherit;
 }
-.btn-run{
+
+.btn-run {
     background-color: $hover;
     color: $w;
-    span{
+
+    span {
         display: inline-block;
     }
-    a , span ,svg{
+
+    a,
+    span,
+    svg {
         color: $w;
         transition: $t-s;
     }
-    
+
 }
-.btn-runBorder{
+
+.btn-runBorder {
     background-color: transparent;
     border: 1px solid $hover-1;
     color: $title;
-    
-    a ,svg,span{
-        color: $hover-1;
+
+    a,
+    svg,
+    span {
+        color: $subtitle;
         transition: $t-s;
+        
     }
-    &:hover{
+
+    &:hover {
         border-color: transparent;
-        a , svg ,span{
+
+        a,
+        svg,
+        span {
             color: $w;
         }
     }
 }
-.btn-runBorder , .btn-run{
+
+.btn-runBorder,
+.btn-run {
     transition: $t-s;
-    &::before{
+    
+    &::before {
         @extend %pseudoElX;
         width: 0;
         height: 100%;
@@ -74,38 +100,87 @@ button , .btn ,input ,textarea , select{
         left: 0;
         top: 0;
     }
-    
-    &:hover{
-        &::before{
+
+    &:hover {
+        &::before {
             left: auto;
             right: 0;
             width: 100%;
         }
     }
 }
-.btnMore{
-    
-        svg{
-            width: 48px;
-            color: $hover;
-        }
+
+.btnMore {
+
+    svg {
+        width: 48px;
+        color: $hover;
+    }
 }
+.whatsAppBtn{
+    background-color: #3CB371;
+    position: fixed;
+    z-index: 9999;
+    bottom: 90px;
+    right: 30px;
+    @include cricle(70px);
+    transform: translateX(250px);
+    opacity: 0;
+    transition: $t-l;
+    &.show{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+    a{
+        width: 100%;
+        height: 100%;
+        svg{
+            color: $w;
+            width: 85%;
+            margin-inline: auto;
+        }
+    }
+    &::after , &::before{
+        @extend %pseudoElX;
+        width: 100%;
+        height: 100%;
+        background-color: #3CB371;
+        border-radius: 50%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        opacity: .7;
+        // transition: background-color $t-s;
+        
+    }
+    &::before{
+        
+        animation: Pulse 2s ease-out infinite;
+    }
+    &::after{
+        animation: Pulse 2s 1s  ease-out infinite;
+    }
+}
+
 //////////////overlay///////////
-.overLay{
-    cursor:url('https://demo-morata.myshopify.com/cdn/shop/t/3/assets/cursor-close.png?v=93210088594709752341700037392') , pointer ;
-  
-    &.active{
-        @include overlay(100%,100%,rgba($color: #000000, $alpha: .3),inset,0);
+.overLay {
+    cursor: url('https://demo-morata.myshopify.com/cdn/shop/t/3/assets/cursor-close.png?v=93210088594709752341700037392'), pointer;
+
+    &.active {
+        @include overlay(100%, 100%, rgba($color: #000000, $alpha: .3), inset, 0);
+
         &::before {
-            z-index: 9999; 
+            z-index: 9999;
             position: fixed;
             backdrop-filter: blur(1px);
             height: 100%;
         }
 
     }
-    
+
 }
+
 // 
 .hideIcon {
     transform: translateY(-30px);
@@ -118,22 +193,27 @@ button , .btn ,input ,textarea , select{
     opacity: 1;
     transition: $t-s;
 }
+
 // //////////////quanity//////////////////
 .Colum {
     display: inline-block;
     border: 1px solid #d7d7d7;
     border-radius: 4px;
+
     .QuanityButtons {
         flex-direction: column;
         float: right;
-        :nth-child(1){
+
+        :nth-child(1) {
             border-bottom: 1px solid #d7d7d7;
             border-top-right-radius: 4px;
         }
-        :nth-child(2){
-            
+
+        :nth-child(2) {
+
             border-bottom-right-radius: 4px;
         }
+
         button {
             width: 40px;
             height: 20px;
@@ -150,43 +230,109 @@ button , .btn ,input ,textarea , select{
         background-color: rgba($color: $BG2, $alpha: .8);
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
-        
+
     }
-    @media(max-width:480px){
-        .QuanityButtons{
-            button{
+
+    @media(max-width:480px) {
+        .QuanityButtons {
+            button {
                 width: 30px;
-                
+
             }
         }
-        input{
+
+        input {
             width: 50px;
             height: 40px;
         }
     }
 }
-.Row{
+
+.Row {
     gap: 15px;
-    .btn-quanity{
+
+    .btn-quanity {
         background-color: $hover;
-        svg{
+
+        svg {
             width: 30px;
-           
+
         }
     }
-    input{
+
+    input {
         width: 100px;
         height: 40px;
     }
 }
+
 // /////////////section///////////////////
 .section-1 {
     margin-top: 6vh;
-  }
-/* Chrome, Safari, Edge, Opera */
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
 }
 
+//   /////////avatar////////////////
+.avatar {
+    @include cricle(80px);
+
+    img {
+        border: 1px solid $hover-1;
+    }
+}
+
+.Model {
+    position: fixed;
+    width: min(100%, 1000px);
+    max-width: 90%;
+    max-height: 80%;
+    background-color: $w;
+    border-radius: 16px;
+    z-index: 99999;
+    left: 50%;
+    top: 50%;
+    padding: 50px 30px;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: $t-l;
+    overflow-y: auto;
+    &.open {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &#quickyViewModel {
+        
+        padding: 0;
+        .showModel {
+            grid-template-columns: 1fr 1.1fr;
+            padding: 25px 15px;
+            gap: 25px;
+            @media(max-width:991px) {
+                grid-template-columns: auto;
+            }
+
+            
+            @extend %ProDetail;
+            .imageGallery{
+                grid-template-rows: 350px 100px;
+
+            }
+            a{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .CloseOrderModel , .CloseViewModel{
+        @extend %closeAside;
+        z-index: 99999;
+    }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+@include Pulse(Pulse);

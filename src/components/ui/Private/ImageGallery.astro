@@ -1,8 +1,13 @@
 ---
 import img from "@assets/images/products/pro-6.webp";
 import { Image } from "astro:assets";
+interface Props {
+    imgClass?: string,
+    id:string,
+}
+const {imgClass , id} =Astro.props;
 ---
-<div class="imageGallery d-grid gap-5">
+<div class={`imageGallery d-grid gap-5 ${imgClass ? imgClass :''}`} id={id}>
     <div class="mainImg round-4">
         <figure><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4`}  /></figure>
     </div>

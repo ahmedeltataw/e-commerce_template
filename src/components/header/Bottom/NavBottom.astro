@@ -5,6 +5,9 @@ import Button from "@components/ui/global/Button.astro";
 import Link from "@components/ui/global/Link.astro";
 import { Icon } from "astro-icon/components";
 import FormGroup from "@components/ui/global/FormGroup.astro";
+import Avatar from "@components/ui/global/Avatar.astro";
+import { DropDownUser } from "@data/Data";
+import DropDown from "@components/ui/global/DropDown.astro";
 ---
 
 <nav class="navBottom py-4 d-flex items-center justify-between">
@@ -24,10 +27,24 @@ import FormGroup from "@components/ui/global/FormGroup.astro";
   <ListLinksPage />
   <!-- ul icon cart and search -->
   <div class="navButtons d-flex items-center gap-10">
+    <!-- user img drop down -->
+    <div class="dropDownAvatar relative">
+      <Button
+        type="button"
+        aria="dropDownUserSetting"
+        ClassName="AvatarBtn"
+        ariaEx={`false`}
+        controll={`dropDownUser`}
+      >
+        <Avatar />
+      </Button>
+      <DropDown data={DropDownUser} id="dropDownUser" />
+    </div>
+    <!-- btn login -->
     <Button
       type="button"
       aria={`login btn`}
-      ClassName="btn-run relative round-6 py-5 px-8 lg-max-d-none"
+      ClassName="btn-run relative round-6 py-5 px-8 d-none"
     >
       <Link
         href="Login.html"
@@ -73,7 +90,11 @@ import FormGroup from "@components/ui/global/FormGroup.astro";
       <Icon name={`close`} size={`36`} />
     </Button>
   </div>
-  <form action="!#" class="navSearchForm d-none absolute right-0" id="navSearchForm">
+  <form
+    action="!#"
+    class="navSearchForm d-none absolute right-0"
+    id="navSearchForm"
+  >
     <FormGroup
       type="text"
       isDisabled={false}

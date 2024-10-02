@@ -1,0 +1,82 @@
+@use "../helpers/color" as *;
+@use "../helpers/extend" as *;
+@use "../helpers/mixin" as *;
+@use "../components/ui/blogCard";
+.blog-1{
+    .d-grid{
+        @extend %col-3;
+    }
+   
+}
+.detailsBlog-1{
+    .d-grid{
+        grid-template-columns: 450px 1fr;
+        @media(max-width:991px){
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;
+        }
+    }
+    .sideBlog{
+        position: sticky;
+        top: 15px;
+        height: 100vh;
+        @media(max-width:991px){
+           position: relative;
+           top: auto;
+           height: auto;
+        }
+    }
+    .RelatedCard{
+        border: 1px solid $border-color;
+        padding: 15px 10px;
+        figure{
+            width: 60%;
+             @media(max-width:991px){
+                width: 150px;
+                
+            }
+        }
+        .time{
+            svg{
+                width: 20px;
+                color: $hover;
+            }
+            p{
+                color: $hover;
+                
+            }
+        }
+        a{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    article{
+        min-height: 100vh;
+        @media(max-width:991px){
+            margin-bottom: auto;
+            
+        }
+        border: 1px solid $border-color;
+        padding: 25px 20px;
+        .time{
+            opacity: .8;
+            svg{
+                width: 20px;
+                color: $subtitle;
+            }
+            p{
+                color: $subtitle;
+                
+            }
+        }
+        figure{
+            height: 40%;
+           
+           
+        }
+        strong ,h3{
+            color: $title;
+        }
+    }
+}

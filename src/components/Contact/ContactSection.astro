@@ -1,8 +1,13 @@
 ---
 import ContactForm from "./ContactForm.astro"
+import { Image } from "astro:assets";
+import img  from "@assets/images/About/contactUs.webp"
 ---
 <section class="section-1 contactUs-1">
-    <div class="container">
+    <div class="container d-flex items-center justify-between gap-14">
         <ContactForm/>
+        <figure>
+            <Image src={img} alt={`img`} quality={70} format="webp" />
+        </figure>
     </div>
 </section>

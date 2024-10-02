@@ -19,7 +19,7 @@ export default defineConfig({
     format: 'file',
     site: "https://ryn-e-commerce.com/",
     base: '/',
-    // assetsPrefix: './'
+    assetsPrefix: './'
   },
 
   image: {

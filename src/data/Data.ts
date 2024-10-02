@@ -23,6 +23,44 @@ export const LangDropDown: LinkType[] = [
         ImageSrc: Ar,
     },
 ];
+export const DropDownUser:LinkType[]=[
+    {
+        href:"MyAccount.html",
+        aria:"editUser",
+        text:"تعديل حسابي",
+        icon:{
+            names:'EditUser',
+            side:'left'
+        },
+    },
+    {
+        href:"Order.html",
+        aria:"userOrder",
+        text:" طلباتي",
+        icon:{
+            names:'order',
+            side:'left'
+        },
+    },
+    {
+        href:"notifications.html",
+        aria:"notifications",
+        text:" الاشعارات",
+        icon:{
+            names:'notifications',
+            side:'left'
+        },
+    },
+    {
+        href:"#!",
+        aria:"logout",
+        text:" تسجيل الخروج",
+        icon:{
+            names:'logout',
+            side:'left'
+        },
+    },
+]
 export const ListLinksPageData: LinkType[] = [
     {
         href: '/',
@@ -45,7 +83,7 @@ export const ListLinksPageData: LinkType[] = [
         aria: 'contactUs Page',
     },
     {
-        href: '#!',
+        href: 'Blog.html',
         text: 'المدونة',
         aria: 'blog Page',
     },
