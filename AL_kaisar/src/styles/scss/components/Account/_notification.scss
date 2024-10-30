@@ -1,0 +1,20 @@
+@use "../../helpers/color" as *;
+@use "../../helpers/extend" as *;
+@use "../../helpers/mixin" as *;
+.notification{
+    background-color: var(--BG);
+    // padding: 15px;
+    // border-radius: 15px;
+    small{
+        opacity: .8;
+    }
+    @media(max-width:380px){
+        p{
+            font-size: 13px;
+        }
+        small{
+            font-size: 12px;
+        }
+    }
+    
+}

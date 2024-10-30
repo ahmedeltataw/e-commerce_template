@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+import Link from "../global/Link.astro";
+interface Props {
+    title:string,
+    des:string,
+    icon:string
+}
+const {title,des,icon} = Astro.props
+---
+<div class="boxSer-1 d-flex items-center gap-8 py-8 px-5  text-center round-4 relative overflow-hidden border-1 border-solid">
+    <!-- icon-ser -->
+     <div class="iconSer-1 relative">
+        <Icon name={icon} size={`48`}  />
+     </div>
+     <!-- details-ser > p.title  p.des -->
+      <div class="detailsSer-1 relative">
+        <p class="title pb-7">{title}</p>
+        <p class="des o-90">{des}</p>
+      </div>
+      <!-- a absolute -->
+       <Link href="#!" aria={title} Class="absolute top-0 left-0" title={title} />
+</div>

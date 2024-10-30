@@ -1,0 +1,40 @@
+// @use "../plugins/AE.css";
+@use "./helpers/color" as *;
+@use "./helpers/mixin" as *;
+
+
+body {
+    background-color: var(--MBG);
+    color: var(--subtitle);
+    font-size: 15px;
+    overflow-x: hidden;
+    
+}
+
+
+html[lang="en"]{
+    direction: ltr;
+   
+}
+html[lang="ar"]{
+    direction: rtl;
+    
+}
+p{
+    // font-size: clamp(16px ,1vw + .6rem , 18px);
+   @media(max-width:580px){
+    font-size: 13px;
+   } 
+}
+
+::-webkit-scrollbar{
+    width: 6px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--hover);
+    border-radius: 8px;
+    height: 180px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+}

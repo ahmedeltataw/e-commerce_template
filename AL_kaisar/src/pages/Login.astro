@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "@styles/scss/pages/Auth.scss";
+// components
+import SmallBeadcrumb from '@components/ui/global/SmallBeadcrumb.astro';
+import Form from '@components/Auth/Form.astro';
+---
+
+<Layout title="jadwal |  تسجيل الدخول" des='  متجر متخصص في توفير جميع الأدوات والمستلزمات الطبية بأعلى جودة وأسعار تنافسية، لتلبية احتياجات المستشفيات والعيادات والأفراد مع خدمة توصيل سريعة ودعم فني متواصل. '>
+<SmallBeadcrumb defaultPage='الرئيسية' linkPage='تسجيل الدخول'  />
+    <Form id='LoginForm' isLogin={true} isSignUp={false} />
+</Layout>
+<script src="../scripts/Auth.ts"></script>

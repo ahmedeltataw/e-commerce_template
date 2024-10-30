@@ -1,0 +1,65 @@
+---
+import Button from "@components/ui/global/Button.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import img from "@assets/images/products/pro-1.webp";
+import QuanityBtn from "@components/ui/Private/QuanityBtn.astro";
+import DeleteBtn from "@components/ui/Private/DeleteBtn.astro";
+---
+
+<section class="section-1 cart-1">
+  <div class="container">
+    <div class="AllCart">
+        <div
+          class="cartBox d-grid items-center text-center relative py-3 px-2 round-8 mb-3  mx-auto  "
+        >
+          <div class="proDetails d-flex items-center gap-10">
+            <div class="cartImg round-6 ">
+              <Image
+                src={img}
+                alt="pro image"
+                format="webp"
+                quality={70}
+                class={`round-6 img-contain`}
+              />
+            </div>
+            <div class="ProDetail text-right">
+                <h3 class="fw-500  o-80">أومرون جهاز قياس ضغط الدم M3</h3>
+            <div class={`price fs-16 pt-7	  `}>
+              <span class={`fw-700 `}>18,500</span>
+              <small class="fs-14">ر.س</small>
+            </div>
+            </div>
+          </div>
+          <!--  -->
+          <QuanityBtn isRow={false} />
+          <!--  -->
+
+          <!--  -->
+          <DeleteBtn/>
+          <!--  -->
+        </div>
+
+        <!-- action -->
+         <!-- Actions -->
+    
+      </div>
+    <!--  -->
+    <div class="actions d-grid relative mx-auto">
+        <Button
+          type="button"
+          ClassName="btn-run round-2 relative "
+          aria="refarch page"
+        >
+          <a href="#!" class="relative fw-700 d-flex items-center justify-center" aria-label="refarch">تحديث السلة</a>
+        </Button>
+        <Button
+          type="button"
+          ClassName="btn-runBorder round-2 relative"
+          aria="checkOut page"
+        >
+          <a href="Payment.html" class="relative fw-700 d-flex items-center justify-center" aria-label="payment">ادفع الان</a>
+        </Button>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from "../global/Button.astro";
+import { Image } from "astro:assets";
+import img from "@assets/images/products/pro-1.webp";
+import QuanityBtn from "./QuanityBtn.astro";
+import DeleteBtn from "./DeleteBtn.astro";
+---
+
+<!-- style="display: none;" -->
+<aside class="CartShop-1 d-none ps-4" id="CartShop">
+  <div class="cartContainer relative d-grid">
+    <div class="aside-top">
+      <Button
+        type="button"
+        aria="closeCart"
+        ariaEx={`false`}
+        controll={`CartShop`}
+        ClassName="closeCart"
+        id="closeCart"
+      >
+        <Icon name={`close`} size={20} />
+      </Button>
+      <h2 class="fs-24 text-center py-8 fw-900">سلتلك</h2>
+    </div>
+
+    <div class="absolute massageEmpty text-center ">
+      <Icon name={`emptyCart`} />
+      <p class=" fw-700 fs-24 pt-5 pl-6">السلة فارغة</p>
+    </div>
+    <div class="aside-middel AllCarts">
+      <div
+        class="cartBox d-grid items-center text-center relative py-3 px-2 round-4 mb-3"
+      >
+        <div class="cartImg round-3">
+          <Image src={img} alt="pro image" format="webp"  quality={70}  class={`round-3 img-contain`}  />
+        </div>
+        <h3 class="fw-500 fs-14 o-80">أومرون جهاز قياس ضغط الدم M3</h3>
+        <!--  -->
+        <QuanityBtn/>
+        <!--  -->
+        <div class={`price fs-16 pb-4	  `}>
+          <span class={`fw-700 `}>18,500</span>
+          <small class="fs-14">ر.س</small>
+        </div>
+        <!--  -->
+        <DeleteBtn/>
+        <!--  -->
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions d-grid relative">
+      <Button
+        type="button"
+        ClassName="btn-run round-2 relative "
+        aria="Cart page"
+      >
+        <a href="Cart.html" class="relative fw-700 d-flex items-center justify-center" aria-label="Cart page">السلة</a>
+      </Button>
+      <Button
+        type="button"
+        ClassName="btn-runBorder round-2 relative"
+        aria="checkOut page"
+      >
+        <a href="Payment.html" class="relative fw-700 d-flex items-center justify-center" aria-label="payment">ادفع الان</a>
+      </Button>
+    </div>
+  </div>
+</aside>
