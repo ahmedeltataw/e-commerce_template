@@ -7,7 +7,7 @@
     @extend %aside;
     width: 500px;
     transform: translateX(500px)  scale(.8);
-    padding-inline-start:7px;
+    // padding-inline-start:7px;
     .cartContainer {
         width: 100%;
         height: 100%;
@@ -18,39 +18,13 @@
         }
 
         .cartBox {
-            background-color: rgb(236, 250, 236);
-            color: $subtitle;
-            margin-bottom: 5px;
-            grid-template-columns: 1fr 150px 1fr 100px;
-            @media(max-width:492px) {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            .cartImg {
-                height:118px ;
-                img{
-                    object-fit: contain;
-                }
-            }
-            h3 {
-                @extend %responsive-text;
-               
-                font-size: 14px;
-                opacity: .8;
-            }
 
-            
-
-            
-
+            @include cartBox(small);
             .delete {
                 width: 50px;
                 height: 35px;
-                background-color: #e15757;
-                border-radius: 0% 100% 100% 0% / 100% 0%;
                 svg {
                     width: 24px;
-                    color: $w;
-                    margin-inline-start: auto;
                     margin-inline-end: 6px;
                 }   
             }
@@ -91,15 +65,6 @@ html[lang="en"]{
             transform: translateX(0) scale(1);
         opacity: 1;
         }
-        .cartContainer{
-            .cartBox{
-                .delete {
-                    right: 0;
-                    left: auto;
-                    border-radius: 0% 100% 0% 100% / 0% 0% 100% 100% ;
-                    
-                }
-            }
-        }
+
     }
 }

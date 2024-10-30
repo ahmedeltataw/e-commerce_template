@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, d as createAstro } from './astro/server-Bpp7M_eh.js';
 import 'kleur/colors';
 import '@astrojs/internal-helpers/path';
-import { $ as $$Image } from './Layout-D4dtAE8-.js';
+import { $ as $$Image } from './Layout-Dr8BzTC7.js';
 
 const $$Astro = createAstro();
 const $$UploadImg = createComponent(($$result, $$props, $$slots) => {

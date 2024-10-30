@@ -28,7 +28,7 @@ export default defineConfig({
   },
 
   compressHTML: true,
-  optimizeHoistedScript: true,
+  // optimizeHoistedScript: true,
   output: 'static',
 
   //   integrations: [purgecss(), icon()]

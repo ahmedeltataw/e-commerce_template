@@ -4,10 +4,10 @@
 @use "../../helpers/mixin" as *;
 
 footer {
-    min-height: 75dvh;
+    min-height: 60dvh;
     padding-top: 6vh;
     margin-top: 5vh;
-    background-color: $BG3;
+    background-color: var(--BG3);
     width: 100%;
 
     .footerLayout {
@@ -22,112 +22,108 @@ footer {
 
 
 
-        h4 {
-            display: inline-block;
-            color: $title;
-
+        h3 {
+            // letter-spacing: 1px;
             &::before {
                 @extend %pseudoElX;
                 width: 50%;
                 height: 2px;
-                background-color: $hover-1;
+                background-color: var(--hover-1);
                 bottom: 20px;
                 right: 0;
             }
         }
 
         a {
-            opacity: .9;
+            // opacity: .9;
 
             &:hover {
-                color: $hover-1;
+                color: var(--hover-1);
                 opacity: 1;
             }
         }
     }
 
-    .Newsletter {
-        .box {
-            .box-text {
+    // .Newsletter {
+    //     .box {
+    //         .box-text {
 
-                h5{
-                    font-size: clamp(18px , 1vw + .9rem ,24px);
-                }
-                p {
-                    opacity: .8;
-                }
-            }
+    //             h4{
+    //                 font-size: clamp(18px , 1vw + .9rem ,24px);
+    //             }
+                
+    //         }
 
-            .box-icons {
-                svg {
-                    width: 48px;
-                }
-            }
+    //         .box-icons {
+    //             svg {
+    //                 width: 48px;
+    //             }
+    //         }
 
-            form {
-                .formGroup {
-                    width: 500px;
-                    max-width: 100%;
-                    height: 55px;
+    //         form {
+    //             .formGroup {
+    //                 width: 500px;
+    //                 max-width: 100%;
+    //                 height: 55px;
 
 
-                }
+    //             }
 
-                input {
-                    @include input(100%, 100%, $subtitle);
-                    background-color: transparent;
+    //             input {
+    //                 @include input(100%, 100%, $subtitle);
+    //                 background-color: transparent;
 
-                    &::placeholder {
-                        color: $subtitle;
-                    }
+    //                 &::placeholder {
+    //                     color: var(--subtitle);
+    //                 }
 
-                    &:hover {
-                        border-color: $hover;
-                    }
+    //                 &:hover {
+    //                     border-color:var(--hover);
+    //                 }
 
-                    &:focus {
-                        border-color: $hover-1;
-                    }
-
-
-                }
-
-                .btnSendEmail {
-                    @extend %centerY;
-                    background-color: $hover;
-                    color: $w;
-                    height: 55px;
-                    transition: $t-s;
-                    border-start-end-radius: 4px;
-                    border-end-end-radius: 4px;
-                    &:hover {
-                        background-color: $hover-1;
-
-                    }
-                }
-            }
-        }
-
-        @media(max-width:768px) {
-            flex-direction: column;
-            align-items: stretch;
-
-            gap: 15px;
+    //                 &:focus {
+    //                     border-color: var(--hover-1);
+    //                 }
 
 
-        }
-    }
+    //             }
+
+    //             .btnSendEmail {
+    //                 @extend %centerY;
+    //                 background-color: $hover;
+    //                 color: var(--w);
+    //                 height: 55px;
+    //                 transition: $t-s;
+    //                 border-start-end-radius: 4px;
+    //                 border-end-end-radius: 4px;
+    //                 &:hover {
+    //                     background-color: $hover-1;
+
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     @media(max-width:768px) {
+    //         flex-direction: column;
+    //         align-items: stretch;
+
+    //         gap: 15px;
+
+
+    //     }
+    // }
 
     .copyright {
         flex-direction: column;
 
         .paymentImg {
-            max-width: 335px;
+            max-width: 500px;
         }
 
 
         a {
-            color: $hover;
+            color: var(--hover);
 
         }
 
@@ -137,7 +133,7 @@ footer {
     }
 
     .mobileFooter {
-        background-color: $w;
+        background-color: var(--w);
         width: 100%;
         z-index: 999;
         box-shadow: 0 -8px 1.25rem rgba(110, 110, 110, .3);
@@ -159,10 +155,10 @@ footer {
 
                     &:hover,
                     &.active {
-                        color: $hover-1;
+                        color: var(--hover-1);
 
                         svg {
-                            color: $hover-1;
+                            color: var(--hover-1);
 
                         }
                     }
@@ -189,22 +185,22 @@ footer {
 html[lang="en"] {
     footer{
         .Footer-meta{
-            h4{
+            h3{
                 &::before{
                     left: 0;
                 }
             }
         }
-        .Newsletter {
-            .box{
-                form{
-                    .btnSendEmail {
-                        right: 0;
-                        left: auto;
+        // .Newsletter {
+        //     .box{
+        //         form{
+        //             .btnSendEmail {
+        //                 right: 0;
+        //                 left: auto;
                         
-                    }
-                }
-            }
-        }
+        //             }
+        //         }
+        //     }
+        // }
     }
 }

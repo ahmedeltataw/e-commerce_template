@@ -4,7 +4,7 @@
 
 .cate {
     .cateSwiper , .ClientSwiper {
-        background-color: $BG2;
+        background-color: var(--BG2);
         border-radius: 4px;
 
         .swiper-slide {

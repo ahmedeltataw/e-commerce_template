@@ -4,24 +4,27 @@
 .hero-1{
 
     height: calc(100vh - 131px);
+    
     .heroSwiper{
         .swiper-slide{
             transition: $t-l;
             transform: scale(.7);
             .sliderBox{
-                position: absolute;
-                top: 50%;
+                // position: absolute;
+                // top: 50%;
                 @extend %centerY;
-                right: 150px;
+                // right: 150px;
+                inset-inline-start: 150px;
                 width: min(100% , 400px);
+                // width: 100%;
                 h1{
-                    color: $title;
+                    // color: var(--title);
                     transform: translateY(-60px) scale(.7);
-                    opacity: 0;
+                    // opacity: 0;
                     transition: $t-l;
                     transition-delay: 100ms;
                     span{
-                        color: $hover-1;
+                        color: var(--hover-1);
                         
                     }
                 }
@@ -31,9 +34,9 @@
                     transition-delay: 200ms;
                     
                 }
+                
                 p , .btn-run{
                     transition: $t-l;
-                    opacity: 0;
                 }
                 p , .btn-run a{
                     font-size: clamp(16px ,1vw + .6rem , 18px);
@@ -84,17 +87,17 @@
 
         }
         .swiper-button-next, .swiper-button-prev{
-            background-color: $hover;
+            background-color: var(--hover);
             transition: $t-s;
             @include cricle (50px);
             transform: scale(.4);
-            opacity: 0;
+            // opacity: 0;
             &::after{
                 font-size: 28px;
-                color: $w;
+                color: var(--w);
             }
             &:hover{
-                background-color: $hover-1;
+                background-color: var(--hover-1);
             }
         }
         &:hover{

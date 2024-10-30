@@ -1,34 +1,12 @@
 @use "../../helpers/color" as *;
 @use "../../helpers/extend" as *;
 @use "../../helpers/mixin" as *;
-.ads-1{
-    .adsWhatApp{
-        background-color: #002502;    
-        color: $w;
-        padding: 20px 20px;
-        border-radius: 20px;
-        @media(max-width:767px){
-            flex-flow: row wrap;
-            justify-content: center;
-        }
-        .adsText{
-            font-size: clamp(18px , 2vw + 1rem , 36px);
-            flex-grow: 1;
-            // flex-shrink: 0;  
-        }
-        svg{
-            width: 80px;
-        }
-        .btn-run {
-            a{
-                font-size: clamp(14px , 1vw + .4rem  , 16px);
-                padding-inline: clamp(8px , 1vw + .4rem , 16px);
-                padding-block: clamp(7px , 1vw + .2rem , 14px);
-                white-space: nowrap;
-            }
-            svg{
-                width: clamp(16px , 1vw + .7rem , 22px);
-            }
-        }
+.AE_break {
+    a{
+        height: 50vh;
+        width: 100%;
     }
+
 }
+
+

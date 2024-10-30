@@ -4,8 +4,8 @@
 
 
 body {
-    background-color: $w;
-    color: $subtitle;
+    background-color: var(--w);
+    color: var(--subtitle);
     font-size: 15px;
     overflow-x: hidden;
     
@@ -31,7 +31,7 @@ p{
     width: 6px;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: $hover;
+    background-color: var(--hover);
     border-radius: 8px;
     height: 180px;
 }

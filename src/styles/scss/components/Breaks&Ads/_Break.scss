@@ -3,7 +3,7 @@
 @use "../../helpers/mixin" as *;
 .berakBox{
    .imgBreak{
-   
+    height: 232px;
     img{
         transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
     }
@@ -15,9 +15,9 @@
    }
     .breakDetails{
         @extend %centerY;
-        left: 15px;
+        // left: 15px;
         .cateName{
-            color: $hover-1;
+            color: var(--hover-1);
             font-size: clamp(14px ,1vw + .6rem , 18px);
         }
         .proName{

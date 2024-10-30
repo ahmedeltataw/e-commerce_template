@@ -13,12 +13,12 @@ import { Icon } from "astro-icon/components";
   <Button
     type="button"
     aria={`close menu`}
-    ClassName="btn-run relative round-6 btnCloseMenu lg-d-none"
+    ClassName="btn-run relative round-3 btnCloseMenu lg-d-none "
     ariaEx={`false`}
     controll={`responsiveNavLinks`}
     id="btnCloseMenu"
   >
-    <Icon name={`close`} size={`36`} class={`relative`} />
+    <Icon name={`close`} size={`36`} class={`relative m-in-auto py-3`} />
   </Button>
   {
     ListLinksPageData.map((li: LinkType) => (

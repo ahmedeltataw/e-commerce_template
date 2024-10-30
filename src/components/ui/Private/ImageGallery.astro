@@ -8,13 +8,13 @@ interface Props {
 const {imgClass , id} =Astro.props;
 ---
 <div class={`imageGallery d-grid gap-5 ${imgClass ? imgClass :''}`} id={id}>
-    <div class="mainImg round-4">
-        <figure><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4`}  /></figure>
+    <div class="mainImg round-2">
+        <figure><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-2`}  /></figure>
     </div>
     <div class="subImg d-flex items-center gap-5">
-        <figure class="round-4"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4 active`} /></figure>
-        <figure class="round-4"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4`} /></figure>
-        <figure class="round-4"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4`} /></figure>
-        <figure class="round-4"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-4`} /></figure>
+        <figure class="round-2"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-2 o-60 border-1 border-solid active`} /></figure>
+        <figure class="round-2"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-2 o-60 border-1 border-solid`} /></figure>
+        <figure class="round-2"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-2 o-60 border-1 border-solid`} /></figure>
+        <figure class="round-2"><Image src={img} alt={`main-img`} quality={70} format="webp" class={`img-contain round-2 o-60 border-1 border-solid`} /></figure>
     </div>
 </div>

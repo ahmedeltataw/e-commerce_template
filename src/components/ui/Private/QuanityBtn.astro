@@ -21,16 +21,16 @@ import { Icon } from "astro-icon/components";
       </Button>
     </div>
   ) : (
-    <div class="quanity d-flex items-center mx-auto Colum">
+    <div class="quanity d-flex items-center mx-auto Colum  border-1 border-solid round-2">
       <div class="d-flex items-center QuanityButtons">
-        <Button type="button" aria={`plus`} ClassName="btn btn-quanity plus">
+        <Button type="button" aria={`plus`} ClassName="btn btn-quanity plus  round-tr-2">
           +
         </Button>
-        <Button type="button" aria={`mins`} ClassName="btn btn-quanity mins">
+        <Button type="button" aria={`mins`} ClassName="btn btn-quanity mins round-br-2">
           -
         </Button>
       </div>
-      <input type="text" class="text-center" value="1" disabled />
+      <input type="text" class="text-center round-l-2 border-0" value="1" disabled />
     </div>
   )
 }

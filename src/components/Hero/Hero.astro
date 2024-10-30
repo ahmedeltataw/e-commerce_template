@@ -10,7 +10,7 @@ import Link from "@components/ui/global/Link.astro";
   <!-- Swiper -->
   <div class="swiper heroSwiper">
     <div class="swiper-wrapper">
-        <!-- slide 1 -->
+      <!-- slide 1 -->
       <div class="swiper-slide">
         <Image
           src={img1}
@@ -19,17 +19,29 @@ import Link from "@components/ui/global/Link.astro";
           quality={70}
           class={`img-cover`}
         />
-        <div class="sliderBox">
-            <h1 class="fs-r-60 pb-10 line-relaxed"><span class="">قناع</span> جراحي وقائي</h1>
-            <p class="line-relaxed">
-                يمكن للأقنعة الجراحية أن تحمينا من العديد من الجراثيم. يجب على الجميع استخدام هذه الأقنعة الجراحية.
-            </p>
-            <Button type="button" aria={`product btn `} ClassName="mt-14 btn-run relative round-6 ">
-                <Link href="#!" aria="product link" Class="relative fs-18  d-flex items-center gap-4" text="تسوق الان" icon={{name:'cart2' ,side:'left'}} />
-            </Button>
+        <div class="sliderBox absolute top-50">
+          <h1 class="fs-r-60 pb-10 line-relaxed o-0"> <span>قناع </span> جراحي وقائي </h1>
+          <p class="line-relaxed o-0">
+            يمكن للأقنعة الجراحية أن تحمينا من العديد من الجراثيم. يجب على
+            الجميع استخدام هذه الأقنعة الجراحية.
+          </p>
+
+          <Button
+            type="button"
+            aria={`product btn `}
+            ClassName="mt-14 btn-run relative round-3 o-0 "
+          >
+            <Link
+              href="#!"
+              aria="product link"
+              Class="relative fs-18  d-flex items-center gap-4"
+              text="تسوق الان"
+              icon={{ name: "cart2", side: "left" }}
+            />
+          </Button>
         </div>
       </div>
-        <!-- slide 2 -->
+      <!-- slide 2 -->
       <div class="swiper-slide">
         <Image
           src={img2}
@@ -38,19 +50,32 @@ import Link from "@components/ui/global/Link.astro";
           quality={70}
           class={`img-cover`}
         />
-        <div class="sliderBox">
-            <h1 class="fs-r-60 pb-10 line-relaxed"><span class="">قناع</span> جراحي وقائي</h1>
-            <p class="line-relaxed fs-18">
-                يمكن للأقنعة الجراحية أن تحمينا من العديد من الجراثيم. يجب على الجميع استخدام هذه الأقنعة الجراحية.
-            </p>
-            <Button type="button" aria={`product btn `} ClassName="mt-14 btn-run relative round-6 ">
-                <Link href="#!" aria="product link" Class="relative fs-18  py-8 px-14 d-flex items-center gap-4" text="تسوق الان" icon={{name:'cart2' ,side:'left'}} />
-            </Button>
+        <div class="sliderBox absolute top-50">
+          <h1 class="fs-r-60 pb-10 line-relaxed o-0">
+            <span class="">قناع</span> جراحي وقائي
+          </h1>
+          <p class="line-relaxed fs-18 o-0">
+            يمكن للأقنعة الجراحية أن تحمينا من العديد من الجراثيم. يجب على
+            الجميع استخدام هذه الأقنعة الجراحية.
+          </p>
+          <Button
+            type="button"
+            aria={`product btn `}
+            ClassName="mt-14 btn-run relative round-3 o-0 "
+          >
+            <Link
+              href="#!"
+              aria="product link"
+              Class="relative fs-18  py-8 px-14 d-flex items-center gap-4"
+              text="تسوق الان"
+              icon={{ name: "cart2", side: "left" }}
+            />
+          </Button>
         </div>
       </div>
       <!-- end slide -->
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next o-0"></div>
+    <div class="swiper-button-prev o-0"></div>
   </div>
 </section>

@@ -8,7 +8,7 @@ import FormGroup from "@components/ui/global/FormGroup.astro";
   <div class="d-flex items-center gap-5 responsiveFilterSearch mb-5">
     <Button
       type="button"
-      ClassName="lg-d-none btn-run relative openFilter px-5 round-4 d-flex items-center"
+      ClassName="lg-d-none btn-run relative openFilter px-5 round-2 d-flex items-center"
       aria={`openFilter`}
       id="openFilter"
       ariaEx={`false`}
@@ -27,16 +27,17 @@ import FormGroup from "@components/ui/global/FormGroup.astro";
       id="searchFilter"
       IsButton={{
         aria: "searchFilter",
-        ClassName: "absolute searchFilter round-4 px-4",
+        ClassName: "absolute searchFilter round-2 px-4",
         BtnIcon: { name: "search" },
       }}
+      InputClassName="p-in-5 "
     />
   </div>
   <div class="accordion round-4 lg-max-d-none" id="accordionResponsive">
     <Button
       type="button"
       aria={`closeFilter`}
-      ClassName="lg-d-none relative btn-run round-4 mb-10 "
+      ClassName="lg-d-none relative btn-run round-2 mb-10 "
       id="closeFilter"
       ariaEx={`false`}
       controll={`accordionResponsive`}
@@ -44,11 +45,11 @@ import FormGroup from "@components/ui/global/FormGroup.astro";
       <Icon name="close" size={`28`} class={`relative mx-auto py-4`} />
     </Button>
     <!-- item-1 -->
-    <div class="accordionItem">
+    <div class="accordionItem border-1 border-solid round-t-2">
       <Button
         type="button"
         aria={`arrow-down`}
-        ClassName="d-flex items-center justify-between fs-18  py-7 px-6 round-t-4  "
+        ClassName="d-flex items-center justify-between fs-18  py-7 px-6 round-t-2  "
         ariaEx={false}
         controll={``}
       >
@@ -90,7 +91,7 @@ import FormGroup from "@components/ui/global/FormGroup.astro";
     </div>
     <!--  -->
     <!-- item-2 -->
-    <div class="accordionItem">
+    <div class="accordionItem border-1 border-solid border-t-0 border-b-0">
       <Button
         type="button"
         aria={`arrow-down`}
@@ -186,11 +187,11 @@ import FormGroup from "@components/ui/global/FormGroup.astro";
     </div>
     <!--  -->
     <!-- item-3 -->
-    <div class="accordionItem">
+    <div class="accordionItem border-1 border-solid round-b-2">
       <Button
         type="button"
         aria={`arrow-down`}
-        ClassName="d-flex items-center justify-between fs-18 py-7 px-6 round-b-4 "
+        ClassName="d-flex items-center justify-between fs-18 py-7 px-6  "
         ariaEx={false}
         controll={``}
       >
@@ -271,7 +272,7 @@ import FormGroup from "@components/ui/global/FormGroup.astro";
       </div>
     </div>
     <!--  -->
-    <Button type="button" aria={`searchFiltr`} ClassName="mt-10 btn-run relative round-6 d-flex items-center mx-auto justify-center "
+    <Button type="button" aria={`searchFiltr`} ClassName="mt-10 btn-run relative round-2 d-flex items-center mx-auto justify-center "
     >
     <span class="relative px-14 py-8">بحث</span>
     </Button

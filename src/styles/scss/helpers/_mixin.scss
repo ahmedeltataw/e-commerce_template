@@ -1,3 +1,5 @@
+// @use "./extend";
+
 @mixin overlay($height, $width, $color, $dir, $dir-value) {
     &::before {
         content: '';
@@ -37,9 +39,11 @@
     height: $h;
     #{$dir}: $dirValue
 }
-@mixin gridCol($min,$max){
-    grid-template-columns: repeat(auto-fill , minmax($min,$max));
+
+@mixin gridCol($min, $max) {
+    grid-template-columns: repeat(auto-fill, minmax($min, $max));
 }
+
 @mixin textMedia($w, $line) {
     @media(max-width:$w) {
         display: -webkit-box;
@@ -48,9 +52,79 @@
         overflow: hidden;
     }
 }
-@mixin responsiveText( $line) {
+
+@mixin responsiveText($line) {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: $line;
     overflow: hidden;
+}
+
+// cart box size
+
+@mixin cartBox($size) {
+    @extend %cartBox;
+
+    @if $size ==large {
+        background-color: rgba($color: #f0f0f0, $alpha: .4);
+        box-shadow: 0px 9px 1.25rem #5353532e;
+        grid-template-columns: 2fr 1fr;
+        width: min(100%, 1200px);
+        margin-bottom: 30px;
+
+        @media(max-width:580px) {
+            grid-template-columns: 1fr;
+            margin-bottom: 6px;
+        }
+
+        .cartImg {
+            height: 150px;
+        }
+
+        h3 {
+            font-size: clamp(16px, 1vw + .6rem, 18px);
+        }
+
+        .price {
+            span {
+                color: var(--hover);
+                font-size: clamp(16px, 1vw + .8rem, 20px);
+            }
+        }
+
+        .Colum {
+
+            .QuanityButtons {
+                button {
+                    width: 50px;
+                    height: 30px;
+                    font-size: 18px;
+                    background-color: var(--BG);
+                }
+
+            }
+
+            input {
+                width: 100px;
+                height: 60px;
+                background-color: var(--BG);
+            }
+
+            @media(max-width:580px) {
+                margin-bottom: 18px;
+
+            }
+        }
+    } 
+    @else if $size ==small  {
+        margin-bottom: 5px;
+            background-color: rgb(236, 250, 236);
+            grid-template-columns: 1fr 150px 1fr 100px;
+            @media(max-width:492px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .cartImg {
+                height:118px ;
+            }
+    }
 }

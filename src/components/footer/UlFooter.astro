@@ -8,8 +8,8 @@ const { MainTitle, data } = Astro.props;
 import Link from "@components/ui/global/Link.astro";
 ---
 
-<div class="Footer-meta">
-  <h4 class="fs-24 fw-500 pb-12 relative">{MainTitle}</h4>
+<div class="Footer-meta  ">
+  <h3 class="fs-24 fw-500 pb-12 relative d-inline-block">{MainTitle}</h3>
   <ul>
     {
       data.map((item: LinkType) => (
@@ -18,7 +18,7 @@ import Link from "@components/ui/global/Link.astro";
             href={item.href}
             aria={`${item.text}Link`}
             text={item.text}
-            Class=""
+            Class="o-90 "
           />
         </li>
       ))

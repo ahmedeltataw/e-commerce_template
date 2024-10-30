@@ -68,7 +68,7 @@ export const ListLinksPageData: LinkType[] = [
         aria: 'Home Page',
     },
     {
-        href: 'About.html',
+        href: 'Know.html',
         text: 'من نحن',
         aria: 'AboutUs Page',
     },
@@ -144,6 +144,30 @@ export const CateBoxData: cateBoxType[] = [
         img: img6,
         title: 'مستلزمات طبية',
     },
+    {
+        img: img1,
+        title: 'مستلزمات طبية',
+    },
+    {
+        img: img2,
+        title: 'العلاج الطبيعي والتأهيل ',
+    },
+    {
+        img: img3,
+        title: 'الرعاية النهارية',
+    },
+    {
+        img: img4,
+        title: 'منتجات الاسنان',
+    },
+    {
+        img: img5,
+        title: 'مستلزمات طبية',
+    },
+    {
+        img: img6,
+        title: 'مستلزمات طبية',
+    },
 
 ]
 
@@ -190,7 +214,7 @@ export const productData: ProductType[] = [
     },
     {
         title: 'سرير طبي للعناية المركزة 6 حركات هيل روم أمريكي مع المرتبة HR900',
-        des: 'سرير طبي HR900 هو سرير طبي عالي الجودة مصمم لتوفير الراحة والدعم للمرضى الذين يعانون من مجموعة متنوع',
+        des: ' الذين يعانون من مجموعة متنوع',
         href: "ProductDetails.html",
         price: '17,500',
         discount: { value: '30', newPrice: '12,400' },

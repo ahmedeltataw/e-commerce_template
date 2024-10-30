@@ -2,7 +2,7 @@
 @use "../../helpers/extend" as *;
 @use "../../helpers/mixin" as *;
 .product{
-    min-height: 100dvh;
+    min-height: auto;
     // 
     .product-1{
       @extend %col-4;
@@ -19,8 +19,10 @@
 }
 .productSlider{
   background-color: #002502;
+  padding-top: 6vh;
   .swiper-slide{
     padding: 80px 0;
+   
   }
   .d-grid{
     grid-template-columns: 250px 1fr;
@@ -32,9 +34,6 @@
     }
   }
   .pro-1{
-    background-color: $w;
-    .proImg-1{
-      margin-bottom: 15px;
-    }
+    background-color: var(--w);
   }
 }

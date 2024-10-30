@@ -17,7 +17,7 @@
         width: 40px;
 
         span {
-            background-color: $hover;
+            background-color: var(--hover);
             width: 30px;
 
             &:nth-child(2) {
@@ -36,7 +36,7 @@
         z-index: 99999;
         .navLink {
             &:hover , &.active {
-                color: $hover-1;
+                color: var(--hover-1);
             }
 
         }
@@ -53,7 +53,7 @@
 
             li {
                 padding-block: 15px;
-                border-bottom: 1px solid $border-color;
+                border-bottom: 1px solid var(--border-color);
                 width: 100%;
 
                 .navLink {
@@ -71,8 +71,8 @@
 
                 svg {
                     width: 30px;
-                    padding: 5px 0;
-                    margin-inline: auto;
+                    
+                   
 
                 }
             }
@@ -94,11 +94,8 @@
 
     .navButtons {
         svg {
-            // opacity: .9;
-            color: $subtitle;
-
             &:hover {
-                color: $hover-1;
+                color: var(--hover-1);
                 opacity: 1;
             }
         }
@@ -117,15 +114,15 @@
     }
 
     .navSearchForm {
-        background-color: $BG;
-        padding-block: 10px;
+        background-color: var(--BG);
+        // padding-block: 10px;
         width: 100%;
         z-index: 999;
         top: -80px;
-        padding-inline: 15px;
+        // padding-inline: 15px;
         transform: scale(.5);
         transition: $t-l;
-        opacity: 1;
+        // opacity: 1;
         box-shadow: 0 13px 1.25rem rgba($color: #6e6e6e, $alpha: .5);
 
         .icon-search {
@@ -142,25 +139,25 @@
         input {
             @include input(50px, 100%, rgba($color: $border-color, $alpha: 1));
             color: #545454;
-            font-size: 16px;
-            padding-inline: 10px;
+            // font-size: 16px;
+            // padding-inline: 10px;
         }
 
         .btnSearchSubmit {
             @extend %centerY;
-            left: 8px;
-            background-color: $hover;
+            inset-inline-end: 8px;
+            background-color: var(--hover);
             height: 40px;
-            padding-inline: 10px;
+            // padding-inline: 10px;
             transition: $t-s;
 
             svg {
                 width: 28px;
-                color: $w;
+                color: var(--w);
             }
 
             &:hover {
-                background-color: $hover-1;
+                background-color: var(--hover-1);
             }
         }
     }
@@ -177,28 +174,33 @@
                 }
 
                 img {
-                    border-color: $border-color;
+                    border-color: var(--border-color);
                     transition: $t-s;
+                }
+            }
+            &:hover , &:focus{
+                .avatar img{
+                    border-color: var(--hover-1);
                 }
             }
         }
 
         #dropDownUser {
             top: 60px;
-            right: -20px;
+            // right: -20px;
             min-width: 150px;
-            font-size: 14px;
-            border-radius: 6px;
+            // font-size: 14px;
+            // border-radius: 6px;
             a {
                 svg {
-                    color: $hover;
+                    color: var(--hover);
                 }
             }
 
             li:last-child {
                 a {
                     svg {
-                        color: $error-text;
+                        color: var(--error-text);
                     }
                 }
             }
@@ -211,12 +213,6 @@ html[lang="en"]{
             .searchBtn{
 
                 margin-right: 0;
-            }
-        }
-        .navSearchForm {
-            .btnSearchSubmit{
-                right: 8px;
-                left: auto;
             }
         }
         .navLinks {

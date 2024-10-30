@@ -7,11 +7,12 @@
     }
    
     form{
-        width: 600px;
-        max-width: 100%;
+        width: min(600px , 100%);
+        // max-width: 100%;
+        
         // background-color: red;
-        padding-inline: 20px;
-        padding-block: 25px;
+        // padding-inline: 20px;
+        // padding-block: 25px;
         svg{
             width: 28px;
         }
@@ -20,25 +21,20 @@
             width: 100%;
             input ,select {
                 @include input(56px, 100%,transparent);
-                background-color: $BG;
-                font-size: 14px;
+                background-color: var(--BG);
+                // font-size: 14px;
             }
-            label{
-                padding-inline-start: 8px;
-            }
+            
             .IsPassword{
                 svg{
-                    position: absolute;
-                    left: 15px;
-                    top: 0;
+                    inset-inline-end: 15px;
                     width: 30px;
                     cursor: pointer;
-                    opacity: .8;
                 }
                 
             }
             .errorMassageInput {
-                color: $error-text;
+                color: var(--error-text);
                 font-size: 12px;
                 font-weight: 400;
                 padding-inline: 8px;
@@ -64,78 +60,34 @@
             .break{
                 width: 100%;
                 height: 1px;
-                background-color: $border-color;
+                background-color: var(--border-color);
                 p{
                     @include centerPosition;
-                    background-color: $w;
-                    padding-inline: 8px;
+                    background-color: var(--w);
+                    // padding-inline: 8px;
                     white-space: nowrap;
                     font-size: clamp(13px ,1vw + .5rem , 16px)
                 }
             }
         }
         a{
-            color: $hover;
+            color: var(--hover);
             &:hover{
-                color: $hover-1;
+                color: var(--hover-1);
             }
         }
         .errorForm {
             input {
-                border-color: $error-text;
+                border-color: var(--error-text);
 
                 &:focus {
-                    border-color: $error-text;
+                    border-color: var(--error-text);
                 }
             }
         }
         .uploadImg {
-            width: 100%;
-            height: 250px;
-            border: 3px dashed #e2e2e2;
-            background-color: rgba($color: $BG, $alpha: .2);
-            padding: 5px;
-            margin-inline: auto;
-            max-width: 100%;
-            transition: $t-s;
-            @media (max-width:480px) {
-                width: 100%;
-                height: 100%;
-            }
+            @extend %uploadImg;
 
-            
-
-            img {
-
-                object-fit: contain;
-
-            }
-
-            label {
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-            }
-
-            &:hover {
-                border-color: $hover;
-            }
-
-        }
-    }
-}
-html[lang="en"] {
-    .auth-1{
-        form{
-            .formGroup{
-                .IsPassword{
-                    svg{
-                        right: 15px;
-                        left: auto;
-                    }
-                }
-            }
         }
     }
 }

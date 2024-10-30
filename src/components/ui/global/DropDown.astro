@@ -7,16 +7,17 @@ import type { LinkType } from "../../../types/type";
 interface Props {
   data: LinkType[];
   id: string;
+  ClassName?:string
 }
-const { data, id } = Astro.props;
+const { data, id ,ClassName } = Astro.props;
 ---
 
-<ul class="dropDownMenu" id={id}>
+<ul class=`dropDownMenu absolute ps-5 round-b-3 overflow-hidden ${ClassName ? ClassName : ''}` id={id} >
   {
     
     data.map((link: LinkType) => (
         
-      <li>
+      <li class="pb-7">
         <Link
           href={link.href}
           Class="d-flex items-center gap-3"

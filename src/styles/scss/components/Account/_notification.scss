@@ -2,9 +2,9 @@
 @use "../../helpers/extend" as *;
 @use "../../helpers/mixin" as *;
 .notification{
-    background-color: $BG;
-    padding: 15px;
-    border-radius: 15px;
+    background-color: var(--BG);
+    // padding: 15px;
+    // border-radius: 15px;
     small{
         opacity: .8;
     }

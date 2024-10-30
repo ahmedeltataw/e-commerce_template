@@ -3,7 +3,7 @@ import FormGroup from "@components/ui/global/FormGroup.astro";
 import Button from "@components/ui/global/Button.astro";
 ---
 
-<form action="" class="mx-auto">
+<form action="" class="mx-auto p-in-9 py-10">
   <FormGroup
     type="text"
     isLabel={true}
@@ -13,8 +13,8 @@ import Button from "@components/ui/global/Button.astro";
     name="userName"
     id="userName"
     FormClassName="d-flex gap-4 mb-8 relative"
-    InputClassName="round-8"
-    LabelClassName="pr-4"
+    InputClassName="round-4 fs-14"
+    LabelClassName="ps-4"
   />
   <FormGroup
     type="email"
@@ -25,8 +25,8 @@ import Button from "@components/ui/global/Button.astro";
     name="userName"
     id="userName"
     FormClassName="d-flex gap-4 mb-8 relative"
-    InputClassName="round-8"
-    LabelClassName="pr-4"
+    InputClassName="round-4 fs-14"
+    LabelClassName="ps-4"
   />
   <FormGroup
     type="number"
@@ -37,18 +37,18 @@ import Button from "@components/ui/global/Button.astro";
     name="userName"
     id="userName"
     FormClassName="d-flex gap-4 mb-8 relative"
-    InputClassName="round-8"
-    LabelClassName="pr-4"
+    InputClassName="round-4 fs-14"
+    LabelClassName="ps-4"
   />
   <div class="formGroup d-flex gap-4 mb-8 relative">
-    <label for="massage" class="pr-4">رسالتك</label>
-    <textarea name="massage" id="massage" placeholder="رسالتك" class="round-8 pr-5 pt-5"></textarea>
+    <label for="massage" class="ps-4">رسالتك</label>
+    <textarea name="massage" id="massage" placeholder="رسالتك" class="round-4 fs-14 ps-5 pt-5"></textarea>
   </div>
   <div class="mt-10 d-flex items-center justify-center mx-auto">
     <Button
       type="submit"
       aria={`send massage `}
-      ClassName="btn-run relative  round-6  px-8 py-2"
+      ClassName="btn-run relative  round-3  px-8 py-2"
 
     >
       <span class="px-10 py-6 fw-500 fs-18 relative"> 

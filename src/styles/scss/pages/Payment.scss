@@ -81,6 +81,14 @@
                 &:has(input:checked){
                     background-color: transparent;
                 }
+                svg{
+                    width: 100%;
+                }
+                p{
+                    padding-top: 6px;
+                    font-size: 12px;
+                   
+                }
             }
            
         }

@@ -14,41 +14,41 @@
 
 a,
 svg {
-    color: $subtitle;
+    color: var(--subtitle);
     transition: $t-s;
 
 }
 
 hr {
-
-    border-color: $border-color ;
+    border-color: var(--border-color) ;
     opacity: .2;
 }
 
 .separator {
-    color: $subtitle;
+    color: var(--subtitle);
 }
 
 .count {
 
     background-color: $hover-1;
     @include cricle(20px);
-    color: $w;
+    color: var(--w);
 
 }
 
+figure{
+    margin-block: 0;
+    margin-inline: 0;
+}
+h1 ,h3{
+    color: var(--title);
+}
 // ///////////btn style/////////////
-button,
-.btn,
-input,
-textarea,
-select {
-    font-family: inherit;
-}
+
 
 .btn-run {
-    background-color: $hover;
-    color: $w;
+    background-color: var(--hover);
+    color: var(--w);
 
     span {
         display: inline-block;
@@ -57,7 +57,7 @@ select {
     a,
     span,
     svg {
-        color: $w;
+        color: var(--w);
         transition: $t-s;
     }
 
@@ -65,13 +65,13 @@ select {
 
 .btn-runBorder {
     background-color: transparent;
-    border: 1px solid $hover-1;
-    color: $title;
+    border: 1px solid var(--hover-1);
+    color: var(--title);
 
     a,
     svg,
     span {
-        color: $subtitle;
+        color: var(--title);
         transition: $t-s;
         
     }
@@ -82,7 +82,7 @@ select {
         a,
         svg,
         span {
-            color: $w;
+            color: var(--w);
         }
     }
 }
@@ -95,7 +95,7 @@ select {
         @extend %pseudoElX;
         width: 0;
         height: 100%;
-        background-color: $hover-1;
+        background-color: var(--hover-1);
         border-radius: 6px;
         left: 0;
         top: 0;
@@ -114,7 +114,7 @@ select {
 
     svg {
         width: 48px;
-        color: $hover;
+        color: var(--hover);
     }
 }
 .whatsAppBtn{
@@ -162,7 +162,17 @@ select {
         animation: Pulse 2s 1s  ease-out infinite;
     }
 }
-
+.delete{
+    @extend %btn-delete;
+}
+html[lang='en']{
+   
+        .delete {
+            border-radius: 0% 100% 0% 100% / 0% 0% 100% 100% ;
+            
+        }
+    
+}
 //////////////overlay///////////
 .overLay {
     cursor: url('https://demo-morata.myshopify.com/cdn/shop/t/3/assets/cursor-close.png?v=93210088594709752341700037392'), pointer;
@@ -196,23 +206,13 @@ select {
 
 // //////////////quanity//////////////////
 .Colum {
-    display: inline-block;
-    border: 1px solid #d7d7d7;
-    border-radius: 4px;
-
+    border-color:  #d7d7d7;
     .QuanityButtons {
         flex-direction: column;
-        float: right;
-
         :nth-child(1) {
-            border-bottom: 1px solid #d7d7d7;
-            border-top-right-radius: 4px;
+            border-bottom:  1px solid #d7d7d7;
         }
 
-        :nth-child(2) {
-
-            border-bottom-right-radius: 4px;
-        }
 
         button {
             width: 40px;
@@ -224,13 +224,9 @@ select {
     input {
         width: 70px;
         height: 40px;
-        border: 0;
         outline: 0;
         border-right: 1px solid #d7d7d7;
         background-color: rgba($color: $BG2, $alpha: .8);
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
-
     }
 
     @media(max-width:480px) {
@@ -252,7 +248,7 @@ select {
     gap: 15px;
 
     .btn-quanity {
-        background-color: $hover;
+        background-color: var(--hover);
 
         svg {
             width: 30px;
@@ -276,7 +272,7 @@ select {
     @include cricle(80px);
 
     img {
-        border: 1px solid $hover-1;
+        border: 1px solid var(--hover-1);
     }
 }
 
@@ -285,7 +281,7 @@ select {
     width: min(100%, 1000px);
     max-width: 90%;
     max-height: 80%;
-    background-color: $w;
+    background-color: var(--w);
     border-radius: 16px;
     z-index: 99999;
     left: 50%;
@@ -335,4 +331,8 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+
+
+
 @include Pulse(Pulse);

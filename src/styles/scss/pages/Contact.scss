@@ -5,27 +5,24 @@
  .contactUs-1{
     form{
        
-        width: 600px;
-        max-width: 100%;
-        // background-color: red;
-        padding-inline: 20px;
-        padding-block: 25px;
+        width: min(600px , 100%);
+
 
         .formGroup{
-        flex-direction: column;
+            flex-direction: column;
             width: 100%;
             input ,textarea {
                 @include input(56px, 100%,transparent);
-                background-color: $BG;
-                font-size: 14px;
+                background-color: var(--BG);
+                // font-size: 14px;
                 transition: $t-s;
                 &:focus {
-                    border-color: $hover;
+                    border-color: var(--hover);
                 }
             }
             textarea{
                 @include input(150px, 100%,transparent);
-                padding-inline-start: 10px;
+                // padding-inline-start: 10px;
             }
         }
         .btn-run{

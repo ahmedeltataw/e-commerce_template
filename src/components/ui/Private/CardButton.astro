@@ -7,16 +7,16 @@ interface Props {
 const { IsStatus = false } = Astro.props;
 ---
 
-<div class="cardButtons absolute">
+<div class="cardButtons absolute right-5">
 
   {
     IsStatus ? (
       <Button
         type="button"
         aria={`quickView`}
-        ClassName="d-flex items-center iconButton BtnDelete px-5	 py-4	 round-6  relative overflow-hidden">
+        ClassName="d-flex items-center iconButton BtnDelete px-5	 py-4	 round-3  relative overflow-hidden o-0 top-50">
         <Icon name={`delete`} size={`30`} class={`relative`} />
-        <span class="absolute round-tl-6 round-bl-6 d-flex items-center justify-center fs-14 px-3">
+        <span class="absolute round-l-3 d-flex items-center justify-center fs-14 px-3 o-0">
             حذف
         </span>
       </Button>
@@ -25,21 +25,21 @@ const { IsStatus = false } = Astro.props;
     <Button
     type="button"
     aria={`addToCart`}
-    ClassName="d-flex items-center iconButton px-5	 py-4 round-6  relative overflow-hidden mb-1"
+    ClassName="d-flex items-center iconButton px-5	 py-4 round-3  relative overflow-hidden mb-1 o-0"
   >
     <Icon name={`cart2`} size={`30`} class={`relative`} />
     <span
-      class="absolute round-tl-6 round-bl-6 d-flex items-center justify-center fs-14 px-3"
+      class="absolute round-l-3  d-flex items-center justify-center fs-14 px-3 o-0"
       >اضف للسلة</span>
   </Button>
   <Button
     type="button"
     aria={`quickView`}
-    ClassName="d-flex items-center iconButton px-5	quickView  py-4	 round-6  relative overflow-hidden"
+    ClassName="d-flex items-center iconButton px-5	quickView  py-4	 round-3  relative overflow-hidden o-0"
   >
     <Icon name={`search`} size={`30`} class={`relative`} />
     <span
-      class="absolute round-tl-6 round-bl-6 d-flex items-center justify-center fs-14 px-3"
+      class="absolute round-l-3 d-flex items-center justify-center fs-14 px-3 o-0"
       >نظرة سريعة</span>
   </Button>
     )

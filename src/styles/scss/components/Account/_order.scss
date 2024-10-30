@@ -7,15 +7,10 @@
 
     .orderFilter {
         .SelectFilter {
-            margin: 0;
             flex-basis: 200px;
-
             select {
                 @include input(48px, 100%, $border-color);
-                border-radius: 6px;
-                font-size: 15px;
-                color: $subtitle;
-
+                color: var(--subtitle);
             }
         }
     }
@@ -37,8 +32,8 @@
             border: none;
             background-color: red;
             height: 7vh;
-            background-color: $BG;
-            border-bottom: 1px solid $border-color;
+            background-color: var(--BG);
+            border-bottom: 1px solid var(--border-color);
 
             th {
                 padding-inline: 25px;
@@ -50,10 +45,10 @@
             // background-color: ;
 
             tr {
-                border-bottom: 1px solid $border-color;
+                border-bottom: 1px solid var(--border-color);
 
                 &:nth-child(even) {
-                    background-color: $BG;
+                    background-color: var(--BG);
                 }
 
                 td {
@@ -93,18 +88,18 @@
                     ;
 
                     span {
-                        color: $w;
+                        color: var(--w);
                     }
                 }
             }
 
             .DeleteOrderBtn {
-                background-color: $error-text;
+                background-color: var(--error-text);
                 span{
-                    color: $w;
+                    color: var(--w);
                 }
                 &::before {
-                    background-color: $error;
+                    background-color: var(--error);
                 }
 
             }

@@ -28,7 +28,7 @@ import DropDown from "@components/ui/global/DropDown.astro";
   <!-- ul icon cart and search -->
   <div class="navButtons d-flex items-center gap-10">
     <!-- user img drop down -->
-    <div class="dropDownAvatar relative">
+    <div class="dropDownAvatar relative d-none">
       <Button
         type="button"
         aria="dropDownUserSetting"
@@ -38,13 +38,13 @@ import DropDown from "@components/ui/global/DropDown.astro";
       >
         <Avatar />
       </Button>
-      <DropDown data={DropDownUser} id="dropDownUser" />
+      <DropDown data={DropDownUser} id="dropDownUser" ClassName="fs-14 round-3 right--10" />
     </div>
     <!-- btn login -->
     <Button
       type="button"
       aria={`login btn`}
-      ClassName="btn-run relative round-6 py-5 px-8 d-none"
+      ClassName="btn-run relative round-3 py-5 px-8 lg-max-d-none"
     >
       <Link
         href="Login.html"
@@ -61,7 +61,7 @@ import DropDown from "@components/ui/global/DropDown.astro";
       controll={`CartShop`}
       id="openCart"
     >
-      <Icon name={`cart2`} size={`36`} />
+      <Icon name={`cart2`} size={`36`} class={`o-90`} />
       <span
         class="count absolute top--1 fw-400 fs-12 round-cricle text-center right--2 d-flex items-center justify-center"
         >12</span
@@ -76,7 +76,7 @@ import DropDown from "@components/ui/global/DropDown.astro";
       controll={`navSearchForm`}
       id="openNavSearch"
     >
-      <Icon name={`search`} size={`36`} />
+      <Icon name={`search`} size={`36`} class={`o-90`} />
     </Button>
     <!-- close -->
     <Button
@@ -87,12 +87,12 @@ import DropDown from "@components/ui/global/DropDown.astro";
       controll={`navSearchForm`}
       id="closeNavSearch"
     >
-      <Icon name={`close`} size={`36`} />
+      <Icon name={`close`} size={`36`} class={`o-90`} />
     </Button>
   </div>
   <form
     action="!#"
-    class="navSearchForm d-none absolute right-0"
+    class="navSearchForm d-none absolute right-0 py-5 p-in-8 o-0"
     id="navSearchForm"
   >
     <FormGroup
@@ -102,10 +102,11 @@ import DropDown from "@components/ui/global/DropDown.astro";
       isLabel={false}
       IsButton={{
         aria: "search submit",
-        ClassName: "btnSearchSubmit absolute round-4",
+        ClassName: "btnSearchSubmit absolute round-4 p-in-5",
         BtnIcon: { name: "search" },
       }}
       place="ابحث عن منتجك"
+      InputClassName="fs-16 p-in-5"
     />
   </form>
 </nav>

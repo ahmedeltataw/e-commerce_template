@@ -2,7 +2,7 @@
 @use "../../helpers/extend" as *;
 .navTop{
     .socialMedia{
-        opacity: .8;
+        
         .btn-runBorder{
             border-color: transparent;
             &:hover{
@@ -11,7 +11,7 @@
         }
         svg{
             width: 20px;
-            color: $subtitle;
+            color: var(--subtitle);
         }
     }
     

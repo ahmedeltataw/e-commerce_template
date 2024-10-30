@@ -26,7 +26,7 @@ import { Icon } from "astro-icon/components";
           : "مرحبًا، أدخل بياناتك الحقيقية والصحيحة لضمان تحقق حسابك وبدء العمل"
       }
     </p>
-    <form action="#!" class="mx-auto" id={id}>
+    <form action="#!" class="mx-auto p-in-9 py-10" id={id}>
         {
             isSignUp && (
                 <UploadImg img={img}  />
@@ -39,7 +39,8 @@ import { Icon } from "astro-icon/components";
                 name="userName"
                 id="userName"
                 FormClassName="d-flex gap-4 mb-8 relative"
-                InputClassName="round-8"
+                InputClassName="round-4 fs-14"
+                LabelClassName="ps-4"
                 
               />
             )
@@ -53,7 +54,8 @@ import { Icon } from "astro-icon/components";
         name="userEmail"
         id="userEmail"
         FormClassName="d-flex gap-4 mb-8"
-        InputClassName="round-8"
+        InputClassName="round-4 fs-14"
+        LabelClassName="ps-4"
         
       />
       <FormGroup
@@ -65,11 +67,12 @@ import { Icon } from "astro-icon/components";
         name="userPassword"
         id="userPassword"
         FormClassName=`d-flex gap-4  relative ${isLogin ? 'mb-4' : 'mb-8'}`
-        InputClassName="round-8"
+        InputClassName="round-4 fs-14"
+        LabelClassName="ps-4"
         
         IsPassword={true}
-        Icons={{ openEye: { name: "openEye", ClassName: "d-none" ,id: "openEye"},
-    closeEye: { name: "closeEye", ClassName: ""  , id: "closeEye"},}}
+        Icons={{ openEye: { name: "openEye", ClassName: "d-none absolute top-0 o-80" ,id: "openEye"},
+    closeEye: { name: "closeEye", ClassName: "absolute top-0 o-80"  , id: "closeEye"},}}
       />
       {
         isSignUp && (
@@ -82,11 +85,11 @@ import { Icon } from "astro-icon/components";
             name="SureUserPassword"
             id="SureUserPassword"
             FormClassName="d-flex gap-4 mb-8 relative"
-            InputClassName="round-8"
-            
+            InputClassName="round-4 fs-14"
+            LabelClassName="ps-4"
             IsPassword={true}
-            Icons={{ openEye: { name: "openEye", ClassName: "d-none" ,id: "openEye1"},
-    closeEye: { name: "closeEye", ClassName: ""  , id: "closeEye1"},}}
+            Icons={{ openEye: { name: "openEye", ClassName: "d-none absolute top-0 o-80" ,id: "openEye1"},
+    closeEye: { name: "closeEye", ClassName: "absolute top-0 o-80"  , id: "closeEye1"},}}
           />
           <FormGroup
             type="number"
@@ -97,8 +100,8 @@ import { Icon } from "astro-icon/components";
             name="userPhone"
             id="userPhone"
             FormClassName="d-flex gap-4 mb-8 relative"
-            InputClassName="round-8"
-            
+            InputClassName="round-4 fs-14"
+            LabelClassName="ps-4"
           />
             <SelectForm id="userGender" title="تحديد النوع">
                 <option value="male">ذكر</option>
@@ -108,7 +111,7 @@ import { Icon } from "astro-icon/components";
       }
       {
         isLogin && (
-          <p class="pr-4">
+          <p class="ps-4">
             <Link
               href="#!"
               aria="forgetPassword"
@@ -120,7 +123,7 @@ import { Icon } from "astro-icon/components";
       }
       {
         isSignUp && (
-          <p class="pr-4 text-center mt-10 condition">
+          <p class="ps-4 text-center mt-10 condition">
             من خلال الاستمرار، أنت توافق على
             <Link href="#!" aria="signUp" Class="" text="الشروط والأحكام" />
             و
@@ -133,7 +136,7 @@ import { Icon } from "astro-icon/components";
         <Button
           type="submit"
           aria={`تسجيل الدخول`}
-          ClassName="btn-run relative  round-6  px-8 py-2"
+          ClassName="btn-run relative  round-3  px-8 py-2"
           id={`${isLogin ? "LoginBtn" : 'SignUpBtn'}`}
         >
           <span class="px-10 py-6 fw-500 fs-18 relative"> 
@@ -145,7 +148,7 @@ import { Icon } from "astro-icon/components";
       </div>
       <div class="mt-14 authWith text-center ">
         <div class="break relative ">
-            <p class="  absolute">
+            <p class="  absolute p-in-4">
             
                 {
                   isLogin
@@ -157,7 +160,7 @@ import { Icon } from "astro-icon/components";
         <Button
           type="submit"
           aria={`تسجيل باستحدام حساب جوجل`}
-          ClassName="btn-runBorder relative  round-6 px-8 py-2 d-flex items-center justify-center mx-auto mt-14"
+          ClassName="btn-runBorder relative  round-3 px-8 py-2 d-flex items-center justify-center mx-auto mt-14"
         >
           <span class="px-10 py-6 fw-500 fs-18 relative "> حساب جوحل</span>
           <Icon name="Google" size="28" class={`relative`} />

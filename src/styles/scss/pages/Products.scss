@@ -7,7 +7,7 @@
 .productFilter-1 {
     
     grid-template-columns: 350px 1fr;
-    gap: 5px;
+    // gap: 5px;
     @media (max-width:991px){
         grid-template-columns: 1fr;
         grid-template-rows: 70px 1fr;
@@ -21,16 +21,16 @@
             height: 45px;
             input{
                 @include input(100%,100%,$border-color);
-                padding-inline: 10px;
+                // padding-inline: 10px;
             }
             .searchFilter{
                 height: 80%;
-                background-color: $hover;
+                background-color: var(--hover);
                 @extend %centerY;
-                left: 5px;
+                inset-inline-end: 5px;
                 svg{
                     width: 24px;
-                    color: $w;
+                    color: var(--w);
                 }
             }
         }
@@ -49,26 +49,23 @@
 
             
             .accordionItem {
-                border: 1px solid $border-color;    
-                &:nth-child(3){
-                    border-top: none;
-                    border-bottom: none;
-                }
+                border-color:  var(--border-color);    
+                
                 button {
                     width: 100%;
                     background-color: transparent;
-                    color: $subtitle;
+                    color: var(--subtitle);
                     height: 100%;
                     svg {
-                        color: $subtitle;
+                        color: var(--subtitle);
                         width: 24px;
                     }
                     &.active {
-                        background-color: $hover;
-                        color: $w;
+                        background-color: var(--hover);
+                        color: var(--w);
                         
                         svg{
-                            color: $w;
+                            color: var(--w);
                             transform: rotate(180deg);
                         }
                     }
@@ -82,7 +79,7 @@
                     .formGroup {
                         input {
                             @include input(18px, 18px, transparent);
-                            accent-color: $hover;
+                            accent-color: var(--hover);
                         }
                     }
                     
@@ -102,20 +99,23 @@
                 transform: translateX(400px) scale(.8) ;
                 .btn-run {
                     width: 100%;
+                    &::before{
+                        border-radius: 4px;
+                    }
 
                     svg{
                         width: 30px;
                     }
                 }
                 
-                .accordionItem{
-                    border: 1px solid $border-color;
+                // .accordionItem{
+                //     border: 1px solid $border-color;
                    
-                    &:nth-child(3){
-                        border-bottom-color: transparent;
-                        border-top-color: transparent;
-                    }
-                }
+                //     &:nth-child(3){
+                //         border-bottom-color: transparent;
+                //         border-top-color: transparent;
+                //     }
+                // }
             }
         }
 
@@ -139,12 +139,7 @@
   html[lang="en"]{
     .productFilter-1 {
         .filterProducts-1{
-            .searchFilterGroup{
-                .searchFilter{
-                    right: 5px;
-                    left: auto;
-                }
-            }
+           
             .accordion{
                 &.responsive-accordion{
                     transform: translateX(-400px) scale(.8) ;

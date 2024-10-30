@@ -8,7 +8,7 @@
 
 
     &:has(.container .knowMe-1) {
-        background-color: $BG;
+        background-color: var(--BG);
         padding: 50px 0 80px 0;
         position: relative;
         z-index: -1;
@@ -34,7 +34,7 @@
         }
     }
     .knowMe-1 , .knowMe{
-        margin-bottom: 15px;
+        // margin-bottom: 15px;
         grid-template-columns: 1fr 1.3fr;
 
         @media(max-width:991px) {
@@ -46,19 +46,18 @@
         }
     }
     .knowMe-1 {
-        // grid-template-columns: 1fr 1.3fr;
-        background-color: $w;
-        padding: 15px;
-        border-radius: 30px;
+        background-color: var(--w);
+
+
         box-shadow: rgba(137, 137, 137, 0.26) 0px 0px 20px 8px;
-        position: relative;
+ 
 
         
 
         &::before {
             content: "";
             position: absolute;
-            background-color: $hover;
+            background-color: var(--hover);
             width: 100%;
             height: 100%;
             border-radius: 30px;
@@ -71,16 +70,9 @@
         .leftSide {
             height: 350px;
             width: 470px;
-            margin-inline: auto;
-            border-bottom-left-radius: 40px;
-            border-top-right-radius: 40px;
-            border-top-left-radius: 40px;
         }
 
         img {
-            border-bottom-left-radius: 40px;
-            border-top-right-radius: 40px;
-            border-top-left-radius: 40px;
             box-shadow: -17px 20px 20px 0px rgba(0, 0, 0, 0.19);
         }
         @media(max-width:580px){

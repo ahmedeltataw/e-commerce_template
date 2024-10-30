@@ -138,9 +138,9 @@ const toggleAsideMenu = (action: 'open' | 'close', asideEl: HTMLUListElement | H
 // =================================================================
 // ==========(((((((((((((((((((((((((((privet functions)))))))))))))))))))))))))))=============
 // drop down menu lang function 
-const showDropDownLang = ( Li: NodeListOf<HTMLLIElement> | any, DropDown: HTMLUListElement | any , Btn:HTMLButtonElement,time:number) => {
+const showDropDownLang = ( Li: NodeListOf<HTMLLIElement> | any, DropDown: HTMLUListElement | any , Btn:HTMLButtonElement,time:number ,classAction:'toggle' | 'remove') => {
   if (!Btn) return;
-  toggleClass(Btn, ['open'], 'toggle');
+  toggleClass(Btn, ['open'], classAction);
   let isOpen = Btn.classList.contains('open');
   toggleDropDown(isOpen ? 'open' : 'close', Li, DropDown,time);
   setAriaExpanded(Btn, isOpen);
@@ -221,7 +221,7 @@ const filterProductAcc = ()=>{
     
   });
 }
-
+console.log(filterProductAcc)
 /////////////////////////upload img\\\\\\\\\\\\\\\
 const UploadImage = () => {
   if(uploadFile && userImage){
@@ -326,8 +326,8 @@ ImageGallery(MainImageModel , SubImageModel);
 if (openMenu) openMenu.addEventListener("click", () => toggleAsideMenu('open', responsiveNavLinks, 'responsiveNavLinks', 'lg-max-d-none', openMenu, btnCloseMenu, true, true));
 if (btnCloseMenu) btnCloseMenu.addEventListener("click", () => toggleAsideMenu('close', responsiveNavLinks, 'responsiveNavLinks', 'lg-max-d-none', openMenu, btnCloseMenu, true, true));
 
-if (BtnLang) BtnLang.addEventListener('click', ()=>showDropDownLang(dropDownLangLi ,dropDownLang,BtnLang ,100));
-if (BtnUser) BtnUser.addEventListener('click', ()=>showDropDownLang(dropDownUserLi ,dropDownUser,BtnUser ,200));
+if (BtnLang) BtnLang.addEventListener('click', ()=>showDropDownLang(dropDownLangLi ,dropDownLang,BtnLang ,100,'toggle'));
+if (BtnUser) BtnUser.addEventListener('click', ()=>showDropDownLang(dropDownUserLi ,dropDownUser,BtnUser ,200,'toggle'));
 
   if(openCart) openCart.addEventListener('click', ()=>toggleAsideMenu('open', CartShop, null, 'd-none', openCart, closeCart, true, false));
   if(closeCart) closeCart.addEventListener('click', ()=>toggleAsideMenu('close', CartShop, null, 'd-none', openCart, closeCart, true, false));
@@ -351,8 +351,20 @@ window.addEventListener("click", (e: Event) => {
   }
   if(!openNavSearch.contains(target) &&!SearchForm.contains(target) ){
     toggleSearch('close');
+    
+  };
+  
+  if(BtnUser !== null && dropDownUser !== null){
+    if(!BtnUser.contains(target) &&!dropDownUser.contains(target) ){
+      showDropDownLang(dropDownUserLi ,dropDownUser,BtnUser ,200,'remove')
+    }
   }
-
+  if(BtnLang !== null && dropDownLang !==null){
+    if(!BtnLang.contains(target) &&!dropDownLang.contains(target) ){
+      showDropDownLang(dropDownLangLi ,dropDownLang,BtnLang ,100,'remove')
+    }
+  }
+  
 
 });
 

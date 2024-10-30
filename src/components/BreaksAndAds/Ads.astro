@@ -1,28 +1,13 @@
 ---
-import { Icon } from "astro-icon/components";
-import Button from "@components/ui/global/Button.astro";
-import Link from "@components/ui/global/Link.astro";
+
+import Image from "astro/components/Image.astro";
+import img from "@assets/images/Breaks&Ads/AdsImage.png"
 ---
 
-<section class="ads-1 section-1">
-  <div class="container">
-    <div class="adsWhatApp relative d-flex items-center justify-between  gap-5">
-      <Icon name={`lager`} size={`48`} />
-      <!-- text -->
-      <p class="adsText text-center">للكميات الكبيرة و المناقصات</p>
-      <Button
-        type="button"
-        aria={`click here`}
-        ClassName="relative btn-run round-6"
-      >
-        <Link
-          href="#!"
-          aria="what'sApp Link "
-          text=" تواصل الان"
-          Class="relative px-8 py-7 fs-16 d-flex items-center gap-2"
-          icon={{ name: "whatsapp", side: "left" }}
-        />
-      </Button>
-    </div>
-  </div>
+<section class="AE_break section-1">
+<div class="container">
+  <a href="#!" class="round-4">
+    <Image src={img} alt="adsImage" quality={70} format="webp" class={'round-8 '} />
+  </a>
+</div>
 </section>

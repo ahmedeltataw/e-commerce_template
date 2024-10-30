@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, d as createAstro, b as addAttribute } from './astro/server-Bpp7M_eh.js';
 import 'kleur/colors';
 import '@astrojs/internal-helpers/path';
-import { b as $$Icon, c as $$Button, $ as $$Image, p as productData } from './Layout-D4dtAE8-.js';
+import { b as $$Icon, c as $$Button, $ as $$Image, p as productData } from './Layout-Dr8BzTC7.js';
 import { $ as $$MainHeading } from './MainHeading-d9tiTf_C.js';
 import 'clsx';
 

@@ -4,45 +4,45 @@
 
 
 .pro-1{
-    height: fit-content;
-    border: 1px solid $border-color;
+    height:  clamp(21.125rem, 19.71rem + 6.471vw, 24.563rem);
+    border: 1px solid var(--border-color);
     transition: $t-s;
     background-color: rgba($color: $w, $alpha: .7);
     .cardButtons{
-        right: 10px;
+        // right: 10px;
         .iconButton{
             
-            background-color: $hover;
+            background-color: var(--hover);
             transition: $t-s;
             transform: translateX(50px) scale(.9);
-            opacity: 0;
+            // opacity: 0;
             z-index: 1;
             
             svg{
                 width: 24px;
-                color: $w;
+                color: var(--w);
                 
             }
             span{
                 right: 43px;
                 white-space: nowrap;
-                background-color: $hover;
+                background-color: var(--hover);
                 height: 40px;
                 // padding-inline: 3px;
-                color: $w;
+                color: var(--w);
                 transform: translateX(50px) scale(0);
                 visibility: hidden;
-                opacity: 0;
+                // opacity: 0;
                 transition: $t-s;
                 
             }
             &:hover{
-                background-color: $hover-1;
+                background-color: var(--hover-1);
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
                 overflow: visible;
                 span{
-                    background-color: $hover-1;
+                    background-color: var(--hover-1);
                     transform: translateX(0) scale(1);
                     visibility: visible;
                     opacity: 1;
@@ -55,10 +55,10 @@
                 transition-delay: 200ms ;
             }
             &.BtnDelete{
-                background-color: $error-text;
-                top: 50px;
+                background-color: var(--error-text);
+                // top: 50px;
                 span{
-                    background-color: $error-text;
+                    background-color: var(--error-text);
                 }
             }
         }
@@ -69,8 +69,8 @@
         height: clamp(200px , 25vw + 2rem, 250px);
         
         .discount , .Status{
-            background-color: $error-text;
-            color: $w;
+            background-color: var(--error-text);
+            color: var(--w);
         }
         .Status {
             &.new{
@@ -83,19 +83,19 @@
                 background-color: rgb(214, 145, 33);
             }
             &.paid{
-                background-color: $hover-1;
+                background-color: var(--hover-1);
             }
         }
     }
     .proDetails{
         .price{
             span {
-                color: $hover;
+                color: var(--hover);
                 font-size: clamp(20px , 1vw  + 1.1rem ,24px);
             }
             del{
                 font-size: 22px;
-                color: $subtitle;
+                color: var(--subtitle);
                 opacity: .7;
                 padding-inline-start: 6px;
             }
@@ -112,6 +112,7 @@
         .proTitle{
             @include responsiveText(1);
             font-size: clamp(16px , 1vw  + .7rem ,18px);
+            color: var(--subtitle);
         }
         .des{
             
@@ -125,7 +126,7 @@
         border-color: $hover-1;
         .proDetails{
             .proTitle ,.price span{
-                color: $hover-1;
+                color: var(--hover-1);
             }
         }
         .cardButtons{
@@ -140,6 +141,9 @@
     a{
         width: 100%;
         height: 100%;
+    }
+    @media (min-width:830px) and (max-width:990px){
+        height: 390px;
     }
 }
 // html[lang="en"]{
