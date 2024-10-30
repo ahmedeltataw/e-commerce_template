@@ -1,0 +1,206 @@
+@use "../../helpers/color" as *;
+@use "../../helpers/animation" as *;
+@use "../../helpers/extend" as*;
+@use "../../helpers/mixin" as *;
+
+footer {
+    min-height: 60dvh;
+    padding-top: 6vh;
+    margin-top: 5vh;
+    background-color: var(--BG3);
+    width: 100%;
+
+    .footerLayout {
+        @include gridCol(300px, 1fr);
+
+        @media(max-width:767px) {
+            @include gridCol(200px, 1fr);
+        }
+    }
+
+    .Footer-meta {
+
+
+
+        h3 {
+            // letter-spacing: 1px;
+            &::before {
+                @extend %pseudoElX;
+                width: 50%;
+                height: 2px;
+                background-color: var(--hover-1);
+                bottom: 20px;
+                right: 0;
+            }
+        }
+
+        a {
+            // opacity: .9;
+
+            &:hover {
+                color: var(--hover-1);
+                opacity: 1;
+            }
+        }
+    }
+
+    // .Newsletter {
+    //     .box {
+    //         .box-text {
+
+    //             h4{
+    //                 font-size: clamp(18px , 1vw + .9rem ,24px);
+    //             }
+                
+    //         }
+
+    //         .box-icons {
+    //             svg {
+    //                 width: 48px;
+    //             }
+    //         }
+
+    //         form {
+    //             .formGroup {
+    //                 width: 500px;
+    //                 max-width: 100%;
+    //                 height: 55px;
+
+
+    //             }
+
+    //             input {
+    //                 @include input(100%, 100%, $subtitle);
+    //                 background-color: transparent;
+
+    //                 &::placeholder {
+    //                     color: var(--subtitle);
+    //                 }
+
+    //                 &:hover {
+    //                     border-color:var(--hover);
+    //                 }
+
+    //                 &:focus {
+    //                     border-color: var(--hover-1);
+    //                 }
+
+
+    //             }
+
+    //             .btnSendEmail {
+    //                 @extend %centerY;
+    //                 background-color: $hover;
+    //                 color: var(--w);
+    //                 height: 55px;
+    //                 transition: $t-s;
+    //                 border-start-end-radius: 4px;
+    //                 border-end-end-radius: 4px;
+    //                 &:hover {
+    //                     background-color: $hover-1;
+
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     @media(max-width:768px) {
+    //         flex-direction: column;
+    //         align-items: stretch;
+
+    //         gap: 15px;
+
+
+    //     }
+    // }
+
+    .copyright {
+        flex-direction: column;
+
+        .paymentImg {
+            max-width: 500px;
+        }
+
+
+        a {
+            color: var(--hover);
+
+        }
+
+        @media(max-width:767px) {
+            padding-bottom: 12vh;
+        }
+    }
+
+    .mobileFooter {
+        background-color: var(--w);
+        width: 100%;
+        z-index: 999;
+        box-shadow: 0 -8px 1.25rem rgba(110, 110, 110, .3);
+
+        .mobileFooterList {
+            grid-template-columns: repeat(4, 70px);
+            grid-template-rows: 70px;
+
+            li {
+
+                a {
+                    flex-direction: column;
+                    transition: $t-s;
+
+                    svg {
+                        width: 30px;
+                        transition: $t-s;
+                    }
+
+                    &:hover,
+                    &.active {
+                        color: var(--hover-1);
+
+                        svg {
+                            color: var(--hover-1);
+
+                        }
+                    }
+                }
+            }
+
+            @media(max-width:480px) {
+                grid-template-columns: repeat(4, 60px);
+                grid-template-rows: 60px;
+
+                li {
+                    a{
+                        font-size: 12px;
+                        svg{
+                            width: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+html[lang="en"] {
+    footer{
+        .Footer-meta{
+            h3{
+                &::before{
+                    left: 0;
+                }
+            }
+        }
+        // .Newsletter {
+        //     .box{
+        //         form{
+        //             .btnSendEmail {
+        //                 right: 0;
+        //                 left: auto;
+                        
+        //             }
+        //         }
+        //     }
+        // }
+    }
+}

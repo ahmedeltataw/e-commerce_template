@@ -1,0 +1,112 @@
+---
+import Logo from "@components/ui/Private/Logo.astro";
+import ListLinksPage from "@components/ui/Private/ListLinksPage.astro";
+import Button from "@components/ui/global/Button.astro";
+import Link from "@components/ui/global/Link.astro";
+import { Icon } from "astro-icon/components";
+import FormGroup from "@components/ui/global/FormGroup.astro";
+import Avatar from "@components/ui/global/Avatar.astro";
+import { DropDownUser } from "@data/Data";
+import DropDown from "@components/ui/global/DropDown.astro";
+---
+
+<nav class="navBottom py-4 d-flex items-center justify-between">
+  <Button
+    type="button"
+    aria={`menu btn`}
+    ClassName="icon-nav-base "
+    ariaEx={`false`}
+    controll={`responsiveNavLinks`}
+    id="openMenu"
+  >
+    <span></span><span></span><span></span>
+  </Button>
+  <!-- logo -->
+  <Logo />
+  <!-- ul link -->
+  <ListLinksPage />
+  <!-- ul icon cart and search -->
+  <div class="navButtons d-flex items-center gap-10">
+    <!-- user img drop down -->
+    <div class="dropDownAvatar relative d-none">
+      <Button
+        type="button"
+        aria="dropDownUserSetting"
+        ClassName="AvatarBtn"
+        ariaEx={`false`}
+        controll={`dropDownUser`}
+      >
+        <Avatar />
+      </Button>
+      <DropDown data={DropDownUser} id="dropDownUser" ClassName="fs-14 round-3 right--10" />
+    </div>
+    <!-- btn login -->
+    <Button
+      type="button"
+      aria={`login btn`}
+      ClassName="btn-run relative round-3 py-5 px-8 lg-max-d-none"
+    >
+      <Link
+        href="Login.html"
+        aria="login link"
+        Class="relative  fs-16 fw-500 "
+        text=" تسجيل الدخول"
+      />
+    </Button>
+    <Button
+      type="button"
+      aria={`cart btn`}
+      ClassName=" relative cartBtn"
+      ariaEx={`false`}
+      controll={`CartShop`}
+      id="openCart"
+    >
+      <Icon name={`cart2`} size={`36`} class={`o-90`} />
+      <span
+        class="count absolute top--1 fw-400 fs-12 round-cricle text-center right--2 d-flex items-center justify-center"
+        >12</span
+      >
+    </Button>
+    <!-- open -->
+    <Button
+      type="button"
+      aria={`poen search btn`}
+      ClassName="relative searchBtn showIcon"
+      ariaEx={`false`}
+      controll={`navSearchForm`}
+      id="openNavSearch"
+    >
+      <Icon name={`search`} size={`36`} class={`o-90`} />
+    </Button>
+    <!-- close -->
+    <Button
+      type="button"
+      aria={`close search btn`}
+      ClassName="relative searchBtn hideIcon d-none"
+      ariaEx={`false`}
+      controll={`navSearchForm`}
+      id="closeNavSearch"
+    >
+      <Icon name={`close`} size={`36`} class={`o-90`} />
+    </Button>
+  </div>
+  <form
+    action="!#"
+    class="navSearchForm d-none absolute right-0 py-5 p-in-8 o-0"
+    id="navSearchForm"
+  >
+    <FormGroup
+      type="text"
+      isDisabled={false}
+      FormClassName="relative"
+      isLabel={false}
+      IsButton={{
+        aria: "search submit",
+        ClassName: "btnSearchSubmit absolute round-4 p-in-5",
+        BtnIcon: { name: "search" },
+      }}
+      place="ابحث عن منتجك"
+      InputClassName="fs-16 p-in-5"
+    />
+  </form>
+</nav>

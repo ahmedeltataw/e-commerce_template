@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import img1 from "@assets/images/Breaks&Ads/break-3.webp"
+import img2 from "@assets/images/Breaks&Ads/break-4.webp";
+import Button from "@components/ui/global/Button.astro";
+import Link from "@components/ui/global/Link.astro";
+---
+<section class="break section-1" aria-label="breakSection">
+    <div class="container">
+        <div class="berakBox d-flex items-center gap-8 overflow-hidden">
+            <figure class="imgBreak relative overflow-hidden round-4">
+                <Image src={img1} alt={`breack img`} quality={70} format="webp"  class={`img-cover round-4`}/>
+                <div class="breakDetails text-left absolute left-8">
+                    <p class="cateName  pb-4">درجة حرارة</p>
+                    <p class="proName ">قناع الوجه N95</p>
+                    <!-- button -->
+                    <div class="buttonPrice mt-8">
+                        <Button type="button" aria={`product btn `} ClassName="  btn-run relative round-3 ">
+                            <Link href="#!" aria="product link" Class="relative fs-16     d-flex items-center gap-4" text="تسوق الان" icon={{name:'cart2' ,side:'left'}} />
+                        </Button>
+                    </div>
+                </div>
+            </figure>
+            <figure class="imgBreak relative overflow-hidden round-4">
+                <Image src={img2} alt={`breack img`} quality={70} format="webp"  class={`img-cover round-4`}/>
+                <div class="breakDetails text-left absolute left-8">
+                    <p class="cateName  pb-4">درجة حرارة</p>
+                    <p class="proName ">قناع الوجه N95</p>
+                    <!-- button -->
+                    <div class="buttonPrice mt-8">
+                        <Button type="button" aria={`product btn `} ClassName="  btn-run relative round-3 ">
+                            <Link href="#!" aria="product link" Class="relative fs-16      d-flex items-center gap-4" text="تسوق الان" icon={{name:'cart2' ,side:'left'}} />
+                        </Button>
+                    </div>
+                </div>
+            </figure>
+
+        </div>
+    </div>
+</section>

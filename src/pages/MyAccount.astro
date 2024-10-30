@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "@styles/scss/pages/account.scss";
+// components
+import SmallBeadcrumb from '@components/ui/global/SmallBeadcrumb.astro';
+import AccountLayouy from '@components/Account/AccountLayouy.astro';
+import EditAccount from '@components/Account/EditAccount.astro';
+---
+
+<Layout title="jadwal | حسابي" des='  متجر متخصص في توفير جميع الأدوات والمستلزمات الطبية بأعلى جودة وأسعار تنافسية، لتلبية احتياجات المستشفيات والعيادات والأفراد مع خدمة توصيل سريعة ودعم فني متواصل. '>
+<SmallBeadcrumb defaultPage='الرئيسية' linkPage=' حسابي'  />
+    <AccountLayouy sectionName='EditAccount round-7 border-1 border-solid'>
+        <EditAccount/>
+    </AccountLayouy>
+</Layout>

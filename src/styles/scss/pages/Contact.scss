@@ -1,0 +1,47 @@
+@use "../helpers/color" as *;
+@use "../helpers/extend" as *;
+@use "../helpers/mixin" as *;
+
+ .contactUs-1{
+    form{
+       
+        width: min(600px , 100%);
+
+
+        .formGroup{
+            flex-direction: column;
+            width: 100%;
+            input ,textarea {
+                @include input(56px, 100%,transparent);
+                background-color: var(--BG);
+                // font-size: 14px;
+                transition: $t-s;
+                &:focus {
+                    border-color: var(--hover);
+                }
+            }
+            textarea{
+                @include input(150px, 100%,transparent);
+                // padding-inline-start: 10px;
+            }
+        }
+        .btn-run{
+            width: 100%;
+        }
+
+
+
+
+    }
+   @media(max-width:991px){
+    .d-flex {
+        flex-wrap: wrap;
+       }
+       figure{
+        order: 1;
+       }
+       form{
+        order: 2;
+       }
+   }
+ }

@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "@styles/scss/pages/Payment.scss";
+// components
+import SmallBeadcrumb from '@components/ui/global/SmallBeadcrumb.astro';
+import Pay from '@components/Payment/Pay.astro';
+
+---
+
+<Layout title="jadwal | الدفع" des='  متجر متخصص في توفير جميع الأدوات والمستلزمات الطبية بأعلى جودة وأسعار تنافسية، لتلبية احتياجات المستشفيات والعيادات والأفراد مع خدمة توصيل سريعة ودعم فني متواصل. '>
+<SmallBeadcrumb defaultPage='الرئيسية' linkPage='الدفع'  />
+<Pay/>
+</Layout>

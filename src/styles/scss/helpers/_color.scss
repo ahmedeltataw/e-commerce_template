@@ -1,0 +1,53 @@
+// background-color
+$black: #00060b;
+$BG: #f0f0f0;
+$BG2:#ebf1ff;
+$BG3:rgb(236, 250, 236);
+$w: #fff;
+// hover
+// $hover: #d0b426 ;
+// $hover-1: #ebcb26;
+$hover: #2E8B57 ;
+$hover-1: #3CB371;
+
+// color
+$subtitle: #535353;
+$dec: #495057;
+$title: #222;
+$border-color: #e1e1e1;
+// shadows
+$light-shadow:  #498fdf80;
+// error and success
+$error: rgb(169, 50, 50);
+$success: rgb(50, 169, 50);
+$error-text: rgb(243, 46, 46);
+// TRANSLATION
+$t-l: 500ms ease-in-out;
+$t-s: 250ms ease-in-out;
+
+
+// #e1e1e1
+//#f5f5f5
+:root{
+    --black: #00060b;
+    --BG: #f0f0f0;
+    --BG2:#ebf1ff;
+    --BG3:rgb(236, 250, 236);
+    --w: #fff;
+    --hover: #2E8B57 ;
+    --hover-1: #3CB371;
+    --subtitle: #535353;
+    --dec: #495057;
+    --title: #222;
+    --border-color: #e1e1e1;
+    --light-shadow:  #498fdf80;
+    --error: rgb(169, 50, 50);
+    --success: rgb(50, 169, 50);
+    --error-text: rgb(243, 46, 46);
+}
+//dark color
+// $black: #060913;
+//0c0f19
+//h-b28040
+//h1-be945a
+//l-d1b586

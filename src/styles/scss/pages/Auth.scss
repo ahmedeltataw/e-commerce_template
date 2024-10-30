@@ -1,0 +1,93 @@
+@use "../helpers/color" as *;
+@use "../helpers/extend" as *;
+@use "../helpers/mixin" as *;
+.auth-1{
+    h3{
+        font-size: clamp(20px , 1vw  + 1.1rem ,28px);
+    }
+   
+    form{
+        width: min(600px , 100%);
+        // max-width: 100%;
+        
+        // background-color: red;
+        // padding-inline: 20px;
+        // padding-block: 25px;
+        svg{
+            width: 28px;
+        }
+        .formGroup{
+        flex-direction: column;
+            width: 100%;
+            input ,select {
+                @include input(56px, 100%,transparent);
+                background-color: var(--BG);
+                // font-size: 14px;
+            }
+            
+            .IsPassword{
+                svg{
+                    inset-inline-end: 15px;
+                    width: 30px;
+                    cursor: pointer;
+                }
+                
+            }
+            .errorMassageInput {
+                color: var(--error-text);
+                font-size: 12px;
+                font-weight: 400;
+                padding-inline: 8px;
+                padding-top: 2px;
+            }
+        }
+        .btn-runBorder , .btn-run{
+            width: 99%;
+            // padding-block: clamp();
+            span{
+                font-size: clamp(14px ,1vw + .6rem , 18px);
+                padding-block: clamp(6px ,1vw + .6rem ,16px);
+            }
+        }
+        .btn-runBorder {
+            
+            &::before{
+                opacity: .8;
+            }
+           
+        }
+        .authWith{
+            .break{
+                width: 100%;
+                height: 1px;
+                background-color: var(--border-color);
+                p{
+                    @include centerPosition;
+                    background-color: var(--w);
+                    // padding-inline: 8px;
+                    white-space: nowrap;
+                    font-size: clamp(13px ,1vw + .5rem , 16px)
+                }
+            }
+        }
+        a{
+            color: var(--hover);
+            &:hover{
+                color: var(--hover-1);
+            }
+        }
+        .errorForm {
+            input {
+                border-color: var(--error-text);
+
+                &:focus {
+                    border-color: var(--error-text);
+                }
+            }
+        }
+        .uploadImg {
+            @extend %uploadImg;
+
+        }
+    }
+}

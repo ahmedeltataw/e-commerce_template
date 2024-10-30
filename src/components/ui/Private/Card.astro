@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+  des: string;
+  href: string;
+  img: string | any;
+  price: string ;
+  discount: { value: string | any; newPrice: string | any };
+  Status?: boolean
+  StatusValue?: string;
+  StatusClass?: string;
+
+}
+
+const { href, title, des, img, price, discount=false , Status=false , StatusValue ,StatusClass} = Astro.props;
+
+import { Image } from "astro:assets";
+import CardButton from "./CardButton.astro";
+---
+
+<!-- card > img > title > des > price  > discount  -->
+<div class="card pro-1 py-6 px-8 round-3 relative overflow-hidden">
+  <CardButton IsStatus={Status} />
+  <!-- img -->
+  <figure class="proImg-1 round-4 mx-auto relative">
+    <Image
+      src={img}
+      alt={`image ${title}`}
+      format="webp"
+      quality={70}
+      class={` round-4 img-contain`}
+    />
+    {
+      Status && StatusValue && (
+      <p class={`Status absolute top-0 right-0 px-4 py-2 round-4 ${StatusClass}`}>
+          {StatusValue}
+        </p>
+      )
+    }
+    {
+      discount && discount.value && (
+        <p class="discount absolute top-0 left-0 px-4 py-2 round-4">
+          %{discount.value}
+        </p>
+      )
+    }
+  </figure>
+  <!-- pro title des price -->
+  <div class="proDetails">
+    {
+      discount  && discount.newPrice ? (
+        <div class="price pb-4	">
+          <span class=" fw-700">{discount.newPrice}</span>
+          <small>ر.س</small>
+		  <del >{price}</del>
+          <small class="smallDel">ر.س</small>
+        </div>
+      ) : (
+        <div class={`price fs-20 pb-4	  `}>
+          <span class={`fw-700 `}>{price}</span>
+          <small >ر.س</small>
+        </div>
+      )
+    }
+
+    <h3 class="proTitle pb-3 fw-500 line-relaxed">{title}</h3>
+    <p class="des line-relaxed fs-14">
+      {des}
+    </p>
+  </div>
+  <a href={href} class="absolute top-0 left-0" aria-label={`link ${title}`} title={title}></a>
+  <!--  -->
+</div>

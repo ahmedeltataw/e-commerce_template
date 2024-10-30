@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import Link from "@components/ui/global/Link.astro";
+interface Props {
+    img: string |any,
+    title?: string ,
+    isCate?:boolean
+}
+const {img, title ,isCate=true} = Astro.props
+---
+<div class={` relative  text-center ${isCate ? 'cateBox-1' : 'prandBox-1'} `}>
+    <figure class={` mx-auto ${isCate ? 'cateImg-1' : 'prandImg-1'}`}>
+        <Image src={img} alt={`img${title}`} format="webp" quality={70} class={`img-contain`}/>
+    </figure>
+    {
+        title && (
+        <figcaption class="title  fw-500 mt-6">{title}</figcaption>
+        <Link href="#!"  aria={`${title}link`} Class="absolute top-0 left-0" title={title} />
+        )
+    }
+  </div>

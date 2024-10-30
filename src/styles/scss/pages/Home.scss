@@ -1,0 +1,23 @@
+@use "../helpers/color" as *;
+@use "../components/product/product";
+@use "../components/Hero/hero";
+@use "../components/service/service";
+@use "../components/Cate/cate";
+@use "../components/Breaks&Ads/Break";
+@use "../components/Breaks&Ads/ads";
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+ 
+
+      position: relative;
+     
+    }
+  }
+
+ 
+
+
+

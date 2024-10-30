@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "@styles/scss/pages/Home.scss";
+import 'swiper/css/bundle';
+// components
+import Hero from '@components/Hero/Hero.astro';
+import Service from '@components/service/Service.astro';
+import Cate from '@components/Cate/Cate.astro';
+import ProductSection from '@components/product/ProductSection.astro';
+import Breacks from '@components/BreaksAndAds/Breacks.astro';
+import Prand from '@components/BreaksAndAds/Prand.astro';
+import Ads from '@components/BreaksAndAds/Ads.astro';
+import ProducSlider from '@components/product/producSlider.astro';
+---
+
+<Layout title="jadwal | الصفحة الرئيسية" des='  متجر متخصص في توفير جميع الأدوات والمستلزمات الطبية بأعلى جودة وأسعار تنافسية، لتلبية احتياجات المستشفيات والعيادات والأفراد مع خدمة توصيل سريعة ودعم فني متواصل. '>
+<Hero/>
+<Service/>
+<Cate/>
+<Ads/>
+<ProductSection title="احدث منتجاتنا" sectionName="newProduct" ClassName="newProduct" HeadType={true}  />
+<ProducSlider/>
+<ProductSection title="المشدات والجبائر"  sectionName="cateName1" HeadType={true}  />
+<Breacks/>
+<ProductSection title="المستهلكات الطبية" sectionName="cateName2" HeadType={true}   />
+<Prand/>
+</Layout>
+<script src="../scripts/Home.ts"></script>
+
