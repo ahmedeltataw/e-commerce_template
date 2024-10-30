@@ -1,0 +1,11 @@
+---
+import { Image } from "astro:assets";
+import img from "@assets/images/model-1.png";
+interface Props {
+    FigureClass?: string;
+}
+const {FigureClass} =Astro.props;
+---
+<figure class={`avatar    ${FigureClass ? FigureClass : ''}`  }>
+    <Image src={img} alt={`user image`}    quality={70} format="webp" class={`round-cricle img-cover`}  />
+</figure>

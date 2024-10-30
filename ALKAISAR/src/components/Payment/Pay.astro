@@ -1,0 +1,43 @@
+---
+import Invoice from "./invoice.astro";
+import { Icon } from "astro-icon/components";
+import Button from "@components/ui/global/Button.astro";
+---
+
+<section class="section-1 Payment-1">
+  <div class="container">
+    <div class="d-grid gap-14 parent">
+      <!-- invoice -->
+      <Invoice/>
+      <!-- Payment -->
+    <div class="PaymentWay">
+        <p class="title fs-18 mb-6"> طريقة الدفع</p>
+        <div class="PayWay d-grid gap-10">
+            <div class="way-1 relative round-6">
+              <Icon name={`paypal`} size={`28`}/>
+              <input type="radio" name="payWay" id="paypal" class="round-6">
+              <p >قسط مع تابي علي 15 شهر بدون فوائد</p>
+            </div>
+            <div class="way-1 relative round-6 ">
+                <Icon name={`visa`} size={`28`}/>
+                <input type="radio" name="payWay" class="round-6">
+            </div>
+        </div>
+        <div class="payNow mt-14 round-6 py-10 px-8">
+            <div class="now  py-10  px-5 round-8 relative">
+                <div class="d-flex items-center  total gap-2">
+                    <p class="total fw-700 fs-14">الاجمالي:</p>
+                    <div class={`price 	  `}>
+                      <span class={`     fw-700 fs-20 `}>37,000</span>
+                      <small class="fs-14">ر.س</small>
+                    </div>
+                  </div>
+                  <Button type="button" aria={`payNow`} ClassName="relative btn-run absolute left-3 payNowBtn round-8" >
+                    <span class="px-6 relative">ادفع الان</span>
+                  </Button>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>

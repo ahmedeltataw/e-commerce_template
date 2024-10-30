@@ -1,0 +1,69 @@
+---
+import FormGroup from "@components/ui/global/FormGroup.astro";
+import UploadImg from "@components/ui/global/UploadImg.astro";
+import img from "@assets/images/model-1.png";
+import Button from "@components/ui/global/Button.astro";
+---
+
+<form action="#!!" class="editForm p-10 d-grid gap-5">
+  <UploadImg img={img} />
+  <FormGroup
+    type="text"
+    isDisabled={false}
+    isLabel={true}
+    title="الاسم بالكامل"
+    place="الاسم بالكامل "
+    name="userName"
+    id="userName"
+    FormClassName="d-flex gap-4 mb-8 relative"
+    InputClassName="round-4 fs-14 "
+    LabelClassName="ps-4"
+    
+  />
+  <FormGroup
+    type="email"
+    isDisabled={false}
+    isLabel={true}
+    title="البريد الالكتروني"
+    place="البريد الالكتروني "
+    name="userEmail"
+    id="userEmail"
+    FormClassName="d-flex gap-4 mb-8 relative"
+    InputClassName="round-4 fs-14 "
+    LabelClassName="ps-4"
+    
+  />
+  <FormGroup
+    type="number"
+    isDisabled={false}
+    isLabel={true}
+    title="رقم الهاتف"
+    place="رقم الهاتف "
+    name="userPhone"
+    id="userPhone"
+    FormClassName="d-flex gap-4 mb-8 relative"
+    InputClassName="round-4 fs-14 "
+    LabelClassName="ps-4"
+    
+  />
+  <FormGroup
+    type="text"
+    isDisabled={false}
+    isLabel={true}
+    title=" العنوان"
+    place=" العنوان "
+    name="userAdders"
+    id="userAdders"
+    FormClassName="d-flex gap-4 mb-8 relative"
+    InputClassName="round-4 fs-14 "
+    LabelClassName="ps-4"
+    
+  />
+  <Button
+    type="submit"
+    aria={`submit edit form`}
+    ClassName="btn-runBorder relative d-flex items-center justfy-center mx-auto round-3"
+  >
+    <span class="px-13 py-7 relative">تاكيد</span>
+  </Button>
+</form>

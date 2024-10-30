@@ -1,0 +1,26 @@
+---
+import Button from "../global/Button.astro";
+import Link from "../global/Link.astro";
+---
+<ul class="socialMedia d-flex items-center gap-4 lg-max-d-none o-80">
+    <li>
+        <Button type="button" aria={`facebookBtn`} ClassName="btn-runBorder relative round-6 d-flex items-center justify-center">
+            <Link  href="#!" Class="relative px-3 py-3" aria="facebookLink" icon={{name:'facebook' ,side:'left'}} />
+        </Button>
+    </li>
+    <li>
+        <Button type="button" aria={`instagramBtn`} ClassName="btn-runBorder relative round-6 d-flex items-center justify-center">
+            <Link  href="#!" Class="relative px-3 py-3" aria="instagramLink" icon={{name:'instagram' ,side:'left'}} />
+        </Button>
+    </li>
+    <li>
+        <Button type="button" aria={`snapchatBtn`} ClassName="btn-runBorder relative round-6 d-flex items-center justify-center">
+            <Link  href="#!" Class="relative px-3 py-3" aria="snapchatLink" icon={{name:'snapchat' ,side:'left'}} />
+        </Button>
+    </li>
+    <li>
+        <Button type="button" aria={`twitterBtn`} ClassName="btn-runBorder relative round-6 d-flex items-center justify-center">
+            <Link  href="#!" Class="relative px-3 py-3" aria="twitterLink" icon={{name:'twitter' ,side:'left'}} />
+        </Button>
+    </li>
+</ul>

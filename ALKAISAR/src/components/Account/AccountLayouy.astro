@@ -1,0 +1,20 @@
+---
+import AccountSideBar from "./AccountSideBar.astro";
+interface Props {
+    sectionName: string;
+}
+const {sectionName} = Astro.props
+---
+
+<section class="section-1">
+  <div class="container">
+    <div class="d-grid AccountLayOut-1 gap-10 ">
+      <!-- side bar -->
+      <AccountSideBar />
+      <!-- g section -->
+    <section class={`globalSection ${sectionName}`}  >
+        <slot />
+    </section>
+    </div>
+  </div>
+</section>

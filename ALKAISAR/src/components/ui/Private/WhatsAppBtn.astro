@@ -1,0 +1,14 @@
+---
+import Button from "@components/ui/global/Button.astro";
+import Link from "@components/ui/global/Link.astro";
+---
+
+<Button type="button" aria={`click here`} ClassName="relative whatsAppBtn  " id="whatsAppBtn">
+  <Link
+    href="#!"
+    aria="what'sApp Link "
+    Class="relative "
+    icon={{ name: "whatsapp", side: "left" }};
+    target="_blank"
+  />
+</Button>
